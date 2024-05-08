@@ -6,9 +6,8 @@
     </main>
 </template>
 
-<style postcss>
+<style lang="postcss">
     h1 {
-        font-family: var(--n27);
-        color: var(--azul)
+        color: var(--azul);
     }
 </style>
