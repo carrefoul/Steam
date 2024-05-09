@@ -3,6 +3,7 @@
         <ul>
             <li>
                 <NuxtLink to="/">Tienda</NuxtLink>
+                <IconButton/>
             </li>
             <li>
                 <NuxtLink to="/comunidad">Comunidad</NuxtLink>
@@ -13,3 +14,7 @@
         </ul>
     </nav>
 </template>
+
+<script>
+import IconButton from "../componentes/IconButton.vue";
+</script>
