@@ -10,5 +10,6 @@
 <style lang="postcss">
     h1 {
         color: var(--azul);
+        font-family: AeonikTRIAL-Bold;
     }
 </style>

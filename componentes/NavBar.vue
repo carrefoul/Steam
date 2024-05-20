@@ -1,9 +1,9 @@
 <template>
-    <nav>
+    <nav class="nav">
         <div class="LogoContainer">
             <nuxt-icon name="Logo" filled></nuxt-icon>
         </div>
-        <ul class="headerMenu">
+        <ul class="nav-list">
             <li>
                 <NuxtLink to="/">Tienda</NuxtLink>
             </li>
@@ -27,20 +27,14 @@ import IconButton from "./Atoms/IconButton.vue";
 <style lang="postcss">
   .nav{
     display: flex;
-    flex-direction: row;
-  }
-  .LogoContainer{
-    width: auto;
-    .nuxt-icon svg{
-       margin-bottom: 0;
-       width: 20vw;
-       .li{
-        list-style: none;
-       }
+    justify-content: space-between;
+    .LogoContainer{
+      background-color: white;
+    }
+    .nav-list{
+      list-style: none;
+      display: flex;
     }
   }
-  .headerMenu{
-    display: flex;
-    flex-direction: row;
-  }
+
 </style>
