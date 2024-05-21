@@ -6,6 +6,9 @@
 </template>
 
 <style lang="postcss">
+  body{
+    margin: 0;
+  }
   :root{
     --azul: #0007FF;
     --blanco: #FFFFFF;

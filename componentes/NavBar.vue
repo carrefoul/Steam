@@ -38,6 +38,9 @@ export default {
 .nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--azul);
+  padding: 5px 20px;
 }
 
 .headerLeft {
@@ -60,7 +63,7 @@ export default {
 .nav-list {
   list-style: none;
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 
 .nav-list li {
