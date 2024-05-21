@@ -12,4 +12,7 @@
     --negro: #000000;
     --gris: #D9D9D9;
   }
+  h1{
+    font-family: AeonikTRIAL-Bold;
+  }
 </style>
