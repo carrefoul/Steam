@@ -3,7 +3,8 @@
         <h1>
             Tienda
         </h1>
-        
+        <HeaderButton/>
+
     </main>
 </template>
 
@@ -12,4 +13,5 @@
         color: var(--azul);
         font-family: AeonikTRIAL-Bold;
     }
+    
 </style>
