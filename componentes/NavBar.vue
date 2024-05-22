@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import HeaderButton from './Atoms/HeaderButton.vue';
+import HeaderButton from './Atoms/HeaderLink.vue';
 import IconButton from "./Atoms/IconButton.vue";
 
 export default {
