@@ -9,5 +9,13 @@ export default defineNuxtConfig({
     },
   ],
 
-  modules: ["@nuxt/fonts", 'nuxt-icons']
+  modules: ["@nuxt/fonts", 'nuxt-icons'],
+  
+  routeRules: { 
+    '/web/v1/**': { 
+        proxy: { 
+          to: "http://localhost:9300/web/v1/**"
+        }, 
+    } 
+  },
 })
