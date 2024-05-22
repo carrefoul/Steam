@@ -23,61 +23,70 @@
   h1 {
         color: var(--azul);
         font-family: AeonikTRIAL-Bold;
-        font-size: 30px;
+        font-weight: normal;
+        font-size: 1.8rem;
   }
   h2 {
-        color: var(--negro);
         font-family: AeonikTRIAL-Regular;
-        font-size: 25px;
+        font-weight: normal;
+        font-size: 1.5rem;
   }
   h3 {
-        color: var(--negro);
         font-family: AeonikTRIAL-Regular;
-        font-size: 23px;
+        font-weight: normal;
+        font-size: 1.4rem;
   }
   h4 {
         color: var(--negro);
         font-family: AeonikTRIAL-Bold;
-        font-size: 23px;
+        font-weight: normal;
+        font-size: 1.4rem;
   }
   h5 {
         color: var(--negro);
         font-family: AeonikTRIAL-Regular;
-        font-size: 20px;
+        font-weight: normal;
+        font-size: 1.25rem;
   }
   h6 {
         color: var(--negro);
         font-family: AeonikTRIAL-Bold;
-        font-size: 15px;
+        font-weight: normal;
+        font-size: 0.9rem;
   }
   h8 {
         color: red;
         font-family: AeonikTRIAL-Regular;
-        font-size: 14px;
+        font-weight: normal;
+        font-size: 0.8rem;
   }
   h9 {
         color: var(--negro);
         font-family: AeonikTRIAL-Bold;
-        font-size: 25px;
+        font-weight: normal;
+        font-size: 1.5rem;
   }
   h10 {
         color: var(--negro);
         font-family: AeonikTRIAL-Bold;
-        font-size: 18px;
+        font-weight: normal;
+        font-size: 1.1rem;
   }
   h11 {
         color: var(--azul);
         font-family: AeonikTRIAL-Regular;
-        font-size: 30px;
+        font-weight: normal;
+        font-size: 1.8rem;
   }
   h12 {
         color: var(--negro);
         font-family: AeonikTRIAL-Regular;
-        font-size: 18px;
+        font-weight: normal;
+        font-size: 0.8rem;
   }
   p{
     color: var(--negro);
     font-family: AeonikTRIAL-Regular;
-    font-size: 15px;
+    font-size: 0.9rem;
   }
 </style>
