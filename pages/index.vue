@@ -9,11 +9,9 @@
         <HeaderButton/>
     </main>
 </template>
-
 <style lang="postcss">
-
     h1 {
         color: var(--azul);
-}
-    
+    }
+   
 </style>
