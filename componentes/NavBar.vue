@@ -49,14 +49,11 @@ export default {
 }
 
 .LogoContainer {
-  background-color: white;
-  display: flex;
-  align-items: center;
+  width: 6rem;
   height: 100%;
   overflow: hidden;
     svg{
-      object-fit: cover;
-      height: 100%;
+      width: 6rem;
     }
 }
 
