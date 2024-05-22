@@ -1,70 +1,62 @@
 <template>
-    <nuxt-link :to="to" :class="buttonClass">
+  <nuxt-link :to="to" :class="buttonClass">
+    <component :is="headerTag" class="header-button">
       <slot>HEADER BUTTON</slot>
-    </nuxt-link>
-  </template>
-  
-  <script>
-  export default {
-    props: {
-      to: {
-        type: String,
-        required: true
-      },
-      isTitle: {
-        type: Boolean,
-        default: false
-      },
-      isSubtitle: {
-        type: Boolean,
-        default: false
-      }
+    </component>
+  </nuxt-link>
+</template>
+
+<script>
+export default {
+  props: {
+    to: {
+      type: String,
+      required: true
     },
-    computed: {
-      buttonClass() {
-        return [
-          'custom-button',
-          { title: this.isTitle, subtitle: this.isSubtitle }
-        ];
-      }
+    isTitle: {
+      type: Boolean,
+      default: false
+    },
+    isSubtitle: {
+      type: Boolean,
+      default: false
     }
-  };
-  </script>
-  
-  <style lang="postcss" scoped>
-  .custom-button {
-    color: var(--negro);
-    font-family: AeonikTRIAL-Regular;
-    text-align: center;
-    cursor: pointer;
-    border: none;
-    background: none;
-    appearance: none;
-    outline: none;
+  },
+  computed: {
+    buttonClass() {
+      return [
+        'custom-button',
+        { title: this.isTitle, subtitle: this.isSubtitle }
+      ];
+    },
+    headerTag() {
+      if (this.isTitle) return 'h2';
+      if (this.isSubtitle) return 'h3';
+      return 'span'; // Default tag if neither isTitle nor isSubtitle is true
+    }
   }
-  
-  .custom-button:hover {
-    color: var(--azul);
-  }
-  
-  .custom-button.router-link-exact-active {
-    color: var(--azul);
-  }
-  
-  .title {
-    font-size: 1rem;
-  }
-  
-  .title:hover {
-    color: var(--azul);
-  }
-  
-  .subtitle {
-    font-size: 0.8rem;
-  }
-  
-  .subtitle:hover {
-    color: var(--azul);
-  }
-  </style>
-  
+};
+</script>
+
+<style lang="postcss" scoped>
+.custom-button {
+  font-family: AeonikTRIAL-Regular;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background: none;
+  appearance: none;
+  outline: none;
+}
+
+.header-button {
+  color: var(--negro);
+}
+
+.custom-button:hover .header-button,
+.custom-button.router-link-exact-active .header-button {
+  color: var(--azul);
+}
+
+
+</style>

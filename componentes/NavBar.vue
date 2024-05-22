@@ -14,6 +14,9 @@
         <li>
           <HeaderButton to="/soporte" isTitle>Soporte</HeaderButton>
         </li>
+        <li>
+          <HeaderButton to="/pruebas" isTitle>Pruebas</HeaderButton>
+        </li>
       </ul>
     </div>
     <div class="headerRight">
