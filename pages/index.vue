@@ -18,6 +18,9 @@
         <h6>
             Tienda
         </h6>
+        <h7>
+            Tienda
+        </h7>
         <h8>
             Tienda
         </h8>
@@ -30,9 +33,6 @@
         <h11>
             Tienda
         </h11>
-        <h12>
-            Tienda
-        </h12>
         <p>
             Tienda
         </p>

@@ -24,69 +24,69 @@
         color: var(--azul);
         font-family: AeonikTRIAL-Bold;
         font-weight: normal;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
   }
   h2 {
         font-family: AeonikTRIAL-Regular;
         font-weight: normal;
-        font-size: 1.5rem;
+        font-size: 1.15rem;
   }
   h3 {
         font-family: AeonikTRIAL-Regular;
         font-weight: normal;
-        font-size: 1.4rem;
+        font-size: 1.05rem;
   }
   h4 {
         color: var(--negro);
         font-family: AeonikTRIAL-Bold;
         font-weight: normal;
-        font-size: 1.4rem;
+        font-size: 1.05rem;
   }
   h5 {
         color: var(--negro);
         font-family: AeonikTRIAL-Regular;
         font-weight: normal;
-        font-size: 1.25rem;
+        font-size: 0.9rem;
   }
   h6 {
         color: var(--negro);
         font-family: AeonikTRIAL-Bold;
         font-weight: normal;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
   }
-  h8 {
+  h7 {
         color: red;
         font-family: AeonikTRIAL-Regular;
         font-weight: normal;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+  }
+  h8 {
+        color: var(--negro);
+        font-family: AeonikTRIAL-Bold;
+        font-weight: normal;
+        font-size: 1.15rem;
   }
   h9 {
         color: var(--negro);
         font-family: AeonikTRIAL-Bold;
         font-weight: normal;
-        font-size: 1.5rem;
+        font-size: 0.8rem;
   }
   h10 {
-        color: var(--negro);
-        font-family: AeonikTRIAL-Bold;
-        font-weight: normal;
-        font-size: 1.1rem;
-  }
-  h11 {
         color: var(--azul);
         font-family: AeonikTRIAL-Regular;
         font-weight: normal;
-        font-size: 1.8rem;
+        font-size: 1.3rem;
   }
-  h12 {
+  h11 {
         color: var(--negro);
         font-family: AeonikTRIAL-Regular;
         font-weight: normal;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
   }
   p{
     color: var(--negro);
     font-family: AeonikTRIAL-Regular;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 </style>
