@@ -1,19 +1,14 @@
 <template>
+    <button :class="buttonClass" @click="handleClick">
+        <span v-if="showBigIcon" class="arrowBigCarrusel">
+            <nuxt-icon :name="iconName" class="icon"></nuxt-icon>
+        </span>
+        <span v-if="showSmallIcon" class="arrowSmallCarrusel">
+            <nuxt-icon :name="iconName" class="icon"></nuxt-icon>
+        </span>
+    </button>
     
-    <button
-      :class="bigArrow"
-      @click="handleClick"
-      v-if="showBigIcon || showBox"
-    >
-      <nuxt-icon :name="iconName" class="icon"></nuxt-icon>
-    </button>
-    <button
-      :class="smallArrow"
-      @click="handleClick"
-      v-if="showSmallIcon || showBox"
-    >
-      <nuxt-icon :name="iconName" class="icon"></nuxt-icon>
-    </button>
+    
     
 </template>
 
@@ -34,18 +29,14 @@ export default {
     }
   },
   computed: {
-    bigArrow() {
+    buttonClass() {
       return [
         'arrow-button',
-        { 'arrowBigCarrousel': this.showBigIcon }
-      ];
-    },
-    smallArrow() {
-      return [
-        'arrow-button',
+        { 'arrowBigCarrousel': this.showBigIcon },
         { 'arrowSmallCarrousel': this.showSmallIcon }
       ];
-    }
+    },
+    
   },
   methods: {
     handleClick() {
@@ -61,7 +52,6 @@ export default {
 <style lang="postcss" scoped>
 
 .arrow-button {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,10 +59,8 @@ export default {
   border: 3px solid var(--azul);
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
   padding: 0.6rem;
-  width: auto;
-  height: auto;
+  transition: background-color 0.3s, color 0.3s;
   color: var(--azul);
 }
 
@@ -89,11 +77,17 @@ export default {
 }
 
 .arrowBigCarrousel {
-  transform: scale(2);
+    height: 43px;
+    width: 43px;
+    margin: 0.6rem;
+    transform: scale(2);
 }
 
 .arrowSmallCarrousel {
-  transform: scale(1.5);
+    height: 25px;
+    width: 25px;
+    margin: 0.6rem;
+    transform: scale(1.5);
 }
 
 </style>

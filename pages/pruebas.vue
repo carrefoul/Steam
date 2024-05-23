@@ -21,6 +21,9 @@
       <IconLink textSize="h3" :pagina="true" :showText="true" buttonText="ICON BUTTON" />
       <IconLink :showIcon="true" :aloneIcon="true" iconName="Basura" />
 
+      <linkListaYMiniIconLink :showText="true" buttonText="Botón lista" />
+      <linkListaYMiniIconLink :showIcon="true" iconName="Facebook" textSize="h9" :showText="true" buttonText="Mini Icon Button" />
+
       <CarruselArrows :showBigIcon="true"  iconName="Flecha d" />
       <CarruselArrows :showSmallIcon="true"  iconName="Flecha d" />
 
@@ -38,13 +41,15 @@ import BuyLink from '@/componentes/Atoms/BuyLink.vue';
 import CheckButton from '@/componentes/Atoms/CheckLink.vue';
 import GameCard from '@/componentes/Moleculas/GameCard.vue';
 import CarruselArrows from '@/componentes/Atoms/CarruselArrows.vue';
+import linkListaYMiniIconLink from '~/componentes/Atoms/linkListaYMiniIconLink.vue';
 
 export default {
   components: {
     BuyLink,
     GameCard,
     CheckButton,
-    CarruselArrows
+    CarruselArrows,
+    linkListaYMiniIconLink
   }
 };
 </script>
