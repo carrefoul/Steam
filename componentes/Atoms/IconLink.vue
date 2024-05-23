@@ -126,11 +126,16 @@
     justify-content: center;
   }
   
-  .icon {
-    width: 26px;
+  .icon svg {
+    width: 50px;
     height: 26px;
     fill: var(--icon-color, black); /* Color del icono por defecto */
     transition: fill 0.3s;
+  }
+
+  .nuxt-icon svg {
+  margin-bottom: 0;
+  width: 5em;
   }
   
   .custom-button:hover .icon {
