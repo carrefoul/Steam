@@ -32,6 +32,14 @@
       type: Boolean,
       default: false
       },
+      fondoAzul: {
+      type: Boolean,
+      default: false
+      },
+      pagina: {
+      type: Boolean,
+      default: false
+      },
       buttonText: {
         type: String,
         default: 'Estim'
@@ -55,6 +63,8 @@
           { 'with-icon': this.showIcon },
           { 'with-box': this.showBox },
           { 'alone-icon': this.aloneIcon },
+          { 'fondo-azul': this.fondoAzul },
+          { 'pagina': this.pagina },
         ];
       },
       textBoxClass() {
@@ -117,6 +127,40 @@
     border-radius: none;
     color: var(--azul);
   }
+
+  .fondo-azul {
+    background-color: var(--azul);
+    color: var(--blanco);
+  }
+  
+  .fondo-azul:hover {
+    background-color: var(--azul);
+    color: var(--blanco);
+    h3 {
+      font-weight: bolder;
+    }
+    h5 {
+      font-weight: bolder;
+    }
+  }
+
+  .pagina {
+    color: var(--azul);
+    border: 0.17em solid var(--azul);
+    box-sizing: border-box;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+  }
+  
+  .pagina:hover {
+    color: var(--azul);
+    outline: 0.1em solid var(--azul); /* Usamos outline en lugar de border para que no cambie el tamaño del contenedor */
+    h3 {
+      font-weight: bolder;
+    }
+    h5 {
+      font-weight: bolder;
+    }
+  }
   
   .icon-box {
     width: 26px;
@@ -127,8 +171,7 @@
   }
   
   .icon {
-    width: 26px;
-    height: 26px;
+    transform: scale(1.3);
     fill: var(--icon-color, black); /* Color del icono por defecto */
     transition: fill 0.3s;
   }

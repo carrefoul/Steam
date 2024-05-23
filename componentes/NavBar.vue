@@ -64,6 +64,7 @@ export default {
   list-style: none;
   display: flex;
   gap: 15px;
+  margin: 0;
 }
 
 .nav-list li {

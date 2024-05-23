@@ -11,11 +11,12 @@
       <BuyButton :showIcon="true" :showBox="true" iconName="Flecha d" />
       <BuyButton :showIcon="true" :showInverted="true" :showBox="true" iconName="Flecha d" textSize="h6" :showText="true" buttonText="BUY BUTTON" />
       <BuyButton  :showInverted="true" :showBox="true"  textSize="h6" :showText="true" buttonText="BUY BUTTON" />
+      
       <IconLink :showIcon="true" iconName="Basura" textSize="h4" :showText="true" buttonText="ICON BUTTON" />
       <IconLink textSize="h3" :showBox="true" :showText="true" buttonText="ICON BUTTON" />
-      <IconLink textSize="h3" :showBox="true" :showText="true" buttonText="ICON BUTTON" />
-      <IconLink textSize="h5" :showBox="true" :showText="true" buttonText="ICON BUTTON" />
-      <IconLink textSize="h3" :showBox="true" :showText="true" buttonText="ICON BUTTON" />
+      <IconLink textSize="h3" :fondoAzul="true" :showText="true" buttonText="ICON BUTTON" />
+      <IconLink textSize="h5" :fondoAzul="true" :showText="true" buttonText="ICON BUTTON" />
+      <IconLink textSize="h3" :pagina="true" :showText="true" buttonText="ICON BUTTON" />
       <IconLink :showIcon="true" :aloneIcon="true" iconName="Basura" />
     </div>
   </div>
@@ -36,6 +37,5 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 10px;
 }
 </style>
