@@ -44,6 +44,8 @@ export default {
   align-items: center;
   border-bottom: 2px solid var(--azul);
   padding: 5px 20px;
+  background-color: white;
+  position: sticky;
 }
 
 .headerLeft {
