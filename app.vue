@@ -22,7 +22,7 @@
   }
   .nuxt-icon svg{
   margin-bottom: 0;
-}
+  }
   h1 {
         color: var(--azul);
         font-family: AeonikTRIAL-Bold;
@@ -84,5 +84,4 @@
     font-family: AeonikTRIAL-Regular;
     font-size: 0.8rem;
   }
-  
 </style>
