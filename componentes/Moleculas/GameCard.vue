@@ -99,54 +99,44 @@
   }
   .image-container {
     width: 100%;
-    height: auto;
     overflow: hidden;
     position: relative;
-
-    img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .icon-button {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-    }
   }
-
-  
+  .image-container img {
+    width: 100%;
+    height: auto;
+    display: block; /* Ensures the image does not have any whitespace underneath */
+  }
+  .icon-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
   .details-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    gap: 20px;
     padding: 20px;
     background: white;
-
-    .textCard {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-
-        .game-description {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 4.5em; /* Three lines */
-        }
-    }
-    .buttons-container {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        margin-top: 20px;
-    }
   }
-  
-  
-  
+  .textCard {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .game-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 4.5em; /* Three lines */
+  }
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 20px;
+  }
   </style>
   
