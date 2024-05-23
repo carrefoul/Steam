@@ -20,23 +20,18 @@
       </ul>
     </div>
     <div class="headerRight">
-      <HeaderRight :loggedIn="true"/>
+      <HeaderRight :loggedOut="true"/>
     </div>
   </nav>
 </template>
 
 <script>
 import HeaderLink from './Atoms/HeaderLink.vue';
-import IconButton from "./Atoms/IconButton.vue";
-import HeaderButton from './Atoms/HeaderLink.vue';
 import HeaderRight from "./Atoms/HeaderRight.vue";
 
 export default {
   components: {
     HeaderLink,
-    IconButton
-    HeaderButton,
-    IconButton,
     HeaderRight
   }
 };
