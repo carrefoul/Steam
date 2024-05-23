@@ -10,7 +10,7 @@
       <BuyButton :showIcon="true" iconName="Flecha d" />
       <BuyButton :showIcon="true" :showBox="true" iconName="Flecha d" />
       <BuyButton :showIcon="true" :showInverted="true" :showBox="true" iconName="Flecha d" textSize="h6" :showText="true" buttonText="BUY BUTTON" />
-      <BuyButton  :showInverted="true" :showBox="true"  textSize="h6" :showText="true" buttonText="BUY BUTTON" />
+      <BuyButton  :showInverted="true" :showBox="true"   textSize="h6" :showText="true" buttonText="BUY BUTTON" />
     </div>
   </div>
 </template>
