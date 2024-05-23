@@ -37,7 +37,8 @@ import GameCard from '@/componentes/Moleculas/GameCard.vue';
 export default {
   components: {
     BuyButton,
-    GameCard
+    GameCard,
+    CheckButton
   }
 };
 </script>
