@@ -6,33 +6,33 @@
       </div>
       <ul class="nav-list">
         <li>
-          <HeaderButton to="/" isTitle>Tienda</HeaderButton>
+          <HeaderLink to="/" isTitle>Tienda</HeaderLink>
         </li>
         <li>
-          <HeaderButton to="/comunidad" isTitle>Comunidad</HeaderButton>
+          <HeaderLink to="/comunidad" isTitle>Comunidad</HeaderLink>
         </li>
         <li>
-          <HeaderButton to="/soporte" isTitle>Soporte</HeaderButton>
+          <HeaderLink to="/soporte" isTitle>Soporte</HeaderLink>
         </li>
         <li>
-          <HeaderButton to="/pruebas" isTitle>Pruebas</HeaderButton>
+          <HeaderLink to="/pruebas" isTitle>Pruebas</HeaderLink>
         </li>
       </ul>
     </div>
     <div class="headerRight">
-      <IconButton/>
+      <HeaderRight :loggedOut="true"/>
     </div>
   </nav>
 </template>
 
 <script>
-import HeaderButton from './Atoms/HeaderLink.vue';
-import IconButton from "./Atoms/IconButton.vue";
+import HeaderLink from './Atoms/HeaderLink.vue';
+import HeaderRight from "./Atoms/HeaderRight.vue";
 
 export default {
   components: {
-    HeaderButton,
-    IconButton
+    HeaderLink,
+    HeaderRight
   }
 };
 </script>
@@ -44,6 +44,8 @@ export default {
   align-items: center;
   border-bottom: 2px solid var(--azul);
   padding: 5px 20px;
+  background-color: white;
+  position: sticky;
 }
 
 .headerLeft {
@@ -64,6 +66,7 @@ export default {
   list-style: none;
   display: flex;
   gap: 15px;
+  margin: 0;
 }
 
 .nav-list li {
