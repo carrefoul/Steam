@@ -18,16 +18,23 @@
       <IconLink textSize="h5" :fondoAzul="true" :showText="true" buttonText="ICON BUTTON" />
       <IconLink textSize="h3" :pagina="true" :showText="true" buttonText="ICON BUTTON" />
       <IconLink :showIcon="true" :aloneIcon="true" iconName="Basura" />
+
+      <GameCard />
+      <GameCard />
+      <GameCard />
+      <GameCard />
     </div>
   </div>
 </template>
 
 <script>
 import BuyButton from '@/componentes/Atoms/BuyButton.vue';
+import GameCard from '@/componentes/Moleculas/GameCard.vue';
 
 export default {
   components: {
-    BuyButton
+    BuyButton,
+    GameCard
   }
 };
 </script>
