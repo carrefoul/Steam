@@ -19,6 +19,10 @@
       <IconLink textSize="h3" :pagina="true" :showText="true" buttonText="ICON BUTTON" />
       <IconLink :showIcon="true" :aloneIcon="true" iconName="Basura" />
 
+      
+      
+      
+
       <GameCard />
       <GameCard />
       <GameCard />
@@ -30,11 +34,13 @@
 <script>
 import BuyButton from '@/componentes/Atoms/BuyButton.vue';
 import GameCard from '@/componentes/Moleculas/GameCard.vue';
+import CarruselArrows from '~/componentes/Atoms/CarruselArrows.vue';
 
 export default {
   components: {
     BuyButton,
-    GameCard
+    GameCard,
+    CarruselArrows
   }
 };
 </script>
