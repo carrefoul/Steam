@@ -90,7 +90,7 @@ export default {
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  padding: 0.2rem 0.5rem 0.2rem 0.5rem; /* Removemos padding por defecto */
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem; /* Removemos padding por defecto */
   gap: 0.4rem;
   width: auto;
   height: auto;
@@ -110,9 +110,11 @@ export default {
   background-color: var(--azul);
   color: var(--blanco);
 }
-svg{
+
+svg {
   margin: 0;
 }
+
 .icon-box {
   display: flex;
   align-items: center;
@@ -123,21 +125,22 @@ svg{
 .icon {
   width: 15px;
   height: 15px;
-  fill: var(--icon-color, black); 
   transition: fill 0.3s;
-  transform: scale(1.5); 
-  display: flex;
-  align-items: center;
 }
 
-.custom-button:hover .icon {
+.icon path {
+  fill: var(--icon-color, black); 
+  transition: fill 0.3s;
+  transform: scale(1.5); /* Aumenta el tamaño del path */
+  transform-origin: center; /* Asegúrate de que el escalado ocurra desde el centro */
+}
+
+.custom-button:hover .icon path {
   fill: var(--hover-icon-color, var(--azul)); 
 }
 
-.with-box .icon {
+.with-box .icon path {
   fill: white; 
-  display: flex;
-  align-items: center;
 }
 
 .text-box {

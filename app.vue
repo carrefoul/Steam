@@ -20,9 +20,7 @@
     --negro: #000000;
     --gris: #D9D9D9;
   }
-  .nuxt-icon svg{
-  margin-bottom: 0;
-}
+ 
   h1 {
         color: var(--azul);
         font-family: AeonikTRIAL-Bold;
