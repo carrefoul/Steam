@@ -16,10 +16,15 @@
 
       <IconLink :showIcon="true" iconName="Basura" textSize="h4" :showText="true" buttonText="ICON BUTTON" />
       <IconLink textSize="h3" :showBox="true" :showText="true" buttonText="ICON BUTTON" />
-      <IconLink textSize="h3" :showBox="true" :showText="true" buttonText="ICON BUTTON" />
-      <IconLink textSize="h5" :showBox="true" :showText="true" buttonText="ICON BUTTON" />
-      <IconLink textSize="h3" :showBox="true" :showText="true" buttonText="ICON BUTTON" />
+      <IconLink textSize="h3" :fondoAzul="true" :showText="true" buttonText="ICON BUTTON" />
+      <IconLink textSize="h5" :fondoAzul="true" :showText="true" buttonText="ICON BUTTON" />
+      <IconLink textSize="h3" :pagina="true" :showText="true" buttonText="ICON BUTTON" />
       <IconLink :showIcon="true" :aloneIcon="true" iconName="Basura" />
+
+      <GameCard />
+      <GameCard />
+      <GameCard />
+      <GameCard />
     </div>
   </div>
 </template>
@@ -27,11 +32,12 @@
 <script>
 import BuyLink from '@/componentes/Atoms/BuyLink.vue';
 import CheckButton from '@/componentes/Atoms/CheckLink.vue';
+import GameCard from '@/componentes/Moleculas/GameCard.vue';
 
 export default {
   components: {
-    BuyLink,
-    CheckButton
+    BuyButton,
+    GameCard
   }
 };
 </script>
@@ -40,7 +46,6 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 10px;
 }
 </style>
 
