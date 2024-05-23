@@ -103,7 +103,7 @@
   }
   
   .with-box {
-    border: 3px solid var(--azul);
+    border: 0.18rem solid var(--azul);
     border-radius: none;
     color: var(--azul);
   }
@@ -123,7 +123,7 @@
   }
   
   .alone-icon:hover {
-    border: 3px solid var(--azul);
+    border: 0.18rem solid var(--azul);
     border-radius: none;
     color: var(--azul);
   }
@@ -131,6 +131,7 @@
   .fondo-azul {
     background-color: var(--azul);
     color: var(--blanco);
+    border: 0.2rem solid var(--azul);
   }
   
   .fondo-azul:hover {
@@ -146,7 +147,7 @@
 
   .pagina {
     color: var(--azul);
-    border: 0.17em solid var(--azul);
+    border: 0.18rem solid var(--azul);
     box-sizing: border-box;
     padding: 0.2rem 1rem 0.2rem 1rem;
   }
