@@ -32,7 +32,7 @@
   .custom-button {
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
-    background-color: var(--azul);
+    background-color: blue;
     color: #fff;
     border-radius: 9999px;
     border: 1px solid #3b82f6;
