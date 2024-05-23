@@ -18,9 +18,9 @@
           <p class="game-description">{{ gameDescription }}</p>
         </textCard>
         <div class="buttons-container">
-          <buy-button :showIcon="true" iconName="Flecha d" :showSale="true" textSize="h3" :showText="true" buttonText="BUY BUTTON"/>
+          <buy-link :showIcon="true" iconName="Flecha d" :showSale="true" textSize="h3" :showText="true" buttonText="BUY BUTTON"/>
           <icon-link textSize="h5" :fondoAzul="true" :showText="true" buttonText="Añadir al carrito"/>
-          <buy-button :showInverted="true" :showBox="true" textSize="h6" :showText="true" buttonText="Ver más" />
+          <buy-link :showInverted="true" :showBox="true" textSize="h6" :showText="true" buttonText="Ver más" />
         </div>
       </div>
     </div>
@@ -29,14 +29,14 @@
   <script>
   import axios from 'axios';
   import IconLink from '../Atoms/IconLink.vue';
-  import BuyButton from '../Atoms/BuyButton.vue';
+  import BuyLink from '../Atoms/BuyLink.vue';
   
   const apiKey = 'ca9f888ff1d74abebec74dfbd11f308f'; // Replace with your RAWG API key
   
   export default {
     components: {
       IconLink,
-      BuyButton
+      BuyLink
     },
     data() {
       return {
