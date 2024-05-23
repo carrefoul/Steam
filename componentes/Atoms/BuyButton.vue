@@ -67,8 +67,9 @@ export default {
     textBoxClass() {
       return [
         'text-box',
-        { 'inverted-text': this.showInverted },
-        { 'text-box-padding': !this.showIcon && this.showText } // Condición para agregar el padding solo si showIcon no está activo y showText está activo
+        { 'text-box inverted-text': this.showInverted },
+        { 'text-box-padding': !this.showIcon }, // Condición para agregar el padding solo si showIcon no está activo y showText está activo
+        { 'text-box': this.showText && this.showIcon } // Aplica la clase invertida específica para showIcon
       ];
     }
   },
@@ -137,6 +138,7 @@ export default {
   padding-right: 10px;
   background: none;
   font-family: AeonikTRIAL-Bold;
+  
 }
 
 .text-box-padding {
