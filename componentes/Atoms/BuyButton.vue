@@ -67,7 +67,7 @@ export default {
     textBoxClass() {
       return [
         'text-box',
-        { 'text-box inverted-text': this.showInverted },
+        { 'inverted-text': this.showInverted },
         { 'text-box-padding': !this.showIcon }, // Condición para agregar el padding solo si showIcon no está activo y showText está activo
         { 'text-box': this.showText && this.showIcon } // Aplica la clase invertida específica para showIcon
       ];
@@ -75,7 +75,6 @@ export default {
   },
   methods: {
     handleClick() {
-      // Aquí puedes añadir lógica para manejar el clic del botón si es necesario
     }
   }
 };
@@ -85,19 +84,20 @@ export default {
 .custom-button {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   background: none;
   border: none;
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  padding: 0; /* Removemos padding por defecto */
-  min-width: 35px;
-  height: 35px;
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem; /* Removemos padding por defecto */
+  gap: 0.4rem;
+  width: auto;
+  height: auto;
 }
 
 .custom-button:hover {
-  color: var(--azul); /* Color de texto por defecto en hover */
+  color: var(--azul); 
 }
 
 .with-box {
@@ -110,45 +110,50 @@ export default {
   background-color: var(--azul);
   color: var(--blanco);
 }
-
+svg{
+  margin: 0;
+}
 .icon-box {
-  width: 35px;
-  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
 }
 
 .icon {
   width: 15px;
   height: 15px;
-  fill: var(--icon-color, black); /* Color del icono por defecto */
+  fill: var(--icon-color, black); 
   transition: fill 0.3s;
+  transform: scale(1.5); 
+  display: flex;
+  align-items: center;
 }
 
 .custom-button:hover .icon {
-  fill: var(--hover-icon-color, var(--azul)); /* Color del icono al hacer hover */
+  fill: var(--hover-icon-color, var(--azul)); 
 }
 
 .with-box .icon {
-  fill: white; /* Color del icono dentro de la caja con borde */
+  fill: white; 
+  display: flex;
+  align-items: center;
 }
 
 .text-box {
-  padding-right: 10px;
   background: none;
   font-family: AeonikTRIAL-Bold;
-  
+  margin: 0;
+}
+
+.inverted .text-box {
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .text-box-padding {
   padding-right: 5px; /* Ajuste de padding a 5px */
   padding-left: 5px; /* Ajuste de padding a 5px */
-}
-
-.inverted .text-box {
-  padding-right: 0;
-  padding-left: 10px;
 }
 
 .sale-text {
@@ -157,6 +162,6 @@ export default {
 }
 
 .inverted {
-  flex-direction: row-reverse; /* Invierte el orden de los elementos */
+  flex-direction: row-reverse;
 }
 </style>
