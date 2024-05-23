@@ -6,16 +6,16 @@
       </div>
       <ul class="nav-list">
         <li>
-          <HeaderButton to="/" isTitle>Tienda</HeaderButton>
+          <HeaderLink to="/" isTitle>Tienda</HeaderLink>
         </li>
         <li>
-          <HeaderButton to="/comunidad" isTitle>Comunidad</HeaderButton>
+          <HeaderLink to="/comunidad" isTitle>Comunidad</HeaderLink>
         </li>
         <li>
-          <HeaderButton to="/soporte" isTitle>Soporte</HeaderButton>
+          <HeaderLink to="/soporte" isTitle>Soporte</HeaderLink>
         </li>
         <li>
-          <HeaderButton to="/pruebas" isTitle>Pruebas</HeaderButton>
+          <HeaderLink to="/pruebas" isTitle>Pruebas</HeaderLink>
         </li>
       </ul>
     </div>
@@ -26,12 +26,12 @@
 </template>
 
 <script>
-import HeaderButton from './Atoms/HeaderLink.vue';
+import HeaderLink from './Atoms/HeaderLink.vue';
 import IconButton from "./Atoms/IconButton.vue";
 
 export default {
   components: {
-    HeaderButton,
+    HeaderLink,
     IconButton
   }
 };
