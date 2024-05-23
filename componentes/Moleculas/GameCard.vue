@@ -87,6 +87,7 @@
   <style scoped>
   .game-card {
     width: 321px;
+    height: fit-content;
     transition: all 0.3s ease;
     position: relative;
     border: 3px solid transparent;

@@ -21,10 +21,10 @@
       <IconLink textSize="h3" :pagina="true" :showText="true" buttonText="ICON BUTTON" />
       <IconLink :showIcon="true" :aloneIcon="true" iconName="Basura" />
 
-      <GameCard />
-      <GameCard />
-      <GameCard />
-      <GameCard />
+        <div class="game-grid">
+            <game-card v-for="index in 20" :key="index" />
+        </div>
+      
     </div>
   </div>
 </template>
@@ -47,6 +47,11 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  .game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 5 columns grid */
+    gap: 10px; /* 10px gap between items */
+  }
 }
 </style>
 
