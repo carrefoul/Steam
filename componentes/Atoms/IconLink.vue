@@ -95,7 +95,7 @@
     padding: 0.2rem 0.5rem 0.2rem 0.5rem; /* Removemos padding por defecto */
     gap: 0.4rem;
     width: auto;
-    height: auto;
+    height: 2.25rem;
   }
   
   .custom-button:hover {
@@ -140,9 +140,16 @@
     h3 {
       font-weight: bolder;
     }
+    p {
+      font-weight: bolder;
+    }
+    h10 {
+      font-weight: bolder;
+    }
     h5 {
       font-weight: bolder;
     }
+    
   }
 
   .pagina {
@@ -159,6 +166,12 @@
       font-weight: bolder;
     }
     h5 {
+      font-weight: bolder;
+    }
+    h10 {
+      font-weight: bolder;
+    }
+    p {
       font-weight: bolder;
     }
   }

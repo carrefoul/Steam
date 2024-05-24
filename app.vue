@@ -11,6 +11,11 @@
   font-weight: bold;
   src: url("/public/fonts/AeonikTRIAL-Bold.woff2") format("woff2");
 }
+@font-face{
+  font-family: AeonikTRIAL-Regular;
+  font-weight: normal;
+  src: url("/public/fonts/AeonikTRIAL-Regular.woff2") format("woff2");
+}
   body{
     margin: 0;
   }
@@ -30,6 +35,7 @@
         font-size: 1.5rem;
   }
   h2 {
+      
         font-family: AeonikTRIAL-Regular;
         font-weight: normal;
         font-size: 1.15rem;
@@ -80,8 +86,9 @@
         font-weight: normal;
         font-size: 0.7rem;
   }
-  p{
+  p { 
     font-family: AeonikTRIAL-Regular;
+    font-weight: normal;
     font-size: 0.8rem;
   }
 </style>
