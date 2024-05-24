@@ -24,6 +24,9 @@
       <linkListaYMiniIconLink :showText="true" buttonText="Botón lista" />
       <linkListaYMiniIconLink :showIcon="true" iconName="Facebook" textSize="h9" :showText="true" buttonText="Mini Icon Button" />
 
+      <imputsElements :showText="true" buttonText="Buscar un juego" :showIcon="true" iconName="Lupa" textSize="h3"/>
+      <imputsElements :showText="true" buttonText="Escriba su correo electrónico" /> 
+
       <CarruselArrows :showBigIcon="true"  iconName="Flecha d" />
       <CarruselArrows :showSmallIcon="true"  iconName="Flecha d" />
 
@@ -42,6 +45,7 @@ import CheckButton from '@/componentes/Atoms/CheckLink.vue';
 import GameCard from '@/componentes/Moleculas/GameCard.vue';
 import CarruselArrows from '@/componentes/Atoms/CarruselArrows.vue';
 import linkListaYMiniIconLink from '~/componentes/Atoms/linkListaYMiniIconLink.vue';
+import imputsElements from '~/componentes/Atoms/imputsElements.vue';
 
 export default {
   components: {
@@ -49,7 +53,9 @@ export default {
     GameCard,
     CheckButton,
     CarruselArrows,
-    linkListaYMiniIconLink
+    linkListaYMiniIconLink,
+    imputsElements
+    
   }
 };
 </script>
@@ -57,7 +63,7 @@ export default {
 .prueba {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
   .game-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 5 columns grid */

@@ -84,8 +84,6 @@
   }
   
   .icon {
-    width: 0.8rem;
-    height: 0.8rem;
     transition: fill 0.3s;
 
   }
