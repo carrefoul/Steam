@@ -1,12 +1,12 @@
 <template>
   <nav class="nav">
     <div class="headerLeft">
-      <div class="LogoContainer">
+      <nuxt-link to="/" class="LogoContainer">
         <nuxt-icon name="Logo" class="logo" filled></nuxt-icon>
-      </div>
+      </nuxt-link>
       <ul class="nav-list">
         <li>
-          <HeaderLink to="/" isTitle>Tienda</HeaderLink>
+          <HeaderLink to="/tienda" isTitle>Tienda</HeaderLink>
         </li>
         <li>
           <HeaderLink to="/comunidad" isTitle>Comunidad</HeaderLink>

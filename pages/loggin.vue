@@ -4,7 +4,7 @@
       <div class="logginS">
         <div class="logginLeft">
             <div class="main">
-                <nuxt-link to="/" class="logginLink">
+                <nuxt-link to="/tienda" class="logginLink">
                     <IconLink textSize="h3" :pagina="true" :showText="true" buttonText="Iniciar sesión" />
                 </nuxt-link>
             </div>
