@@ -4,6 +4,13 @@
       <h1 class="ajuste-titulo">Pruebesitas</h1>
     </main>
 
+    <div>
+      <h1>Botones 2</h1>
+    </div>
+    <div class="prueba">
+      <imputsElements :showText="true" buttonText="Buscar un juego" :showIcon="true" iconName="Lupa" textSize="h3"/>
+      <imputsElements :showText="true" buttonText="Escriba su correo electrónico" />
+    </div>
 
     <div>
       <h1>Botones 3 y 3.2</h1>
@@ -18,8 +25,8 @@
       <BuyLink :fontChange="true" :showBox="true" textSize="p" :showText="true" buttonText="BUY BUTTON" />
       <IconLink textSize="p" :fondoAzul="true" :showText="true" buttonText="BUY BUTTON" />
       <BuyMiniCard />
-</div>
-      <div>
+    </div>
+    <div>
       <h1>Botones 4 y 4.2</h1>
     </div>
     <div class="prueba">
@@ -31,11 +38,16 @@
       <IconLink textSize="h3" :pagina="true" :showText="true" buttonText="ICON BUTTON" />
       <IconLink :showIcon="true" :aloneIcon="true" iconName="Basura" />
 
-      <linkListaYMiniIconLink :showText="true" buttonText="Botón lista" />
-      <linkListaYMiniIconLink :showIcon="true" iconName="Facebook" textSize="h9" :showText="true" buttonText="Mini Icon Button" />
+    </div>
 
-      <imputsElements :showText="true" buttonText="Buscar un juego" :showIcon="true" iconName="Lupa" textSize="h3"/>
-      <imputsElements :showText="true" buttonText="Escriba su correo electrónico" /> 
+    
+
+    <div>
+      <h1>Botones 5, 6 y 7</h1>
+    </div>
+    <div class="prueba">
+      <linkListaYMiniIconLink :showText="true" buttonText="Botón lista" />
+      <linkListaYMiniIconLink :showIcon="true" iconName="Facebook" textSize="h9" :showText="true" buttonText="Mini Icon Button" /> 
 
       <CarruselArrows :showBigIcon="true"  iconName="Flecha d" />
       <CarruselArrows :showSmallIcon="true"  iconName="Flecha d" />
@@ -46,10 +58,10 @@
     </div>
     <div class="prueba">
 
-    <div class="game-grid">
+      <div class="game-grid">
             <game-card v-for="index in 20" :key="index" />
-        </div>
-  </div>
+      </div>
+    </div>
   </div>
 </template>
 
