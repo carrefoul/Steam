@@ -46,6 +46,8 @@ export default {
   padding: 5px 20px;
   background-color: white;
   position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .headerLeft {

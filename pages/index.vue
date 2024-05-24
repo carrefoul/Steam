@@ -40,6 +40,13 @@
         <HeaderButton/>
     </main>
 </template>
+
+<script>
+  export default {
+    name: 'IndexPage'
+  };
+</script>
+
 <style lang="postcss">
     h1 {
         color: var(--azul);
