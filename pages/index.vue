@@ -1,5 +1,6 @@
 <template>
     <main>
+        
         <h1>
             Tienda
         </h1>
