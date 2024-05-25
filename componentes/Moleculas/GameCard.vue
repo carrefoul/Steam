@@ -19,7 +19,6 @@
         </textCard>
         <div class="buttons-container">
         <BuyMiniCard />
-
         </div>
       </div>
     </div>
