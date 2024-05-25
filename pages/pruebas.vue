@@ -8,8 +8,8 @@
       <h1>Botones 2</h1>
     </div>
     <div class="prueba">
-      <imputsElements :showText="true" buttonText="Buscar un juego" :showIcon="true" iconName="Lupa" textSize="h3"/>
-      <imputsElements :showText="true" buttonText="Escriba su correo electrónico" />
+      <imputsElements :showText="true" placeholderText="Buscar un juego" :showIcon="true" iconName="Lupa" textSize="h3"/>
+      <imputsElements :showText="true" placeholderText="Escriba su correo electrónico" />
     </div>
 
     <div>

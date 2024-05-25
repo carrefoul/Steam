@@ -1,19 +1,19 @@
 <template>
     <div class="logginHolder">
-      <h1>Iniciar sesión</h1>
       <div class="logginS">
         <div class="logginLeft">
             <div class="main">
-                <nuxt-link to="/tienda" class="logginLink">
+                <h1>inicia sesión con tu cuenta</h1>
+                <div class="logginImput">
+                    <imputsElements inputWidth="20rem" :showText="true" placeholderText="Nombre de cuenta" />
+                </div>
+                <div class="logginImput">
+                    <imputsElements inputWidth="20rem" :showText="true" placeholderText="Contraseña" />
+                </div>
+            </div>
+            <nuxt-link to="/tienda" class="logginLink">
                     <IconLink textSize="h3" :pagina="true" :showText="true" buttonText="Iniciar sesión" />
                 </nuxt-link>
-            </div>
-            <div class="extra">
-                <p>Ayuda, no puedo iniciar sesión</p>
-                <nuxt-link to="/registration" class="logginLink">
-                    <p>No tengo cuenta</p>
-                </nuxt-link>
-            </div>
         </div>
         <div class="logginRight">
             <h1>o con un código QR</h1>
@@ -22,6 +22,12 @@
             </div>
         </div>
       </div>
+      <div class="extra">
+                <p>Ayuda, no puedo iniciar sesión</p>
+                <nuxt-link to="/registration" class="logginLink">
+                    <p>No tengo cuenta</p>
+                </nuxt-link>
+       </div>
     </div>
   </template>
   
@@ -36,15 +42,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 5rem;
 }
 .logginS {
     display: flex;
     flex-direction: row;
-    gap: 3.5rem;
+    gap: 5rem;
 }
 .logginLeft {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
 }
 .logginLink {
   text-decoration: none;
@@ -65,5 +78,13 @@
 .qrClass {
     transform: scale(13.2);
     color: var(--azul);
+}
+
+h1 {
+    font-size: 1.3rem;
+    margin: 0;
+}
+p{
+    margin: 0;
 }
 </style>
