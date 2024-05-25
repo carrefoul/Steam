@@ -8,7 +8,8 @@
       <h1>Botones 2</h1>
     </div>
     <div class="prueba">
-      <imputsElements :showText="true" placeholderText="Buscar un juego" :showIcon="true" iconName="Lupa" textSize="h3"/>
+      <imputsElements :showText="true" placeholderText="Buscar un juego" :showIcon="true" iconName="Lupa"
+        textSize="h3" />
       <imputsElements :showText="true" placeholderText="Escriba su correo electrónico" />
     </div>
 
@@ -16,12 +17,14 @@
       <h1>Botones 3 y 3.2</h1>
     </div>
     <div class="prueba">
-      <BuyLink :showIcon="true" iconName="Flecha d" :showBox="true" textSize="h6" :showText="true" buttonText="BUY BUTTON" />
+      <BuyLink :showIcon="true" iconName="Flecha d" :showBox="true" textSize="h6" :showText="true"
+        buttonText="BUY BUTTON" />
       <BuyLink :showIcon="true" iconName="Flecha d" />
       <BuyLink :showIcon="true" :showBox="true" iconName="Flecha d" />
       <CheckButton />
-      <BuyLink  :fontChange="true" textSize="p" :showText="true" buttonText="BUY BUTTON" />
-      <BuyLink :showIcon="true" :showInverted="true" :showBox="true" iconName="Flecha d" textSize="h6" :showText="true" buttonText="BUY BUTTON" />
+      <BuyLink :fontChange="true" textSize="p" :showText="true" buttonText="BUY BUTTON" />
+      <BuyLink :showIcon="true" :showInverted="true" :showBox="true" iconName="Flecha d" textSize="h6" :showText="true"
+        buttonText="BUY BUTTON" />
       <BuyLink :fontChange="true" :showBox="true" textSize="p" :showText="true" buttonText="BUY BUTTON" />
       <IconLink textSize="p" :fondoAzul="true" :showText="true" buttonText="BUY BUTTON" />
       <BuyMiniCard />
@@ -40,19 +43,20 @@
 
     </div>
 
-    
+
 
     <div>
       <h1>Botones 5, 6 y 7</h1>
     </div>
     <div class="prueba">
       <linkListaYMiniIconLink :showText="true" buttonText="Botón lista" />
-      <linkListaYMiniIconLink :showIcon="true" iconName="Facebook" textSize="h9" :showText="true" buttonText="Mini Icon Button" /> 
+      <linkListaYMiniIconLink :showIcon="true" iconName="Facebook" textSize="h9" :showText="true"
+        buttonText="Mini Icon Button" />
 
-      <CarruselArrows :showBigIcon="true"  iconName="Flecha d" />
-      <CarruselArrows :showSmallIcon="true"  iconName="Flecha d" />
+      <CarruselArrows :showBigIcon="true" iconName="Flecha d" />
+      <CarruselArrows :showSmallIcon="true" iconName="Flecha d" />
     </div>
-    
+
     <div>
       <h1>Game Grid</h1>
     </div>
@@ -62,6 +66,13 @@
         <game-card v-for="index in 20" :key="index" />
       </div>
     </div>
+
+    <div>
+      <h1>My Carousel</h1>
+      <mainCarrusel />
+    </div>
+
+
   </div>
 </template>
 
@@ -73,6 +84,8 @@ import CarruselArrows from '@/componentes/Atoms/CarruselArrows.vue';
 import linkListaYMiniIconLink from '~/componentes/Atoms/linkListaYMiniIconLink.vue';
 import imputsElements from '~/componentes/Atoms/imputsElements.vue';
 import BuyMiniCard from '~/componentes/Atoms/BuyMiniCard.vue';
+import mainCarrusel from '~/componentes/Moleculas/mainCarrusel.vue';
+
 
 
 export default {
@@ -83,30 +96,39 @@ export default {
     GameCard,
     CarruselArrows,
     linkListaYMiniIconLink,
-    imputsElements
-    
+    imputsElements,
+    mainCarrusel
+
   }
 };
+
+
+
+
 </script>
 <style lang="postcss">
+
 .prueba {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+
   .game-grid {
     display: grid;
     padding: 0 20px;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns grid */
-    gap: 10px; /* 10px gap between items */
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 columns grid */
+    gap: 10px;
+    /* 10px gap between items */
     width: 100%;
     box-sizing: border-box;
   }
 }
-.ajuste-titulo{
+
+.ajuste-titulo {
   display: flex;
   flex-direction: row;
   justify-content: center;
   justify-items: center;
 }
 </style>
-
