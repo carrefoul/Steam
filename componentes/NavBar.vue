@@ -20,19 +20,36 @@
       </ul>
     </div>
     <div class="headerRight">
-      <HeaderRight :loggedOut="true"/>
+      <HeaderRight :loggedIn="loggedIn" />
     </div>
   </nav>
 </template>
 
 <script>
 import HeaderLink from './Atoms/HeaderLink.vue';
-import HeaderRight from "./Atoms/HeaderRight.vue";
+import HeaderRight from './Atoms/HeaderRight.vue';
 
 export default {
   components: {
     HeaderLink,
     HeaderRight
+  },
+  data() {
+    return {
+      loggedIn: false
+    };
+  },
+  mounted() {
+    this.checkLoginStatus();
+    window.addEventListener('storage', this.checkLoginStatus);
+  },
+  methods: {
+    checkLoginStatus() {
+      this.loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    }
+  },
+  beforeDestroy() {
+    window.removeEventListener('storage', this.checkLoginStatus);
   }
 };
 </script>
