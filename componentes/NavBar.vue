@@ -20,6 +20,7 @@
       </ul>
     </div>
     <div class="headerRight">
+      <!-- Aquí se pasa el estado loggedIn como prop -->
       <HeaderRight :loggedIn="loggedIn" />
     </div>
   </nav>
@@ -36,19 +37,23 @@ export default {
   },
   data() {
     return {
-      loggedIn: false
+      loggedIn: false // Estado inicial como falso
     };
   },
   mounted() {
+    // Comprobar el estado de inicio de sesión al cargar la página
     this.checkLoginStatus();
+    // Escuchar cambios de estado de inicio de sesión
     window.addEventListener('storage', this.checkLoginStatus);
   },
   methods: {
+    // Método para comprobar el estado de inicio de sesión
     checkLoginStatus() {
       this.loggedIn = localStorage.getItem('isLoggedIn') === 'true';
     }
   },
   beforeDestroy() {
+    // Limpiar el listener al destruir el componente
     window.removeEventListener('storage', this.checkLoginStatus);
   }
 };

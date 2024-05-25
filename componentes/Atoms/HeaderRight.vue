@@ -3,7 +3,9 @@
     <div v-if="loggedIn" class="headerRight">
       <IconLink :showIcon="true" :aloneIcon="true" iconName="Download" />
       <IconLink :showIcon="true" :aloneIcon="true" iconName="Tienda" />
-      <IconLink :showIcon="true" :aloneIcon="true" iconName="Usuario" />
+      <nuxt-link to="/usuario" class="headerRightLink">
+        <IconLink :showIcon="true" :aloneIcon="true" iconName="Usuario" />
+      </nuxt-link>
     </div>
     <div v-else class="headerRight">
       <IconLink :showIcon="true" :aloneIcon="true" iconName="Download" />
@@ -32,10 +34,6 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-/* Agregar estilos según sea necesario */
-</style>
 
 <style>
    .headerRight {
