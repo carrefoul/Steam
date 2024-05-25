@@ -16,8 +16,10 @@
   font-weight: normal;
   src: url("/public/fonts/AeonikTRIAL-Regular.woff2") format("woff2");
 }
-  body{
+
+  html, body{
     margin: 0;
+    overflow: hidden;
   }
   :root{
     --azul: #0007FF;
