@@ -59,7 +59,7 @@
     <div class="prueba">
 
       <div class="game-grid">
-            <game-card v-for="index in 20" :key="index" />
+        <game-card v-for="index in 20" :key="index" />
       </div>
     </div>
   </div>
@@ -95,8 +95,11 @@ export default {
   gap: 20px;
   .game-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 5 columns grid */
+    padding: 0 20px;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns grid */
     gap: 10px; /* 10px gap between items */
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 .ajuste-titulo{
