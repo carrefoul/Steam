@@ -2,6 +2,7 @@
   <button :class="buttonClass" @click="handleClick">
     <input
       v-model="inputText"
+      @input="handleInput"
       @blur="handleBlur"
       @keyup.enter="handleBlur"
       class="input-box"
@@ -60,7 +61,13 @@ export default {
     },
     handleBlur() {
       this.isEditing = false;
+      console.log('Texto ingresado:', this.inputText);
       this.$emit('update:inputText', this.inputText);
+    },
+    handleInput() {
+      // Manejar la entrada del usuario
+      // Por ejemplo, podrías agregar un console.log aquí para verificar el valor de inputText
+      console.log('Input:', this.inputText);
     }
   }
 };
