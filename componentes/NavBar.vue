@@ -70,6 +70,7 @@ export default {
   position: sticky;
   top: 0;
   z-index: 999;
+  position: relative;
 }
 
 .headerLeft {

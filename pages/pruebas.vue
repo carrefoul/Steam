@@ -65,6 +65,8 @@
       <profilePicture :showFriendProfile="true" />
       <profilePicture :showCommentPhoto="true" />
     </div>
+   
+      
 
     <div>
       <h1>Game Grid</h1>
@@ -108,6 +110,7 @@ export default {
     imputsElements,
     mainCarrusel,
     profilePicture
+    
 
   }
 };
