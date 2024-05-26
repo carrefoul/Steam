@@ -58,6 +58,15 @@
     </div>
 
     <div>
+      <h1>Profile pic</h1>
+    </div>
+    <div class="prueba">
+      <profilePicture :showProfilePic="true" />
+      <profilePicture :showFriendProfile="true" />
+      <profilePicture :showCommentPhoto="true" />
+    </div>
+
+    <div>
       <h1>Game Grid</h1>
     </div>
     <div class="prueba">
@@ -85,7 +94,7 @@ import linkListaYMiniIconLink from '~/componentes/Atoms/linkListaYMiniIconLink.v
 import imputsElements from '~/componentes/Atoms/imputsElements.vue';
 import BuyMiniCard from '~/componentes/Atoms/BuyMiniCard.vue';
 import mainCarrusel from '~/componentes/Moleculas/mainCarrusel.vue';
-
+import profilePicture from '~/componentes/Atoms/profilePicture.vue';
 
 
 export default {
@@ -97,7 +106,8 @@ export default {
     CarruselArrows,
     linkListaYMiniIconLink,
     imputsElements,
-    mainCarrusel
+    mainCarrusel,
+    profilePicture
 
   }
 };
