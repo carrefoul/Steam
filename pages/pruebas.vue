@@ -104,12 +104,11 @@ export default {
     linkListaYMiniIconLink,
     imputsElements,
     mainCarrusel,
-    profilePicture
-    
+    profilePicture,
+    GameGrid,
 
   }
 };
-
 
 
 
