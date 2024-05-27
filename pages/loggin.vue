@@ -8,10 +8,21 @@
               <imputsElements inputWidth="20rem" :showText="true" placeholderText="Nombre de cuenta" v-model="username" />
             </div>
             <div class="logginImput">
-              <imputsElements inputWidth="20rem" :showText="true" placeholderText="Contraseña" v-model="password" />
+              <imputsElements inputWidth="20rem" :showText="true" :isPassword="true" placeholderText="Contraseña" v-model="password" />
             </div>
           </div>
-          <IconLink @click="login" textSize="h3" :pagina="true" :showText="true" buttonText="Iniciar sesión" />
+          <div class="logginButtonHolder">
+            <div>
+              <IconLink @click="login" textSize="h3" :pagina="true" :showText="true" buttonText="Iniciar sesión" />
+            </div>
+            
+            <div class="extra">
+                <p>Ayuda, no puedo iniciar sesión</p>
+                <nuxt-link to="/registration" class="logginLink">
+                   <p>No tengo cuenta</p>
+                </nuxt-link>
+            </div> 
+          </div>          
         </div>
         <div class="logginRight">
           <h1>O con un código QR</h1>
@@ -19,12 +30,6 @@
             <nuxt-icon name="qr" class="qrClass"></nuxt-icon>
           </div>
         </div>
-      </div>
-      <div class="extra">
-        <p>Ayuda, no puedo iniciar sesión</p>
-        <nuxt-link to="/registration" class="logginLink">
-          <p>No tengo cuenta</p>
-        </nuxt-link>
       </div>
     </div>
   </template>
@@ -67,6 +72,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 5rem;
+    gap: 0.5rem;
 }
 .logginS {
     display: flex;
@@ -76,16 +82,24 @@
 .logginLeft {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 4rem;
 }
 .main {
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
 }
+
+.logginButtonHolder {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .logginLink {
   text-decoration: none;
   appearance: none;
+  list-style: none;
 }
 .logginRight {
     display: flex;
@@ -97,11 +111,19 @@
     justify-content: center;
     align-items: center;
     width: 13.2em;
-    height: 13.2em;
+    height: 14.2em;
 }
 .qrClass {
-    transform: scale(13.2);
+    transform: scale(13.2) translateY(-0.06rem);
+    top: 0;
     color: var(--azul);
+}
+
+.extra {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-self: flex-start;
 }
 
 h1 {

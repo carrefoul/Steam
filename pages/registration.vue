@@ -1,10 +1,11 @@
 <template>
     <div class="registrationHolder">
-      <div class="titulo">
-        <h1>Crea tu cuenta</h1>
-      </div>
+      
       <div class="todoReg">
         <div class="registration">
+          <div class="titulo">
+            <h1>Crea tu cuenta</h1>
+          </div>
         <div class="registrationInput">
           <h2>Nombre de la cuenta</h2>
           <imputsElements inputWidth="20rem" :showText="true" placeholderText="Nombre de cuenta" v-model="username" />
@@ -15,11 +16,11 @@
         </div>
         <div class="registrationInput">
           <h2>Contraseña</h2>
-          <imputsElements inputWidth="20rem" :showText="true" placeholderText="Contraseña" v-model="username" />
+          <imputsElements inputWidth="20rem" :showText="true" :isPassword="true" placeholderText="Contraseña" v-model="username" />
         </div>
         <div class="registrationInput">
           <h2>Confirmar contraseña</h2>
-          <imputsElements inputWidth="20rem" :showText="true" placeholderText="Confirmar contraseña" v-model="username" />
+          <imputsElements inputWidth="20rem" :showText="true" :isPassword="true" placeholderText="Confirmar contraseña" v-model="username" />
         </div>
         <div class="registrationInput">
           <h2>País</h2>
@@ -27,7 +28,8 @@
         </div>
       </div>
       <div class="extras">
-        <div class="robotInput">
+        <div class="extrasImput">
+          <div class="robotInput">
           <CheckButton />
           <p>No soy un robot</p>
         </div>
@@ -35,6 +37,12 @@
           <CheckButton />
           <p>Tengo 13 años o más y acepto los términos del Acuerdo de Suscriptor a Steam y la Política de Privacidad de Valve.</p>
         </div>
+        </div>
+        <div class="regButton">
+          <nuxt-link to="/loggin" class="logginLink">
+            <IconLink @click="login" textSize="h3" :pagina="true" :showText="true" buttonText="Registrarse" />
+          </nuxt-link>
+        </div>        
       </div>
       </div>
     </div>
@@ -42,10 +50,12 @@
   
   <script>
   import CheckButton from '@/componentes/Atoms/CheckLink.vue';
+  import IconLink from '@/componentes/Atoms/IconLink.vue';
   export default {
     name: 'RegistrationPage',
     components: {
-    CheckButton
+    CheckButton,
+    IconLink
     }
   };
   </script>
@@ -63,8 +73,6 @@
   justify-content: center;
   padding-top: 5rem;
   align-items: center;
-  box-sizing: content-box;
-  width: max-content;
 }
 .todoReg {
   display: flex;
@@ -100,6 +108,14 @@
   flex-direction: row;
   gap: 0.75rem;
   padding: 0.75rem;
+}
+
+.extras {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4.6rem;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 h1 {
   margin: 0;
