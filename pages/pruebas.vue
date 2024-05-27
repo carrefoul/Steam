@@ -67,11 +67,6 @@
     </div>
    
     <div>
-      <h1>Game Grid</h1>
-      <GameGrid />
-    </div>
-
-    <div>
       <h1>My Carousel</h1>
       <mainCarrusel />
     </div>
@@ -90,7 +85,6 @@ import imputsElements from '~/componentes/Atoms/imputsElements.vue';
 import BuyMiniCard from '~/componentes/Atoms/BuyMiniCard.vue';
 import mainCarrusel from '~/componentes/Moleculas/mainCarrusel.vue';
 import profilePicture from '~/componentes/Atoms/profilePicture.vue';
-import GameGrid from '~/componentes/Organismos/GameGrid.vue';
 
 
 
@@ -105,8 +99,6 @@ export default {
     imputsElements,
     mainCarrusel,
     profilePicture,
-    GameGrid,
-
   }
 };
 

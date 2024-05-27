@@ -33,7 +33,7 @@ import axios from 'axios';
 import IconLink from '../Atoms/IconLink.vue';
 import BuyMiniCard from '../Atoms/BuyMiniCard.vue';
 
-const apiKey = 'ca9f888ff1d74abebec74dfbd11f308f'; // Reemplaza con tu clave de API de RAWG
+const apiKey = 'ca9f888ff1d74abebec74dfbd11f308f'; 
 
 export default {
   components: {
