@@ -66,16 +66,9 @@
       <profilePicture :showCommentPhoto="true" />
     </div>
    
-      
-
     <div>
       <h1>Game Grid</h1>
-    </div>
-    <div class="prueba">
-
-      <div class="game-grid">
-        <game-card v-for="index in 20" :key="index" />
-      </div>
+      <GameGrid />
     </div>
 
     <div>
@@ -97,6 +90,8 @@ import imputsElements from '~/componentes/Atoms/imputsElements.vue';
 import BuyMiniCard from '~/componentes/Atoms/BuyMiniCard.vue';
 import mainCarrusel from '~/componentes/Moleculas/mainCarrusel.vue';
 import profilePicture from '~/componentes/Atoms/profilePicture.vue';
+import GameGrid from '~/componentes/Organismos/GameGrid.vue';
+
 
 
 export default {
@@ -119,24 +114,9 @@ export default {
 
 
 </script>
+
+
 <style lang="postcss">
-
-.prueba {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-
-  .game-grid {
-    display: grid;
-    padding: 0 20px;
-    grid-template-columns: repeat(5, 1fr);
-    /* 5 columns grid */
-    gap: 10px;
-    /* 10px gap between items */
-    width: 100%;
-    box-sizing: border-box;
-  }
-}
 
 .ajuste-titulo {
   display: flex;
