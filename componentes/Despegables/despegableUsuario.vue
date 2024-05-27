@@ -46,7 +46,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: 15px;
     margin: 0;
     padding: 10px 8px;
     background-color: var(--white);
@@ -56,6 +56,8 @@ export default {
     top: calc(100% + 10px);
     right: 0;
     overflow: hidden;
+    background-color: white;
+    text-decoration: none;
     
 }
 
