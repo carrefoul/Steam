@@ -18,7 +18,7 @@
     </div>
     <div v-if="isExpanded" class="details-container">
       <textCard class="textCard">
-        <h2>{{ gameTitle }}</h2>
+        <h2 class="gameTitle" >{{ gameTitle }}</h2>
         <p class="game-description">{{ gameDescription }}</p>
       </textCard>
       <div class="buttons-container">
@@ -161,8 +161,8 @@ export default {
 
 .icon-button {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 5px;
+  left: 5px;
 }
 
 .details-container {
@@ -180,6 +180,10 @@ export default {
   gap: 10px;
 }
 
+.gameTitle {
+  margin: 0;
+}
+
 .game-description {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -187,7 +191,7 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   max-height: 4.5em; /* Tres líneas */
+  margin: 0;
 }
-
 
 </style>
