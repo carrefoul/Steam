@@ -1,7 +1,10 @@
 <template>
     <div class="soporteContainer">
       <div v-if="loggedIn" class="soporteIn">
-        <h1>in</h1>
+        <div class="subSoporte">
+            <h1>TUS JUEGOS</h1>
+            <imputsElements inputWidth="10rem" :showText="true" placeholderText="Busca un juego" :showIcon="true" iconName="Lupa" textSize="h3" />
+        </div>
       </div>
       <div v-else class="soporteOut"> 
         <div class="outHolder">
@@ -90,6 +93,14 @@ export default {
 .link2{
     width: 100% !important;
     justify-content: center !important;
+}
+
+.subSoporte {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.7rem 1rem 1.7rem 1rem;
+    align-items: center;
 }
 
 </style>
