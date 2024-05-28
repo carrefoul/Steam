@@ -3,21 +3,24 @@
     :class="['game-card', { expanded: isExpanded }]" 
     @mouseenter="showButton = true" 
     @mouseleave="showButton = false"
+    ref="card"
     :style="{ gridColumnEnd: isExpanded ? 'span 2' : 'span 1' }"
   >
     <div class="image-container">
-      <img :src="gameImage" alt="Game Image" />
-      <icon-link :showIcon="true" :iconName="isExpanded ? 'Cerrar' : 'Detalles'"
+      <img :src="gameImage" alt="Game Image" @load="adjustHeight" />
+      <icon-link 
+        :showIcon="true" 
+        :iconName="isExpanded ? 'Cerrar' : 'Detalles'"
         v-if="showButton || isExpanded" 
         class="icon-button" 
         @click="toggleExpand"
       />
     </div>
     <div v-if="isExpanded" class="details-container">
-      <textCard class="textCard">
+      <div class="textCard">
         <h2>{{ gameTitle }}</h2>
         <p class="game-description">{{ gameDescription }}</p>
-      </textCard>
+      </div>
       <div class="buttons-container">
         <buy-link :showIcon="true" iconName="Flecha d" :showSale="true" textSize="h3" :showText="true" buttonText="BUY BUTTON"/>
         <icon-link textSize="h5" :fondoAzul="true" :showText="true" buttonText="Añadir al carrito"/>
@@ -80,6 +83,25 @@ export default {
     },
     toggleExpand() {
       this.isExpanded = !this.isExpanded;
+      this.adjustHeight();
+    },
+    adjustHeight() {
+      this.$nextTick(() => {
+        const card = this.$refs.card;
+        const height = card.offsetHeight + 10; // Altura real de la tarjeta más el gap
+        const rowHeight = 10; // Debe coincidir con el valor de grid-auto-rows
+        const rowSpan = Math.ceil(height / rowHeight);
+        card.style.gridRowEnd = `span ${rowSpan}`;
+      });
+    }
+  },
+  watch: {
+    isExpanded(newVal) {
+      if (newVal) {
+        this.$nextTick(() => {
+          this.$refs.card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      }
     }
   }
 };
