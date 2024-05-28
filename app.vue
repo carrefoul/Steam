@@ -52,31 +52,37 @@
             font-family: AeonikTRIAL-Bold;
             font-weight: normal;
             font-size: 1.5rem;
+            margin: 0;
       }
       h2 {
             font-family: AeonikTRIAL-Regular;
             font-weight: normal;
             font-size: 1.15rem;
+            margin: 0;
       }
       h3 {
             font-family: AeonikTRIAL-Regular;
             font-weight: normal;
             font-size: 1.05rem;
+            margin: 0;
       }
       h4 {
             font-family: AeonikTRIAL-Bold;
             font-weight: normal;
             font-size: 1.05rem;
-      }
+            margin: 0;
+      }     
       h5 {
             font-family: AeonikTRIAL-Regular;
             font-weight: normal;
             font-size: 0.9rem;
+            margin: 0;
       }
       h6 {
             font-family: AeonikTRIAL-Bold;
             font-weight: normal;
             font-size: 0.8rem;
+            margin: 0;
       }
       h7 {
             color: red;

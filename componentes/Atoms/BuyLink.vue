@@ -32,7 +32,7 @@ export default {
       default: false
     },
     saleText: {
-      type: Boolean,
+      type: String,
       default: 'sale'
     },
     showBox: {
