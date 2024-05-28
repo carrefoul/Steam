@@ -6,7 +6,7 @@
       @blur="handleBlur"
       @keyup.enter="handleBlur"
       class="input-box"
-      type="text"
+      :type="inputType"
       :placeholder="placeholderText"
       :readonly="!isEditing"
       :style="{ width: inputWidth }"
@@ -45,6 +45,10 @@ export default {
     inputWidth: {
       type: String,
       default: '100%'
+    },
+    isPassword: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -53,6 +57,9 @@ export default {
         'custom-button',
         { 'with-icon': this.showIcon || this.showInput },
       ];
+    },
+    inputType() {
+      return this.isPassword ? 'password' : 'text';
     }
   },
   methods: {

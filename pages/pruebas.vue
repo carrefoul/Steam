@@ -123,4 +123,11 @@ export default {
   justify-content: center;
   justify-items: center;
 }
+.prueba{
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
 </style>

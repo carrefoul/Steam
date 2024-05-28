@@ -1,10 +1,10 @@
 <template>
     <button :class="buttonClass" @click="handleClick">
         <span v-if="showBigIcon" class="arrowBigCarrusel">
-            <nuxt-icon :name="iconName" class="icon"></nuxt-icon>
+            <nuxt-icon :name="iconName" class="icon BigIcon"></nuxt-icon>
         </span>
         <span v-if="showSmallIcon" class="arrowSmallCarrusel">
-            <nuxt-icon :name="iconName" class="icon"></nuxt-icon>
+            <nuxt-icon :name="iconName" class="icon smallIcon"></nuxt-icon>
         </span>
     </button>
     
@@ -77,17 +77,26 @@ export default {
 }
 
 .arrowBigCarrousel {
-    height: 43px;
-    width: 43px;
+    height: 65px;
+    width: 65px;
     margin: 0.6rem;
-    transform: scale(2);
+    
+}
+
+.BigIcon{
+  transform: scale(2);
+
 }
 
 .arrowSmallCarrousel {
-    height: 25px;
-    width: 25px;
+    height: 45px;
+    width: 45px;
     margin: 0.6rem;
-    transform: scale(1.5);
+    
+}
+
+.smallIcon {
+  transform: scale(1.5);
 }
 
 </style>

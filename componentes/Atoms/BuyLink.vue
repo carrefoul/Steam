@@ -7,7 +7,7 @@
       {{ buttonText }}
     </component>
     <span v-if="showSale" class="sale-text">
-      sale
+      {{ saleText }}
     </span>
   </button>
 </template>
@@ -30,6 +30,10 @@ export default {
     showSale: {
       type: Boolean,
       default: false
+    },
+    saleText: {
+      type: String,
+      default: 'sale'
     },
     showBox: {
       type: Boolean,
