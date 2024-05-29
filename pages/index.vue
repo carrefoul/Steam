@@ -39,7 +39,6 @@ export default {
         title.style.transform = 'translateY(0)';
       }
     }
-   
   }
 };
 </script>
@@ -58,8 +57,8 @@ export default {
 .title-container {
   position: absolute;
   left: 50%;
-  transform: translateY(-150%);
-  width: 300px; 
+  transform: translateY(-10rem); 
+  width: 18.75rem; 
   word-wrap: break-word;
 }
 
@@ -67,7 +66,7 @@ export default {
   color: var(--blanco);
   font-family: 'AeonikTRIAL-Regular', sans-serif;
   text-align: left; 
-  font-size: 25px;
+  font-size: 1.5rem; 
 }
 
 .bold {
@@ -90,11 +89,10 @@ video {
   outline: none;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 43.75rem) { /* 700px -> 43.75rem */
   .title-container {
-    left: 8%;
-    transform: translateY(-250%);
+    left: 0.5rem; /* 8px -> 0.5rem */
+    transform: translateY(-15.625rem); /* -250px -> -15.625rem */
   }
-  
 }
 </style>
