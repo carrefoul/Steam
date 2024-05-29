@@ -22,9 +22,7 @@
         <p class="game-description">{{ gameData.description }}</p>
       </div>
       <div class="buttons-container">
-        <buy-link :showIcon="true" iconName="Flecha d" :showSale="true" textSize="h3" :showText="true" buttonText="BUY BUTTON"/>
-        <icon-link textSize="h5" :fondoAzul="true" :showText="true" buttonText="Añadir al carrito"/>
-        <buy-link :showInverted="true" :showBox="true" textSize="h6" :showText="true" buttonText="Ver más" />
+        <BuyMiniCard />
       </div>
     </div>
   </div>
@@ -32,7 +30,7 @@
 
 <script>
 import IconLink from '../Atoms/IconLink.vue';
-import BuyLink from '../Atoms/BuyLink.vue';
+import BuyMiniCard from '../Atoms/BuyMiniCard.vue';
 
 export default {
   props: {
@@ -43,7 +41,7 @@ export default {
   },
   components: {
     IconLink,
-    BuyLink
+    BuyMiniCard
   },
   data() {
     return {
@@ -94,6 +92,7 @@ export default {
 
 .game-card.expanded {
   width: calc(100%);
+  border: 3px solid blue;
 }
 
 .image-container {
@@ -117,7 +116,8 @@ export default {
 .details-container {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  align-items: start;
+  gap: 40px;
   padding: 20px;
   background: white;
 }
@@ -126,6 +126,11 @@ export default {
   display: flex;
   flex-direction: column;
   flex: 1;
+  gap: 10px;
+  h2 {
+    color: var(--azul);
+    font-weight: bold;
+  }
 }
 
 .game-description {
@@ -140,7 +145,6 @@ export default {
 .buttons-container {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  margin-top: 20px;
+  margin-top: -8px;
 }
 </style>
