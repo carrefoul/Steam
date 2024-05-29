@@ -24,7 +24,7 @@
       <div class="buttons-container">
         <buy-link :showIcon="true" iconName="Flecha d" :showSale="true" textSize="h3" :showText="true" buttonText="BUY BUTTON"/>
         <icon-link textSize="h5" :fondoAzul="true" :showText="true" buttonText="Añadir al carrito"/>
-        <buy-link :showInverted="true" :showBox="true" textSize="h6" :showText="true" buttonText="Ver más" />
+        <buy-link :showInverted="true" :showBox="true" textSize="h6" :showText="true" buttonText="Ver más" />>
       </div>
     </div>
   </div>
