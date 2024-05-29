@@ -1,51 +1,64 @@
 <template>
-      <div class="game-grid">
-        <game-card v-for="index in 20" :key="index" :expandHandler="expandCard" :resetAllExpanded="resetAllExpanded"/>
-      </div>
-  </template>
-  
-  <script>
-  import GameCard from '../componentes/Moleculas/GameCard.vue';
-  
-  export default {
-    components: {
-      GameCard,
-    },
-    data() {
-      return {
-        expandedCard: null,
-      };
-    },
-    methods: {
-      expandCard(card) {
-        if (this.expandedCard && this.expandedCard !== card) {
-          this.expandedCard.isExpanded = false;
-          this.expandedCard.adjustHeight();
-        }
-        this.expandedCard = card;
-        this.$nextTick(() => {
-          this.expandedCard.adjustHeight();
+  <div class="game-grid">
+    <game-card
+      v-for="game in games"
+      :key="game.id"
+      :gameData="game"
+    />
+  </div>
+</template>
+
+<script>
+import axios from 'axios';
+import GameCard from '../Moleculas/GameCard.vue';
+
+const apiKey = 'ca9f888ff1d74abebec74dfbd11f308f'; // Reemplaza con tu clave de API de RAWG
+
+export default {
+  components: {
+    GameCard,
+  },
+  data() {
+    return {
+      games: [],
+    };
+  },
+  async mounted() {
+    await this.fetchGames();
+  },
+  methods: {
+    async fetchGames() {
+      const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}&page_size=20`;
+
+      try {
+        const response = await axios.get(apiUrl);
+        const games = response.data.results;
+
+        const gameDetailsPromises = games.map(async (game) => {
+          const gameDetailsUrl = `https://api.rawg.io/api/games/${game.id}?key=${apiKey}`;
+          const gameDetailsResponse = await axios.get(gameDetailsUrl);
+          return {
+            ...game,
+            description: gameDetailsResponse.data.description_raw || 'No description available'
+          };
         });
-      },
-      resetAllExpanded() {
-        if (this.expandedCard) {
-          this.expandedCard.isExpanded = false;
-          this.expandedCard.adjustHeight();
-          this.expandedCard = null;
-        }
+
+        this.games = await Promise.all(gameDetailsPromises);
+      } catch (error) {
+        console.error('Error fetching game data:', error);
       }
-    }
-  };
-  </script>
-  
-  <style lang="postcss">
-  
-  .game-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Cinco columnas */
-    grid-gap: 10px; /* 10px de espacio entre tarjetas */
-    width: 100%;
-    box-sizing: border-box;
-  }
-  </style>
-  
+    },
+  },
+};
+</script>
+
+<style scoped>
+.game-grid {
+  display: grid;
+  padding: 0 20px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+</style>
