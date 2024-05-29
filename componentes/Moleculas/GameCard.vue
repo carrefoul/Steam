@@ -7,7 +7,7 @@
     :style="{ gridColumnEnd: isExpanded ? 'span 2' : 'span 1' }"
   >
     <div class="image-container">
-      <img :src="gameImage" alt="Game Image" @load="adjustHeight" />
+      <img :src="gameData.background_image" alt="Game Image" @load="adjustHeight" />
       <icon-link 
         :showIcon="true" 
         :iconName="isExpanded ? 'Cerrar' : 'Detalles'"
@@ -18,69 +18,38 @@
     </div>
     <div v-if="isExpanded" class="details-container">
       <div class="textCard">
-        <h2>{{ gameTitle }}</h2>
-        <p class="game-description">{{ gameDescription }}</p>
+        <h2>{{ gameData.name }}</h2>
+        <p class="game-description">{{ gameData.description }}</p>
       </div>
       <div class="buttons-container">
-        <buy-link :showIcon="true" iconName="Flecha d" :showSale="true" textSize="h3" :showText="true" buttonText="BUY BUTTON"/>
-        <icon-link textSize="h5" :fondoAzul="true" :showText="true" buttonText="Añadir al carrito"/>
-        <buy-link :showInverted="true" :showBox="true" textSize="h6" :showText="true" buttonText="Ver más" />>
+        <BuyMiniCard />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
 import IconLink from '../Atoms/IconLink.vue';
-import BuyLink from '../Atoms/BuyLink.vue';
-
-const apiKey = 'ca9f888ff1d74abebec74dfbd11f308f'; // Replace with your RAWG API key
+import BuyMiniCard from '../Atoms/BuyMiniCard.vue';
 
 export default {
+  props: {
+    gameData: {
+      type: Object,
+      required: true
+    }
+  },
   components: {
     IconLink,
-    BuyLink
+    BuyMiniCard
   },
   data() {
     return {
-      gameImage: '',
-      gameTitle: '',
-      gameDescription: '',
       isExpanded: false,
       showButton: false,
-      usedIds: new Set(),
     };
   },
-  async mounted() {
-    await this.fetchRandomGame();
-  },
   methods: {
-    async fetchRandomGame() {
-      const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}&page_size=50`; // Fetch a list of 50 games
-
-      try {
-        const response = await axios.get(apiUrl);
-        const games = response.data.results;
-
-        let randomGame;
-        do {
-          randomGame = games[Math.floor(Math.random() * games.length)];
-        } while (this.usedIds.has(randomGame.id) && this.usedIds.size < games.length);
-
-        this.usedIds.add(randomGame.id);
-
-        this.gameImage = randomGame.background_image;
-        this.gameTitle = randomGame.name;
-
-        // Fetch the detailed game data including description
-        const gameDetailsUrl = `https://api.rawg.io/api/games/${randomGame.id}?key=${apiKey}`;
-        const gameDetailsResponse = await axios.get(gameDetailsUrl);
-        this.gameDescription = gameDetailsResponse.data.description_raw || 'No description available';
-      } catch (error) {
-        console.error('Error fetching game data:', error);
-      }
-    },
     toggleExpand() {
       this.isExpanded = !this.isExpanded;
       this.adjustHeight();
@@ -123,6 +92,7 @@ export default {
 
 .game-card.expanded {
   width: calc(100%);
+  border: 3px solid blue;
 }
 
 .image-container {
@@ -146,7 +116,8 @@ export default {
 .details-container {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  align-items: start;
+  gap: 40px;
   padding: 20px;
   background: white;
 }
@@ -155,6 +126,11 @@ export default {
   display: flex;
   flex-direction: column;
   flex: 1;
+  gap: 10px;
+  h2 {
+    color: var(--azul);
+    font-weight: bold;
+  }
 }
 
 .game-description {
@@ -169,7 +145,6 @@ export default {
 .buttons-container {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  margin-top: 20px;
+  margin-top: -8px;
 }
 </style>
