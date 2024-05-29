@@ -65,12 +65,12 @@
       <profilePicture :showFriendProfile="true" />
       <profilePicture :showCommentPhoto="true" />
     </div>
-   
+
     <div>
       <h1>Game Grid</h1>
       <GameGrid />
     </div>
-
+   
     <div>
       <h1>My Carousel</h1>
       <mainCarrusel />
@@ -106,7 +106,6 @@ export default {
     mainCarrusel,
     profilePicture,
     GameGrid,
-
   }
 };
 

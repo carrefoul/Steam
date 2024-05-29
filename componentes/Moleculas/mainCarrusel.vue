@@ -1,29 +1,45 @@
 <template>
     <div class="carousel-container">
-        <swiper :slides-per-view="1" :navigation="true" ref="swiper">
+        <swiper 
+           
+            :slides-per-view="1" 
+            :pagination="true"
+            :navigation="true"
+            :loop="true"
+            :effect="'creative'"
+            :creative-effect="{
+                prev: {
+                    shadow: false,
+                    translate: ['-20%', 0, -1],
+                },
+                next: {
+                    translate: ['100%', 0, 0],
+                },
+            }"
+            ref="swiper">
             <swiper-slide v-for="(image, index) in images" :key="index">
                 <img :src="image" alt="game Image" />
             </swiper-slide>
+           
         </swiper>
-        <div class="swiper-pagination">
-        </div>
+    
     </div>
 
 </template>
 
 <script>
 import axios from 'axios';
-import { Swiper, SwiperSlide, } from 'swiper/vue';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+
 import 'swiper/swiper-bundle.css';
 import CarruselArrows from '../Atoms/CarruselArrows.vue';
 
 const apiKey = 'ca9f888ff1d74abebec74dfbd11f308f';
 
 export default {
-    mounted() {
-        this.initSwiper();
-    },
+    // mounted() {
+    //     this.initSwiper();
+    // },
     components: {
         Swiper,
         SwiperSlide,
@@ -39,17 +55,17 @@ export default {
         await this.fetchRandomGames();
     },
     methods: {
-        initSwiper() {
-            import('swiper/swiper-bundle.css').then(() => {
-                const Swiper = require('swiper');
-                new Swiper('.swiper-container', {
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
-                });
-            });
-        },
+        // initSwiper() {
+        //     import('swiper/swiper-bundle.css').then(() => {
+        //         const Swiper = require('swiper');
+        //         new Swiper('.swiper-container', {
+        //             pagination: {
+        //                  el: '.swiper-pagination',
+        //                 clickable: true,
+        //             },
+        //         });
+        //     });
+        // },
 
         async fetchRandomGames() {
             const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}&page_size=10`;

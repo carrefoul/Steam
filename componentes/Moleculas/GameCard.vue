@@ -7,7 +7,7 @@
     :style="{ gridColumnEnd: isExpanded ? 'span 2' : 'span 1' }"
   >
     <div class="image-container">
-      <img :src="gameImage" alt="Game Image" @load="adjustHeight"/>
+      <img :src="gameImage" alt="Game Image" @load="adjustHeight" />
       <icon-link 
         :showIcon="true" 
         :iconName="isExpanded ? 'Cerrar' : 'Detalles'"
@@ -17,12 +17,14 @@
       />
     </div>
     <div v-if="isExpanded" class="details-container">
-      <textCard class="textCard">
+      <div class="textCard">
         <h2>{{ gameTitle }}</h2>
         <p class="game-description">{{ gameDescription }}</p>
-      </textCard>
+      </div>
       <div class="buttons-container">
-        <BuyMiniCard />
+        <buy-link :showIcon="true" iconName="Flecha d" :showSale="true" textSize="h3" :showText="true" buttonText="BUY BUTTON"/>
+        <icon-link textSize="h5" :fondoAzul="true" :showText="true" buttonText="Añadir al carrito"/>
+        <buy-link :showInverted="true" :showBox="true" textSize="h6" :showText="true" buttonText="Ver más" />>
       </div>
     </div>
   </div>
@@ -31,26 +33,20 @@
 <script>
 import axios from 'axios';
 import IconLink from '../Atoms/IconLink.vue';
-import BuyMiniCard from '../Atoms/BuyMiniCard.vue';
+import BuyLink from '../Atoms/BuyLink.vue';
 
-const apiKey = 'ca9f888ff1d74abebec74dfbd11f308f'; // Reemplaza con tu clave de API de RAWG
+const apiKey = 'ca9f888ff1d74abebec74dfbd11f308f'; // Replace with your RAWG API key
 
 export default {
   components: {
     IconLink,
-    BuyMiniCard,
-  },
-  props: {
-    expandHandler: Function,
-    resetAllExpanded: Function,
+    BuyLink
   },
   data() {
     return {
       gameImage: '',
       gameTitle: '',
       gameDescription: '',
-      buttonText: '',
-      saleText: '',
       isExpanded: false,
       showButton: false,
       usedIds: new Set(),
@@ -58,11 +54,10 @@ export default {
   },
   async mounted() {
     await this.fetchRandomGame();
-    this.generatePrices();
   },
   methods: {
     async fetchRandomGame() {
-      const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}&page_size=50`; // Obtén una lista de 50 juegos
+      const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}&page_size=50`; // Fetch a list of 50 games
 
       try {
         const response = await axios.get(apiUrl);
@@ -78,7 +73,7 @@ export default {
         this.gameImage = randomGame.background_image;
         this.gameTitle = randomGame.name;
 
-        // Obtén los datos detallados del juego, incluida la descripción
+        // Fetch the detailed game data including description
         const gameDetailsUrl = `https://api.rawg.io/api/games/${randomGame.id}?key=${apiKey}`;
         const gameDetailsResponse = await axios.get(gameDetailsUrl);
         this.gameDescription = gameDetailsResponse.data.description_raw || 'No description available';
@@ -86,22 +81,9 @@ export default {
         console.error('Error fetching game data:', error);
       }
     },
-    generatePrices() {
-      const randomPrice = (min, max) => {
-        return (Math.random() * (max - min) + min).toFixed(2);
-      };
-      const price = parseFloat(randomPrice(10, 60)); // Precio entre 10 y 60 euros
-      const salePrice = (price + Math.random() * 10).toFixed(2); // Precio de venta mayor que el precio base
-
-      this.buttonText = `${price} €`;
-      this.saleText = `${salePrice} €`;
-    },
     toggleExpand() {
       this.isExpanded = !this.isExpanded;
       this.adjustHeight();
-      if (this.isExpanded) {
-        this.expandHandler(this.$refs.card);
-      }
     },
     adjustHeight() {
       this.$nextTick(() => {
@@ -111,17 +93,14 @@ export default {
         const rowSpan = Math.ceil(height / rowHeight);
         card.style.gridRowEnd = `span ${rowSpan}`;
       });
-    },
-    scrollToCard() {
-      if (this.isExpanded) {
-        this.$refs.card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
     }
   },
   watch: {
     isExpanded(newVal) {
       if (newVal) {
-        this.scrollToCard();
+        this.$nextTick(() => {
+          this.$refs.card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
       }
     }
   }
@@ -130,13 +109,12 @@ export default {
 
 <style scoped>
 .game-card {
-  display: flex;
-  flex-direction: column;
-  border: 3px solid transparent;
-  box-sizing: border-box;
+  height: fit-content;
+  width: 100%;
   transition: all 0.3s ease;
   position: relative;
-  height: fit-content; /* Ajusta la altura según el contenido */
+  border: 3px solid transparent;
+  box-sizing: border-box;
 }
 
 .game-card:hover {
@@ -144,7 +122,7 @@ export default {
 }
 
 .game-card.expanded {
-  grid-column-end: span 2; /* Ocupa dos columnas cuando está expandida */
+  width: calc(100%);
 }
 
 .image-container {
@@ -156,7 +134,7 @@ export default {
 .image-container img {
   width: 100%;
   height: auto;
-  display: block; /* Asegura que la imagen no tenga espacio en blanco debajo */
+  display: block; /* Ensures the image does not have any whitespace underneath */
 }
 
 .icon-button {
@@ -168,7 +146,7 @@ export default {
 .details-container {
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  gap: 20px;
   padding: 20px;
   background: white;
 }
@@ -177,7 +155,6 @@ export default {
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 10px;
 }
 
 .game-description {
@@ -186,8 +163,13 @@ export default {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 4.5em; /* Tres líneas */
+  max-height: 4.5em; /* Three lines */
 }
 
-
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+}
 </style>
