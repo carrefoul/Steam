@@ -63,8 +63,8 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid var(--azul);
-  padding: 5px 20px;
+  border-bottom: 0.12rem solid var(--azul);
+  padding: 0.3rem 0.8rem;
   background-color: white;
   position: sticky;
   top: 0;
