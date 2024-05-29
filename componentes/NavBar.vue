@@ -20,7 +20,6 @@
       </ul>
     </div>
     <div class="headerRight">
-      <!-- Aquí se pasa el estado loggedIn como prop -->
       <HeaderRight :loggedIn="loggedIn" />
     </div>
   </nav>
