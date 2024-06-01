@@ -22,7 +22,7 @@
         <p class="game-description">{{ gameData.description }}</p>
       </div>
       <div class="buttons-container">
-        <BuyMiniCard />
+        <BuyMiniCard :gameId="gameData.id"/>
       </div>
     </div>
   </div>
