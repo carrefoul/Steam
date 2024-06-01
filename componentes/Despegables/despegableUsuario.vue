@@ -7,7 +7,7 @@
             <HeaderLink to="/userProfile" isSubTitle>Perfil</HeaderLink>
         </li>
         <li>
-            <HeaderLink isSubtitle>Insignias/Inventario</HeaderLink>
+            <HeaderLink to="/insignias" isSubtitle>Insignias/Inventario</HeaderLink>
         </li>
         <li>
             <HeaderLink isSubtitle>Lista de deseos</HeaderLink>
@@ -50,10 +50,10 @@ export default {
     margin: 0;
     padding: 10px 8px;
     background-color: var(--white);
-    border: 5px solid #0007FF;
+    border: 3px solid #0007FF;
     position: absolute;
     z-index: 2;
-    top: calc(100% + 10px);
+    top: calc(100% + 5px);
     right: 0;
     overflow: hidden;
     background-color: white;

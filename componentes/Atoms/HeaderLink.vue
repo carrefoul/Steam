@@ -32,7 +32,7 @@ export default {
     headerTag() {
       if (this.isTitle) return 'h2';
       if (this.isSubtitle) return 'h3';
-      return 'span'; // Default tag if neither isTitle nor isSubtitle is true
+      return 'span'; 
     }
   }
 };

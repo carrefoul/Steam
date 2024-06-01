@@ -8,6 +8,9 @@
     <div v-if="showCommentPhoto" :class="['profile-container', 'comment-profile-pic']">
       <img :src="randomCommentImageUrl" />
     </div>
+    <div v-if="showGamePhoto" :class="['profile-container', 'game-pic']">
+      <img :src="randomGameImageUrl" />
+    </div>
   </template>
   
   <script>
@@ -18,6 +21,10 @@
         default: false
       },
       showFriendProfile: {
+        type: Boolean,
+        default: false
+      },
+      showGamePhoto: {
         type: Boolean,
         default: false
       },
@@ -40,6 +47,9 @@
       },
       randomCommentImageUrl() {
         return this.getRandomImageUrl(this.seed + 2);
+      },
+      randomGameImageUrl() {
+        return this.getRandomImageUrl(this.seed + 2);
       }
     },
     methods: {
@@ -56,31 +66,39 @@
     padding: 0;
     margin: 0;
     object-fit: cover;
-    overflow: hidden; /* Asegura que la imagen no se salga del contenedor */
+    overflow: hidden; 
   }
   
   .profile-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen al tamaño del contenedor */
+    object-fit: cover; 
   }
   
   .profile-pic {
-    border: 8px solid; /* Añade borde de 8px */
-    height: 9.8rem;
-    width: 9.8rem;
+    border: 5px solid; 
+    height: 7.8rem;
+    width: 7.8rem;
+  }
+
+  .game-pic {
+    border: 3px solid; 
+    height: 14rem;
+    width: 14rem;
   }
   
   .friends-profile-pic {
-    border: 5px solid; /* Añade borde de 5px */
-    height: 7rem;
-    width: 7rem;
+    border: 3px solid; 
+    height: 5rem;
+    width: 5rem;
+    margin-right: 0.3rem;
+    margin-top: 0.3rem;
   }
   
   .comment-profile-pic {
-    border: 5px solid; /* Añade borde de 5px */
-    height: 5.5rem;
-    width: 5.5rem;
+    border: 3px solid;
+    height: 3.5rem;
+    width: 3.5rem;
   }
   </style>
   
