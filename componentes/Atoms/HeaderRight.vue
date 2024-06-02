@@ -4,8 +4,8 @@
       <div class="headerRightLink">
         <IconLink :showIcon="true" :aloneIcon="true" iconName="Download" @click="toggleDesplegableDescargar" />
         <div v-if="showDesplegableDescargar" class="overlay">
-          <div class="background-overlay" @click="hideDesplegableDescargar"></div>
-          <desplegableDescargar class="desplegable-descargar" @close="hideDesplegableDescargar" />
+          <div class="background-overlay" @click="closeOutsideDesplegableDescargar"></div>
+          <desplegableDescargar ref="desplegableDescargar" class="desplegable-descargar" @close="closeDesplegableDescargar" />
         </div>
       </div>
       <IconLink :showIcon="true" :aloneIcon="true" iconName="Tienda" />
@@ -18,8 +18,8 @@
       <div class="headerRightLink">
         <IconLink :showIcon="true" :aloneIcon="true" iconName="Download" @click="toggleDesplegableDescargar" />
         <div v-if="showDesplegableDescargar" class="overlay">
-          <div class="background-overlay" @click="hideDesplegableDescargar"></div>
-          <desplegableDescargar class="desplegable-descargar" @close="hideDesplegableDescargar" />
+          <div class="background-overlay" @click="closeOutsideDesplegableDescargar"></div>
+          <desplegableDescargar ref="desplegableDescargar" class="desplegable-descargar" @close="closeDesplegableDescargar" />
         </div>
       </div>
       <nuxt-link to="/loggin" class="headerRightLink">
@@ -39,7 +39,7 @@ import desplegableDescargar from '../Despegables/desplegableDescargar.vue';
 
 export default {
   components: {
-    despegableUsuario, 
+    despegableUsuario,
     IconLink,
     desplegableDescargar
   },
@@ -56,8 +56,14 @@ export default {
     toggleDesplegableDescargar() {
       this.showDesplegableDescargar = !this.showDesplegableDescargar;
     },
-    hideDesplegableDescargar() {
+  
+    closeDesplegableDescargar() {
       this.showDesplegableDescargar = false;
+    },
+    hideDesplegableUsuario(event) {
+      if (this.showDespegableUsuario && !this.$el.contains(event.target)) {
+        this.showDespegableUsuario = false;
+      }
     }
   },
   props: {
@@ -65,6 +71,12 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+  mounted() {
+    document.addEventListener('click', this.hideDesplegableUsuario);
+  },
+  beforeDestroy() {
+    document.removeEventListener('click', this.hideDesplegableUsuario);
   }
 };
 </script>
@@ -89,7 +101,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 999; /* Debajo del desplegable */
+  z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,7 +119,7 @@ export default {
 
 .desplegable-descargar {
   position: relative;
-  z-index: 1000; 
+  z-index: 1000;
   background-color: white;
   padding: 1rem;
   box-shadow: 0 2px 10px var;

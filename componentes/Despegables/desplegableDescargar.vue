@@ -13,14 +13,14 @@
           <nuxt-icon name="NoCheck" class="iconon"></nuxt-icon>
           <p>En línea</p>
         </div>
-        <p>132454354</p>
+        <p class="numbers">132,454,354</p>
       </div>
       <div class="playgroup">
         <div class="title">
           <nuxt-icon name="NoCheck" class="iconon"></nuxt-icon>
           <p>Jugando</p>
         </div>
-        <p>352463356</p>
+        <p class="numbers">52,463,356</p>
       </div>
       <div class="installgroup">
         <p>Disponible en</p>
@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     redirectToPage() {
-      window.location.href = 'https://store.steampowered.com/about/?l=spanish'; 
+      window.open('https://store.steampowered.com/about/?l=spanish', '_blank');
     }
   }
 };
@@ -63,9 +63,15 @@ export default {
 .title {
   display: flex;
   flex-direction: row;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+p {
   margin: 0;
 }
+
 .cerrar {
   width: 100%;
   display: flex;
@@ -137,6 +143,10 @@ export default {
   flex-direction: row;
   justify-content: space-between;
 }
+.with-box{
+  border: 3px solid var(--azul);
+
+}
 .with-box .icon path {
   fill: white;
 }
@@ -147,5 +157,18 @@ export default {
 }
 p {
   font-size: 14px;
+}
+.installgroup .button-custom {
+  border: 3px solid var(--border-color, black);
+}
+.onlinegroup{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+.playgroup{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 </style>

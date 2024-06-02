@@ -17,8 +17,7 @@
       <h1>Botones 3 y 3.2</h1>
     </div>
     <div class="prueba">
-      <BuyLink :showIcon="true" iconName="Flecha d" :showBox="true" textSize="h6" :showText="true"
-        buttonText="BUY BUTTON" />
+      <BuyLink :showIcon="true" iconName="Flecha d" :showBox="true" textSize="h6" :showText="true" buttonText="BUY BUTTON" />
       <BuyLink :showIcon="true" iconName="Flecha d" />
       <BuyLink :showIcon="true" :showBox="true" iconName="Flecha d" />
       <CheckButton />
@@ -58,6 +57,13 @@
     </div>
 
     <div>
+      <h1>Botón carrusel categorías</h1>
+    </div>
+    <div>
+      <categoriesBox buttonText="Nombre categoría" />
+    </div>
+
+    <div>
       <h1>Profile pic</h1>
     </div>
     <div class="prueba">
@@ -70,11 +76,33 @@
       <h1>Game Grid</h1>
       <GameGrid />
     </div>
-   
+
     <div>
-      <h1>My Carousel</h1>
-      <mainCarrusel />
+      
+      <MainCarruselOrganismo />
     </div>
+
+
+
+
+    <div>
+      
+      <gamesCarrusel buttonText="JUEGOS"/>
+
+    </div>
+
+    
+    <div>
+      <categoriasCarruselOrganismo buttonText="CATEGORÍAS" />
+    </div>
+
+    <div>
+      <JuegoInfoCarrusel />
+    </div>
+
+
+
+
 
 
   </div>
@@ -91,6 +119,13 @@ import BuyMiniCard from '~/componentes/Atoms/BuyMiniCard.vue';
 import mainCarrusel from '~/componentes/Moleculas/mainCarrusel.vue';
 import profilePicture from '~/componentes/Atoms/profilePicture.vue';
 import GameGrid from '~/componentes/Organismos/GameGrid.vue';
+import gameCardCarrusel from '~/componentes/Moleculas/gameCardCarrusel.vue';
+import gamesCarrusel from '~/componentes/Organismos/gamesCarrusel.vue';
+import categoriesBox from '~/componentes/Atoms/categoriesBox.vue';
+import CategoriesCarrusel from '~/componentes/Moleculas/categoriesCarrusel.vue';
+import mainCarruselOrganismo from '~/componentes/Organismos/mainCarruselOrganismo.vue';
+import categoriasCarruselOrganismo from '~/componentes/Organismos/categoriasCarruselOrganismo.vue';
+import juegoInfoCarrusel from '~/componentes/Moleculas/juegoInfoCarrusel.vue';
 
 
 
@@ -106,6 +141,13 @@ export default {
     mainCarrusel,
     profilePicture,
     GameGrid,
+    gameCardCarrusel,
+    gamesCarrusel,
+    categoriesBox,
+    CategoriesCarrusel,
+    mainCarruselOrganismo,
+    categoriasCarruselOrganismo,
+    juegoInfoCarrusel
   }
 };
 
@@ -115,14 +157,14 @@ export default {
 
 
 <style lang="postcss">
-
 .ajuste-titulo {
   display: flex;
   flex-direction: row;
   justify-content: center;
   justify-items: center;
 }
-.prueba{
+
+.prueba {
   display: flex;
   justify-content: flex-start;
   gap: 20px;

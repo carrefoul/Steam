@@ -21,8 +21,8 @@
            
         </swiper>
         <div class="arrowContainer">
-            <CarruselArrows @click="slidePrev" :showBigIcon="true" iconName="Flecha i" />
-            <CarruselArrows @click="slideNext" :showBigIcon="true" iconName="Flecha d" />
+            <CarruselArrows @click="slidePrev" :showSmallIcon="true" iconName="Flecha i" />
+            <CarruselArrows @click="slideNext" :showSmallIcon="true" iconName="Flecha d" />
 
         </div>
     
@@ -101,15 +101,14 @@ export default {
 
 <style scoped>
 .carousel-container {
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 500px;
     position: relative;
     overflow: hidden;
 }
 
 .carousel-container img {
     width: 100%;
-    height: 600px;
     object-fit: cover;
 }
 
