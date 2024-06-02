@@ -4,8 +4,12 @@
             <component :is="textSize" class="text">
                 {{ buttonText }}
             </component>
-            <BuyLink :showIcon="true" :showInverted="true" :showBox="true" iconName="Más" textSize="h6"
+            <NuxtLink to="/ofertasEspeciales" class="no-underline">
+                <BuyLink :showIcon="true" :showInverted="true" :showBox="true" iconName="Más" textSize="h6"
                 :showText="true" buttonText="Ver más" />
+
+            </NuxtLink>
+            
         </div>
         <div class="carousel-container">
             <swiper :slides-per-view="1" :navigation="true" :effect="'creative'" :creative-effect="{
@@ -123,6 +127,9 @@ export default {
     height: 100%;
     position: relative;
 
+}
+.no-underline {
+  text-decoration: none;
 }
 
 .card-container {

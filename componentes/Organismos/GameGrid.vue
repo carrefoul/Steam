@@ -1,11 +1,13 @@
 <template>
-  <div class="game-grid">
-    <game-card
-      v-for="game in games"
-      :key="game.id"
-      :gameData="game"
-    />
+  <div class="gamegallery">
+    <component :is="textSize" class="text">
+      {{ buttonText }}
+    </component>
+    <div class="game-grid">
+      <game-card v-for="game in games" :key="game.id" :gameData="game" />
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -17,6 +19,17 @@ const apiKey = 'c320afcffae4417e9b8004ba91f1950b'; // Reemplaza con tu clave de 
 export default {
   components: {
     GameCard,
+  },
+  props: {
+
+    buttonText: {
+      type: String,
+      default: 'TÍTULOS POPULARES'
+    },
+    textSize: {
+      type: String,
+      default: 'h1',
+    },
   },
   data() {
     return {
@@ -53,9 +66,17 @@ export default {
 </script>
 
 <style scoped>
+.gamegallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px;
+}
+
 .game-grid {
   display: grid;
-  padding: 0 20px;
+  padding: 0px;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   width: 100%;

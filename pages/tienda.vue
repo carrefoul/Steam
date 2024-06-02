@@ -2,7 +2,7 @@
   <div class="subHeaderContainer">
     <div class="subHeaderTienda">
       <div class="section">
-        <h1>Destacados/Novedades</h1>
+        <h1>DESTACADOS/NOVEDADES</h1>
         <div class="pages-links">
           <h3>Ofertas especiales</h3>
           <h3>Categorías</h3>
@@ -70,6 +70,6 @@ main{
   justify-content: space-between;
   margin: 0;
   padding: 0;
-  gap: 25px;
+  gap: 15px;
 }
 </style>
