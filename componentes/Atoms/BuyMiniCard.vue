@@ -3,7 +3,7 @@
     <BuyLink :showSale="true" textSize="h2" :showText="true" buttonText="BUY BUTTON" />
     <div class="MiniCard">
       <IconLink class="adjust-space" textSize="p" :fondoAzul="true" :showText="true" buttonText="Añadir al carro" />
-      <NuxtLink to="/detalleJuego" class="no-underline">
+      <NuxtLink :to="`/detalleJuego/${gameId}`" class="no-underline">
         <BuyLink :fontChange="true" :showBox="true" textSize="p" :showText="true" buttonText="Ver más" />
       </NuxtLink>
     </div>
@@ -11,7 +11,7 @@
   <div v-else class="BuyMiniCard">
     <BuyLink :showSale="true" textSize="h2" :showText="true" buttonText="BUY BUTTON" />
     <div class="MiniCard">
-      <NuxtLink to="/detalleJuego" class="no-underline">
+      <NuxtLink :to="`/detalleJuego/${gameId}`" class="no-underline">
         <BuyLink :fontChange="true" :showBox="true" textSize="p" :showText="true" buttonText="Ver más" />
       </NuxtLink>
     </div>
@@ -23,6 +23,12 @@ import IconLink from '@/componentes/Atoms/IconLink.vue';
 import BuyLink from '@/componentes/Atoms/BuyLink.vue';
 
 export default {
+  props: {
+    gameId: {
+      type: Number,
+      required: true
+    }
+  },
   components: {
     IconLink,
     BuyLink

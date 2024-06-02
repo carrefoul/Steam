@@ -1,42 +1,44 @@
 <template>
-    <h1>titulo juego</h1>
-    <div class="container">
-      <div class="containerLeft">
-        <div class="carrousel">
-          <div class="carruselImgFlechas">
-            <div class="imageDiv">
-              <img class="capsule" :src="gameData ? gameData.background_image : 'https://via.placeholder.com/1120x561'" />
+    <div>
+      <h1>{{ gameData ? gameData.name : 'Cargando...' }}</h1>
+      <div class="container">
+        <div class="containerLeft">
+          <div class="carrousel">
+            <div class="carruselImgFlechas">
+              <div class="imageDiv">
+                <img class="capsule" :src="gameData ? gameData.background_image : 'https://via.placeholder.com/1120x561'" />
+              </div>
+              <div class="flechas">
+                <div class="icon-flechadcha">
+                  <CarruselArrows :showSmallIcon="true" iconName="Flecha i"/>
+                </div>
+                <div class="icon-flechadcha">
+                  <CarruselArrows :showSmallIcon="true"/>
+                </div>
+              </div>
             </div>
-            <div class="flechas">
-              <div class="icon-flechadcha">
-                <CarruselArrows :showSmallIcon="true" iconName="Flecha i"/>
-              </div>
-              <div class="icon-flechadcha">
-                <CarruselArrows :showSmallIcon="true"/>
-              </div>
+            <div class="dotDiv">
+              <div class="dot-carrusel active"></div>
+              <div class="dot-carrusel"></div>
+              <div class="dot-carrusel"></div>
+              <div class="dot-carrusel"></div>
             </div>
           </div>
-          <div class="dotDiv">
-            <div class="dot-carrusel active"></div>
-            <div class="dot-carrusel"></div>
-            <div class="dot-carrusel"></div>
-            <div class="dot-carrusel"></div>
+          <div class="infoDiv">
+            <p class="description">
+              {{ gameData ? gameData.description_raw : 'Cargando descripción...' }}
+            </p>
+            <BuyLink textSize="h2" :showText="true" buttonText="BUY BUTTON"/>
           </div>
         </div>
-        <div class="infoDiv">
-          <p class="description">
-            {{ gameData ? gameData.description : 'Cargando descripción...' }}
-          </p>
-          <BuyLink textSize="h2" :showText="true" buttonText="BUY BUTTON"/>
-        </div>
-      </div>
-      <div class="containerRight">
-        <div class="imagenes-juego">
-          <img class="imagen" :src="gameData ? gameData.background_image_additional : 'https://via.placeholder.com/560x275'" />
-          <img class="imagen" :src="gameData ? gameData.background_image_additional : 'https://via.placeholder.com/560x275'" />
-        </div>
-        <div class="detallesJuego">
-          <p>Datos del juego (Número de jugadores, plataformas, detalles del PC, etc.)</p>
+        <div class="containerRight">
+          <div class="imagenes-juego">
+            <img class="imagen" :src="gameData ? gameData.background_image_additional : 'https://via.placeholder.com/560x275'" />
+            <img class="imagen" :src="gameData ? gameData.background_image_additional : 'https://via.placeholder.com/560x275'" />
+          </div>
+          <div class="detallesJuego">
+            <p>Datos del juego (Número de jugadores, plataformas, detalles del PC, etc.)</p>
+          </div>
         </div>
       </div>
     </div>
@@ -58,7 +60,7 @@
         default: null
       }
     },
-    name: 'GameCarrousel'
+    name: 'DetalleJuego'
   };
   </script>
   
@@ -192,3 +194,4 @@
     gap: 10px;
   }
   </style>
+  
