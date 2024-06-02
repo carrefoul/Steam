@@ -1,7 +1,17 @@
 <template>
     <main>
-        <h1>
-            Perfil
-        </h1>
+        <ProfileEdit />
+        <ProfileFriends />
+        <ProfileGames />
+
     </main>
 </template>
+
+<script>
+
+import ProfileEdit from '@/componentes/Moleculas/ProfileEdit.vue';
+import ProfileFriends from '@/componentes/Moleculas/ProfileFriends.vue';
+import ProfileGames from '@/componentes/Moleculas/ProfileGames.vue';
+
+
+</script>

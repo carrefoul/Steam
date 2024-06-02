@@ -119,7 +119,7 @@ export default {
   border: none;
   text-align: center;
   transition: background-color 0.3s, color 0.3s;
-  padding: 0.5rem 0.5rem 0.5rem 0.5rem; /* Padding por defecto */
+  padding: 0; /* Padding por defecto */
   gap: 0.4rem;
   width: auto;
   height: 2.25rem;
@@ -136,12 +136,14 @@ export default {
   background-color: var(--azul);
   color: var(--blanco);
   cursor: pointer;
+  
 }
 
 /* Nuevo estilo para el fondo azul */
 .with-box.fondo {
   background-color: var(--azul);
   color: var(--blanco);
+  
 
 }
 
@@ -149,6 +151,7 @@ export default {
 .text-box.fondo {
   background-color: var(--azul);
   color: var(--blanco);
+  
 }
 
 .text-box1.fondo,
@@ -175,6 +178,7 @@ export default {
   border: 3px solid var(--azul);
   border-radius: none;
   color: var(--azul);
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
 .with-box.custom-padding {

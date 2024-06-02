@@ -79,19 +79,22 @@ export default {
 .arrowBigCarrousel {
     height: 65px;
     width: 65px;
-    margin: 0.6rem;
+    margin: 0 1rem;
+    
     
 }
 
 .BigIcon{
   transform: scale(2);
+  
 
 }
 
 .arrowSmallCarrousel {
     height: 45px;
     width: 45px;
-    margin: 0.6rem;
+    margin: 0 0.75rem;
+    
     
 }
 
