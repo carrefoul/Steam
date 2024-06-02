@@ -1,6 +1,6 @@
 <template>
   <div v-if="loggedIn" class="BuyMiniCard">
-    <BuyLink :showSale="true" textSize="h2" :showText="true" buttonText="BUY BUTTON" />
+    <BuyLink :showSale="true" textSize="h2" :showText="true" buttonText="BUY BUTTON" class="buybutton"/>
     <div class="MiniCard">
       <IconLink class="adjust-space" textSize="p" :fondoAzul="true" :showText="true" buttonText="Añadir al carro" />
       <NuxtLink to="/detalleJuego" class="no-underline">
@@ -48,6 +48,14 @@ export default {
 </script>
 
 <style scoped>
+.BuyMiniCard{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  
+}
+
+
 .MiniCard {
   display: flex;
   flex-direction: row;

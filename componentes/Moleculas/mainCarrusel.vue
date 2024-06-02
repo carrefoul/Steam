@@ -3,8 +3,6 @@
         <swiper 
            
             :slides-per-view="1" 
-            :pagination="true"
-            :navigation="true"
             :loop="true"
             :effect="'creative'"
             :creative-effect="{
@@ -22,6 +20,11 @@
             </swiper-slide>
            
         </swiper>
+        <div class="arrowContainer">
+            <CarruselArrows @click="slidePrev" :showBigIcon="true" iconName="Flecha i" />
+            <CarruselArrows @click="slideNext" :showBigIcon="true" iconName="Flecha d" />
+
+        </div>
     
     </div>
 
@@ -55,17 +58,6 @@ export default {
         await this.fetchRandomGames();
     },
     methods: {
-        // initSwiper() {
-        //     import('swiper/swiper-bundle.css').then(() => {
-        //         const Swiper = require('swiper');
-        //         new Swiper('.swiper-container', {
-        //             pagination: {
-        //                  el: '.swiper-pagination',
-        //                 clickable: true,
-        //             },
-        //         });
-        //     });
-        // },
 
         async fetchRandomGames() {
             const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}&page_size=10`;
@@ -94,6 +86,13 @@ export default {
             } catch (error) {
                 console.error('Error fetching game data', error);
             }
+
+        },
+        slidePrev() {
+            this.$refs.swiper.swiper.slidePrev();
+        },
+        slideNext() {
+            this.$refs.swiper.swiper.slideNext();
         }
 
     }
@@ -104,11 +103,13 @@ export default {
 .carousel-container {
     width: 100%;
     height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .carousel-container img {
     width: 100%;
-    height: 550px;
+    height: 600px;
     object-fit: cover;
 }
 
@@ -126,5 +127,20 @@ export default {
 
 .swiper-pagination-bullet-active {
     background-color: var(--azul);
+}
+
+.arrowContainer{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 4;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.arrowContainer > * {
+    pointer-events: all; /* Asegura que las flechas sean clicables */
 }
 </style>

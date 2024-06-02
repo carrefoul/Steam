@@ -35,6 +35,8 @@
       /* For Firefox */
       body {
             scrollbar-width: none; /* Firefox */
+            max-width: 100%;
+            margin: 0 auto;
       }
       
       :root{
@@ -115,6 +117,7 @@
             font-family: AeonikTRIAL-Regular;
             font-weight: normal;
             font-size: 0.8rem;
+            margin: 0;
       }
       </style>
     
