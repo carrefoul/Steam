@@ -111,6 +111,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     height: 32.125rem; /* Altura fija en rem */
+    overflow: hidden;
   }
   
   .capsule {
