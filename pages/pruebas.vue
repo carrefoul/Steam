@@ -100,6 +100,10 @@
       <JuegoInfoCarrusel />
     </div>
 
+    <div>
+      <comentariosOrganismo />
+    </div>
+
 
 
 
@@ -126,6 +130,7 @@ import CategoriesCarrusel from '~/componentes/Moleculas/categoriesCarrusel.vue';
 import mainCarruselOrganismo from '~/componentes/Organismos/mainCarruselOrganismo.vue';
 import categoriasCarruselOrganismo from '~/componentes/Organismos/categoriasCarruselOrganismo.vue';
 import juegoInfoCarrusel from '~/componentes/Moleculas/juegoInfoCarrusel.vue';
+import comentariosOrganismo from '~/componentes/Organismos/comentariosOrganismo.vue';
 
 
 
@@ -147,7 +152,8 @@ export default {
     CategoriesCarrusel,
     mainCarruselOrganismo,
     categoriasCarruselOrganismo,
-    juegoInfoCarrusel
+    juegoInfoCarrusel,
+    comentariosOrganismo
   }
 };
 

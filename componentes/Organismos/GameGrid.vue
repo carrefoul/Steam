@@ -71,7 +71,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   gap: 15px;
-  padding: 20px;
+  margin: 20px;
 }
 
 .game-grid {
