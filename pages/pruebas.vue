@@ -96,6 +96,10 @@
       <categoriasCarruselOrganismo buttonText="CATEGORÍAS" />
     </div>
 
+    <div>
+      <JuegoInfoCarrusel />
+    </div>
+
 
 
 
@@ -121,6 +125,7 @@ import categoriesBox from '~/componentes/Atoms/categoriesBox.vue';
 import CategoriesCarrusel from '~/componentes/Moleculas/categoriesCarrusel.vue';
 import mainCarruselOrganismo from '~/componentes/Organismos/mainCarruselOrganismo.vue';
 import categoriasCarruselOrganismo from '~/componentes/Organismos/categoriasCarruselOrganismo.vue';
+import juegoInfoCarrusel from '~/componentes/Moleculas/juegoInfoCarrusel.vue';
 
 
 
@@ -141,7 +146,8 @@ export default {
     categoriesBox,
     CategoriesCarrusel,
     mainCarruselOrganismo,
-    categoriasCarruselOrganismo
+    categoriasCarruselOrganismo,
+    juegoInfoCarrusel
   }
 };
 
