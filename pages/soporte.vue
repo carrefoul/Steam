@@ -7,12 +7,9 @@
         </div>
       </div>
       <div v-else class="soporteOut"> 
-        <registerNotif />
-        
+        <registerNotif class="registerNotif"/>
       </div>
-    </div>
-  
-  
+  </div>
 </template>
 
 <script>
@@ -47,11 +44,9 @@
 };
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .soporteContainer{
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .soporteIn{
@@ -65,5 +60,16 @@
     padding: 1.7rem 1rem 1.7rem 1rem;
     
     align-items: center;
+}
+
+.registerNotif {
+  width: 100%;
+}
+
+.soporteOut {
+  display: flex;
+  padding: 5rem 5rem 15rem 5rem;
+  width: 100%;
+  height: 100%;
 }
 </style>

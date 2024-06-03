@@ -72,6 +72,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 5rem;
+    padding-bottom: 5rem;
     gap: 0.5rem;
 }
 .logginS {

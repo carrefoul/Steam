@@ -18,7 +18,17 @@
                 <linkListaYMiniIconLink :showIcon="true" iconName="Twitter" textSize="h9" :showText="true" buttonText="@steam" @click="redirectToPage2"/>
             </div>
         </div>
-        <div class="footerBottom"></div>
+        <div class="footerBottom">
+            <p>Política de privacidad</p>
+            <p class="raya">|</p>
+            <p>Información legal</p>
+            <p class="raya">|</p>
+            <p>Acuerdo de Suscriptor Steam</p>
+            <p class="raya">|</p>
+            <p>Reembolsos</p>
+            <p class="raya">|</p>
+            <p>Cookies</p>
+        </div>
     </div>
 </template>
 
@@ -47,6 +57,7 @@ export default {
     flex-direction: column;
     border-top: 0.12rem solid var(--azul);
     padding: 2rem;
+    gap: 1.5rem;
 }
 .logoHolder {
     display: flex;
@@ -68,5 +79,25 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
+}
+.topRedes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: end;
+}
+.topMain {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.footerBottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.raya {
+    color: var(--gris);
 }
 </style>

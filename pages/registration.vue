@@ -72,6 +72,7 @@
   flex-direction: column;
   justify-content: center;
   padding-top: 5rem;
+  padding-bottom: 5rem;
   align-items: center;
 }
 .todoReg {
