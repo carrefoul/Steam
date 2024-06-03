@@ -57,7 +57,7 @@
    export default {
     registerNotif,
   
-    name: 'TiendaPage',
+    name: 'ComunidadPage',
       components: {
       IconLink
       },
