@@ -33,6 +33,7 @@
     padding: 1.8rem 3.75rem 1.8rem 3.75rem;
     border: 0.2rem solid var(--azul);
     width: auto;
+    margin: 20px;
     
 }
 

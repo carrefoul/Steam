@@ -17,15 +17,13 @@ import { ref } from 'vue';
 import categoriesBox from '~/componentes/Atoms/categoriesBox.vue';
 
 const items = ref([
-    { id: 1, name: 'Category 1', buttonText: 'Ciudades y asentamientos' },
-    { id: 2, name: 'Category 2', buttonText: 'Todos los deportes' },
-    { id: 3, name: 'Category 3', buttonText: 'Roguelike' },
-    { id: 4, name: 'Category 4', buttonText: 'Puzzles' },
-    { id: 5, name: 'Category 5', buttonText: 'Anime' },
-    { id: 6, name: 'Category 6', buttonText: 'Aventura' },
-    { id: 7, name: 'Category 7', buttonText: 'Estrategia' },
-    { id: 8, name: 'Category 8', buttonText: 'Carreras' },
-    { id: 9, name: 'Category 9', buttonText: 'Ciencia y steampunk' }
+    { id: 1, name: 'Category 1', buttonText: 'Falta un DLC o contenido extra' },
+    { id: 2, name: 'Category 2', buttonText: 'Problemas con clave de producto' },
+    { id: 3, name: 'Category 3', buttonText: 'Problema técnico' },
+    { id: 4, name: 'Category 4', buttonText: 'No es lo que esperaba' },
+    { id: 5, name: 'Category 5', buttonText: 'No se encuentra en la biblioteca' },
+    { id: 6, name: 'Category 6', buttonText: 'Quiero eliminar el juego' }
+    
 ]);
 
 </script>
@@ -42,5 +40,9 @@ const items = ref([
     margin-right: 5px;
 }
 
-
+.categorias {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
 </style>
