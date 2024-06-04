@@ -11,14 +11,12 @@
 
 <script>
 import axios from 'axios';
-import CarruselArrows from '../Atoms/CarruselArrows.vue';
+
 
 const apiKey = 'c320afcffae4417e9b8004ba91f1950b';
 
 export default {
-    components: {
-        CarruselArrows
-    },
+   
     data() {
         return {
             images: [],
