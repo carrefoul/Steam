@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     },
   ],
 
-  modules: ["@nuxt/fonts", 'nuxt-icons'],
+  modules: ["@nuxt/fonts", 'nuxt-icons', "@nuxt/ui"],
   
   routeRules: { 
     '/web/v1/**': { 

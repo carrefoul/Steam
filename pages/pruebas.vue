@@ -104,6 +104,10 @@
       <comentariosOrganismo />
     </div>
 
+    
+
+    
+
 
 
 
@@ -153,7 +157,10 @@ export default {
     mainCarruselOrganismo,
     categoriasCarruselOrganismo,
     juegoInfoCarrusel,
-    comentariosOrganismo
+    comentariosOrganismo,
+    
+
+   
   }
 };
 

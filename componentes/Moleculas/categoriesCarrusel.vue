@@ -1,87 +1,50 @@
 <template>
     <div class="carruselContainer">
-        <swiper 
-            :slides-per-view="1"
-            :effect="'creative'"
-            :creative-effect="{
-                prev: {
-                    shadow: false,
-                    translate: ['-20%', 0, -1],
-                },
-                next: {
-                    translate: ['100%', 0, 0],
-                },
-            }"
-            ref="swiper">
-            <swiper-slide class="categorias">
-                <categoriesBox buttonText="Ciudades y asentamientos"/>
-                <categoriesBox buttonText="Todos los deportes"/>
-                <categoriesBox buttonText="Roguelike"/>
-                <categoriesBox buttonText="Puzzles"/>
-                <categoriesBox buttonText="Anime"/>
-                <categoriesBox buttonText="Aventura"/>
-                <categoriesBox buttonText="Estrategia"/>
-                <categoriesBox buttonText="Carreras"/>
-                <categoriesBox buttonText="Ciencia y steampunk"/>
-            </swiper-slide>
-           
-        </swiper>
-        <div class="arrowContainer">
-            <CarruselArrows :showSmallIcon="true" iconName="Flecha i" />
-            <CarruselArrows :showSmallIcon="true" iconName="Flecha d" />
+        <UCarousel v-slot="{ item }" :items="items" :ui="{ item: 'snap-start' }" arrows >
+            <div class="carousel-item-container">
+                <categoriesBox :item="item" :buttonText="item.buttonText" class="w-full" />
 
-        </div>
+            </div>
+            
+        </UCarousel>
+
     </div>
+
 </template>
 
-<script scoped>
-
+<script setup lang="ts">
+import { ref } from 'vue';
 import categoriesBox from '~/componentes/Atoms/categoriesBox.vue';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/swiper-bundle.css';
-import CarruselArrows from '../Atoms/CarruselArrows.vue';
 
-export default{
-    components: {
-        categoriesBox,
-        Swiper,
-        SwiperSlide,
-        CarruselArrows
+const items = ref([
+    { id: 1, name: 'Category 1', buttonText: 'Ciudades y asentamientos' },
+    { id: 2, name: 'Category 2', buttonText: 'Todos los deportes' },
+    { id: 3, name: 'Category 3', buttonText: 'Roguelike' },
+    { id: 4, name: 'Category 4', buttonText: 'Puzzles' },
+    { id: 5, name: 'Category 5', buttonText: 'Anime' },
+    { id: 6, name: 'Category 6', buttonText: 'Aventura' },
+    { id: 7, name: 'Category 7', buttonText: 'Estrategia' },
+    { id: 8, name: 'Category 8', buttonText: 'Carreras' },
+    { id: 9, name: 'Category 9', buttonText: 'Ciencia y steampunk' }
+]);
 
-
-
-    },
-};
 </script>
 
 <style>
- .carruselContainer{
+.carruselContainer {
     height: 100%;
     width: 100%;
     position: relative;
     overflow: hidden;
-   
- }
- .categorias{
+
+}
+.carousel-item-container {
+    margin-right: 5px;
+}
+
+.categorias {
     display: flex;
     flex-direction: row;
     gap: 5px;
- }
-
- .arrowContainer {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    z-index: 4;
-    top: 50%;
-    width: 100%;
-    transform: translateY(-50%);
 }
-
-.arrowContainer>* {
-    pointer-events: all;
-    /* Asegura que las flechas sean clicables */
-}
- 
 </style>

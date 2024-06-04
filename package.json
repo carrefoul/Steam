@@ -7,10 +7,12 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "add-ui-module": "npx nuxi@latest module add ui"
   },
   "dependencies": {
     "@nuxt/fonts": "^0.7.0",
+    "@nuxt/ui": "^2.16.0",
     "axios": "^1.7.2",
     "nuxt": "^3.11.2",
     "nuxt-icons": "^3.2.1",

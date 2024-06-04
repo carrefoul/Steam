@@ -1,51 +1,22 @@
 <template>
     <div class="carousel-container">
-        <swiper 
-           
-            :slides-per-view="1" 
-            :loop="true"
-            :effect="'creative'"
-            :creative-effect="{
-                prev: {
-                    shadow: false,
-                    translate: ['-20%', 0, -1],
-                },
-                next: {
-                    translate: ['100%', 0, 0],
-                },
-            }"
-            ref="swiper">
-            <swiper-slide v-for="(image, index) in images" :key="index">
-                <img :src="image" alt="game Image" />
-            </swiper-slide>
-           
-        </swiper>
-        <div class="arrowContainer">
-            <CarruselArrows @click="slidePrev" :showBigIcon="true" iconName="Flecha i" />
-            <CarruselArrows @click="slideNext" :showBigIcon="true" iconName="Flecha d" />
+        <UCarousel v-slot="{ item }" :items="images" :ui="{ item: 'basis-full' }" 
+            arrows>
+            <img :src="item" class="w-full" draggable="false">
+        </UCarousel>
 
-        </div>
-    
     </div>
 
 </template>
 
 <script>
 import axios from 'axios';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-
-import 'swiper/swiper-bundle.css';
 import CarruselArrows from '../Atoms/CarruselArrows.vue';
 
 const apiKey = 'c320afcffae4417e9b8004ba91f1950b';
 
 export default {
-    // mounted() {
-    //     this.initSwiper();
-    // },
     components: {
-        Swiper,
-        SwiperSlide,
         CarruselArrows
     },
     data() {
@@ -58,7 +29,6 @@ export default {
         await this.fetchRandomGames();
     },
     methods: {
-
         async fetchRandomGames() {
             const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}&page_size=10`;
             let attempts = 0;
@@ -86,15 +56,7 @@ export default {
             } catch (error) {
                 console.error('Error fetching game data', error);
             }
-
         },
-        slidePrev() {
-            this.$refs.swiper.swiper.slidePrev();
-        },
-        slideNext() {
-            this.$refs.swiper.swiper.slideNext();
-        }
-
     }
 };
 </script>
@@ -129,7 +91,7 @@ export default {
     background-color: var(--azul);
 }
 
-.arrowContainer{
+.arrowContainer {
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -140,7 +102,8 @@ export default {
     transform: translateY(-50%);
 }
 
-.arrowContainer > * {
-    pointer-events: all; /* Asegura que las flechas sean clicables */
+.arrowContainer>* {
+    pointer-events: all;
+    /* Asegura que las flechas sean clicables */
 }
 </style>

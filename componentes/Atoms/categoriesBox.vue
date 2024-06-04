@@ -1,5 +1,5 @@
 <template>
-    <button :class="buttonClass" @click="handleClick">
+  <button :class="buttonClass" @click="handleClick">
     <component :is="textSize" class="text">
       {{ buttonText }}
     </component>
@@ -8,8 +8,8 @@
 
 <script scoped>
 export default {
-    props: {
-    
+  props: {
+
     buttonText: {
       type: String,
       default: 'Estim'
@@ -18,36 +18,37 @@ export default {
       type: String,
       default: 'h8',
     },
- },
- computed: {
+  },
+  computed: {
     buttonClass() {
-        return[
-            'custom-button'
-        ];
+      return [
+        'custom-button'
+      ];
     }
- }
+  }
 
 };
- 
+
 
 </script>
 
-<style lang="postcss" scoped> 
-.custom-button{
+<style lang="postcss" scoped>
+.custom-button {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--azul);
   border: none;
   text-align: center;
-  padding: 50px 70px; /* Padding por defecto */
+  padding: 50px 70px;
+  /* Padding por defecto */
   width: auto;
   height: auto;
   color: white;
   white-space: nowrap;
 }
 
-.custom-button text{
+.custom-button text {
   width: auto;
 }
 </style>
