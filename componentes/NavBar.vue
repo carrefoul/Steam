@@ -1,6 +1,9 @@
 <template>
   <nav class="nav">
     <div class="headerLeft">
+      <div class="webNone">
+        <IconLink :showIcon="true" :aloneIcon="true" iconName="Menu" />
+      </div>
       <nuxt-link to="/" class="LogoContainer">
         <nuxt-icon name="Logo" class="logo" filled></nuxt-icon>
       </nuxt-link>
@@ -71,6 +74,9 @@ export default {
   z-index: 999;
   
 }
+.webNone {
+  display: none;
+}
 
 .headerLeft {
   display: flex;
@@ -105,5 +111,32 @@ export default {
 .headerRight {
   display: flex;
   align-items: center;
+}
+
+@media (orientation : portrait) {
+  .nav {
+    width: 100vw;
+    padding: 0.6rem 0.8rem;
+    display: flex;
+    align-items: center;
+  }
+  .nav-list {
+    display: none;
+  }
+  .webNone {
+    display: block;
+  }
+
+  .LogoContainer {
+    width: 10rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    svg{
+      transform: scale(1.5);
+    }
+  }
 }
 </style>

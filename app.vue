@@ -49,6 +49,8 @@
         scrollbar-width: none; /* Firefox */
         max-width: 100%;
         margin: 0 auto;
+        background-color: white;
+        color: #000000;
       }
     
       :root {

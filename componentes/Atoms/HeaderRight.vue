@@ -1,7 +1,7 @@
 <template>
   <div class="header-container">
     <div v-if="loggedIn" class="headerRight">
-      <div class="headerRightLink">
+      <div class= "portraitNone">
         <IconLink :showIcon="true" :aloneIcon="true" iconName="Download" @click="toggleDesplegableDescargar" />
         <div v-if="showDesplegableDescargar" class="overlay">
           <div class="background-overlay" @click="closeOutsideDesplegableDescargar"></div>
@@ -15,7 +15,7 @@
       </div>
     </div>
     <div v-else class="headerRight">
-      <div class="headerRightLink">
+      <div class="portraitNone">
         <IconLink :showIcon="true" :aloneIcon="true" iconName="Download" @click="toggleDesplegableDescargar" />
         <div v-if="showDesplegableDescargar" class="overlay">
           <div class="background-overlay" @click="closeOutsideDesplegableDescargar"></div>
@@ -25,7 +25,7 @@
       <nuxt-link to="/loggin" class="headerRightLink">
         <IconLink textSize="h3" :fondoAzul="true" :showText="true" buttonText="Iniciar sesión" />
       </nuxt-link>
-      <nuxt-link to="/registration" class="headerRightLink">
+      <nuxt-link to="/registration" class="portraitNone">
         <IconLink textSize="h3" :showBox="true" :showText="true" buttonText="Registrarse" />
       </nuxt-link>
     </div>
@@ -95,6 +95,12 @@ export default {
   position: relative;
 }
 
+.portraitNone {
+  text-decoration: none;
+  appearance: none;
+  position: relative;
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -123,5 +129,10 @@ export default {
   background-color: white;
   padding: 1rem;
   box-shadow: 0 2px 10px var;
+}
+@media (orientation : portrait) {
+  .portraitNone {
+    display: none;
+  }
 }
 </style>
