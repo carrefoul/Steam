@@ -13,14 +13,11 @@
             <profilePicture class="amigospic" :showFriendProfile="true" />
             <profilePicture class="amigospic" :showFriendProfile="true" />
             <profilePicture class="amigospic" :showFriendProfile="true" />
-            
-
         </div>
     </main>
 </template>
 
 <script>
-
 import profilePicture from '~/componentes/Atoms/profilePicture.vue';
 import IconLink from '@/componentes/Atoms/IconLink.vue';
 

@@ -9,6 +9,7 @@
                     <h2>{{ gameData.name }}</h2>
                 </div>
                 <div class="barra">
+                    <Bar></Bar>
 
                 </div>
 
@@ -28,6 +29,9 @@
 </template>
 
 <script>
+import IconLink from './IconLink.vue';
+import Bar from './Bar.vue';
+
 
 export default {
 
