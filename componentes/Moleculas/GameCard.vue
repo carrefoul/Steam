@@ -111,6 +111,7 @@ export default {
   position: absolute;
   top: 10px;
   left: 10px;
+  color: var(--azul);
 }
 
 .details-container {

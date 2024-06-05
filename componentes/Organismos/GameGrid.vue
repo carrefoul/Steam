@@ -6,22 +6,34 @@
     <div class="game-grid">
       <game-card v-for="game in games" :key="game.id" :gameData="game" />
     </div>
+    <div v-if="!allGamesLoaded" class="load-more">
+      <BuyLink
+        :showIcon="true"
+        :showInverted="true"
+        :showBox="true"
+        iconName="Más"
+        textSize="h6"
+        :showText="true"
+        buttonText="Ver más"
+        @click="loadMoreGames"
+      />
+    </div>
   </div>
-
 </template>
 
 <script>
 import axios from 'axios';
 import GameCard from '../Moleculas/GameCard.vue';
+import BuyLink from '../Atoms/BuyLink.vue';
 
 const apiKey = 'c320afcffae4417e9b8004ba91f1950b'; // Reemplaza con tu clave de API de RAWG
 
 export default {
   components: {
     GameCard,
+    BuyLink,
   },
   props: {
-
     buttonText: {
       type: String,
       default: 'TÍTULOS POPULARES'
@@ -34,6 +46,9 @@ export default {
   data() {
     return {
       games: [],
+      page: 1,
+      totalGamesLoaded: 0,
+      allGamesLoaded: false,
     };
   },
   async mounted() {
@@ -41,7 +56,7 @@ export default {
   },
   methods: {
     async fetchGames() {
-      const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}&page_size=20`;
+      const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}&page_size=10&page=${this.page}`;
 
       try {
         const response = await axios.get(apiUrl);
@@ -56,11 +71,23 @@ export default {
           };
         });
 
-        this.games = await Promise.all(gameDetailsPromises);
+        const newGames = await Promise.all(gameDetailsPromises);
+
+        this.games = [...this.games, ...newGames];
+        this.totalGamesLoaded += newGames.length;
+
+        // Ocultar el botón si se han cargado 30 juegos en total
+        if (this.totalGamesLoaded >= 30 || newGames.length < 10) {
+          this.allGamesLoaded = true;
+        }
       } catch (error) {
         console.error('Error fetching game data:', error);
       }
     },
+    async loadMoreGames() {
+      this.page += 1;
+      await this.fetchGames();
+    }
   },
 };
 </script>
@@ -81,5 +108,11 @@ export default {
   gap: 10px;
   width: 100%;
   box-sizing: border-box;
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 </style>

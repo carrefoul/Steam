@@ -7,7 +7,6 @@
             <NuxtLink to="/ofertasEspeciales" class="no-underline">
                 <BuyLink :showIcon="true" :showInverted="true" :showBox="true" iconName="Más" textSize="h6"
                     :showText="true" buttonText="Ver más" />
-
             </NuxtLink>
 
         </div>
