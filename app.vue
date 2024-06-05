@@ -8,6 +8,10 @@
 
     
     <style lang="postcss">
+    body{
+      background-color: var(--blanco);
+      color: var(--negro);
+    }
       @font-face {
         font-family: AeonikTRIAL-Bold;
         font-weight: bold;

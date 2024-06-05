@@ -2,7 +2,6 @@
     <main class="all">
         <div class="friendstitle">
             <h8 class="profilename">INVENTARIO</h8>
-            <BuyLink :fontChange="true" :showBox="true" textSize="p" :showText="true" buttonText="Ver más" />
 
         </div>
         <div class="insigbox">

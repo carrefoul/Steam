@@ -4,10 +4,6 @@
             arrows>
             <img :src="item" class="w-full" draggable="false">
         </UCarousel>
-       
-           
-        
-    
     </div>
 
 </template>

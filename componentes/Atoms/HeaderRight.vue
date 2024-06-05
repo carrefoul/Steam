@@ -8,7 +8,15 @@
           <desplegableDescargar ref="desplegableDescargar" class="desplegable-descargar" @close="closeDesplegableDescargar" />
         </div>
       </div>
-      <IconLink :showIcon="true" :aloneIcon="true" iconName="Tienda" />
+
+      <div class="headerRightLink">
+        <IconLink :showIcon="true" :aloneIcon="true" iconName="Tienda" @click="toggleDesplegableCarrito" />
+        <div v-if="showDesplegableCarrito" class="overlay right">
+          <div class="background-overlay" @click="closeOutsideDesplegableCarrito"></div>
+          <carrito ref="carrito" class="desplegable-carrito" @close="closeDesplegableCarrito" />
+        </div>
+      </div>
+
       <div class="headerRightLink">
         <IconLink :showIcon="true" :aloneIcon="true" iconName="Usuario" @click="toggleDesplegableUsuario" />
         <despegableUsuario v-if="showDespegableUsuario" @close="toggleDesplegableUsuario" />
@@ -36,17 +44,20 @@
 import IconLink from '@/componentes/Atoms/IconLink.vue';
 import despegableUsuario from '../Despegables/despegableUsuario.vue';
 import desplegableDescargar from '../Despegables/desplegableDescargar.vue';
+import carrito from '../Despegables/carrito.vue'; 
 
 export default {
   components: {
     despegableUsuario,
     IconLink,
-    desplegableDescargar
+    desplegableDescargar,
+    carrito  // Registrar el componente carrito
   },
   data() {
     return {
       showDespegableUsuario: false,
-      showDesplegableDescargar: false
+      showDesplegableDescargar: false,
+      showDesplegableCarrito: false  // Estado para el desplegable del carrito
     };
   },
   methods: {
@@ -56,9 +67,14 @@ export default {
     toggleDesplegableDescargar() {
       this.showDesplegableDescargar = !this.showDesplegableDescargar;
     },
-  
+    toggleDesplegableCarrito() {
+      this.showDesplegableCarrito = !this.showDesplegableCarrito;
+    },
     closeDesplegableDescargar() {
       this.showDesplegableDescargar = false;
+    },
+    closeDesplegableCarrito() {
+      this.showDesplegableCarrito = false;
     },
     hideDesplegableUsuario(event) {
       if (this.showDespegableUsuario && !this.$el.contains(event.target)) {
@@ -113,6 +129,10 @@ export default {
   justify-content: center;
 }
 
+.overlay.right {
+  justify-content: flex-end; /* Alinear a la derecha */
+}
+
 .background-overlay {
   position: absolute;
   top: 0;
@@ -123,12 +143,23 @@ export default {
   z-index: 998; 
 }
 
-.desplegable-descargar {
+.desplegable-descargar,
+.desplegable-carrito {
+  height: 100%; 
   position: relative;
   z-index: 1000;
   background-color: white;
   padding: 1rem;
   box-shadow: 0 2px 10px var;
+}
+.desplegable-carrito {
+  height: 100vh; 
+  max-width: 37rem;
+  min-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 @media (orientation : portrait) {
   .portraitNone {
