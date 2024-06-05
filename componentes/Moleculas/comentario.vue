@@ -48,7 +48,7 @@ export default {
 <style scoped>
 .comentario {
     width: auto;
-    border: 5px solid var(--azul);
+    border: .2rem solid var(--azul);
     background-color: white;
     padding: 30px;
     display: flex;
