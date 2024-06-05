@@ -2,7 +2,7 @@
   <nav class="nav">
     <div class="headerLeft">
       <div class="webNone">
-        <IconLink :showIcon="true" :aloneIcon="true" iconName="Menu" />
+        <IconLink @click="openOverlay" :showIcon="true" :aloneIcon="true" iconName="Menu" />
       </div>
       <nuxt-link to="/" class="LogoContainer">
         <nuxt-icon name="Logo" class="logo" filled></nuxt-icon>
@@ -25,21 +25,27 @@
     <div class="headerRight">
       <HeaderRight :loggedIn="loggedIn" />
     </div>
+    <portraitNav v-if="isOverlayVisible" @close="closeOverlay" />
   </nav>
 </template>
 
 <script>
 import HeaderLink from './Atoms/HeaderLink.vue';
 import HeaderRight from './Atoms/HeaderRight.vue';
+import IconLink from './Atoms/IconLink.vue';
+import portraitNav from '@/componentes/Despegables/portraitNav.vue';
 
 export default {
   components: {
     HeaderLink,
-    HeaderRight
+    HeaderRight,
+    portraitNav,
+    IconLink
   },
   data() {
     return {
-      loggedIn: false // Estado inicial como falso
+      loggedIn: false,
+      isOverlayVisible: false
     };
   },
   mounted() {
@@ -52,6 +58,12 @@ export default {
     // Método para comprobar el estado de inicio de sesión
     checkLoginStatus() {
       this.loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    },
+    openOverlay() {
+      this.isOverlayVisible = true;
+    },
+    closeOverlay() {
+      this.isOverlayVisible = false;
     }
   },
   beforeDestroy() {
