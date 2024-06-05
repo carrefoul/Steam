@@ -18,7 +18,6 @@
                 class: 'custom-arrow custom-arrow-right',
                 icon: 'i-heroicons-arrow-right-20-solid custom-icon'
             }" arrows>
-                <!-- <gameCardCarrusel :game="item" class="w-full" draggable="false" /> -->
                 <div :class="['game-card', { expanded: isExpanded }]" @click="toggleExpand">
                     <div class="image-container">
                         <img :src="item.background_image" alt="Game Image" />
