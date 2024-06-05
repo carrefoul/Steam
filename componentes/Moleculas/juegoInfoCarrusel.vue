@@ -20,8 +20,7 @@
   
   <style scoped>
   .carousel-container {
-    width: 60%;
-    height: 500px;
+    height: 100%;
     position: relative;
     overflow: hidden;
   }

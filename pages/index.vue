@@ -18,18 +18,17 @@ export default {
   name: 'IndexPage',
   data() {
     return {
-      isMobile: false // Variable para determinar si la pantalla es móvil
+      isMobile: false 
     };
   },
   mounted() {
-    // Inicializa la opacidad del título en 0 al cargar la página
+    
     this.$refs.titleContainer.style.opacity = '0';
-    // Verifica si la pantalla es móvil
+   
     this.isMobile = window.innerWidth < 700;
   },
   methods: {
     videoEnded() {
-      // Muestra el título con animaciones de opacidad y movimiento hacia abajo
       const title = this.$refs.titleContainer;
       title.style.transition = 'opacity 1.0s ease-in, transform 1.0s ease-out';
       title.style.opacity = '1';
