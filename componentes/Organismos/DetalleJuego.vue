@@ -4,12 +4,12 @@
     <div class="container">
       <div class="containerLeft">
         <div class="carrousel">
-          <juegoInfoCarrusel />
+          <juegoInfoCarrusel :images="carouselImages" />
           <div class="dotDiv">
-            <div class="dot-carrusel active"></div>
-            <div class="dot-carrusel"></div>
-            <div class="dot-carrusel"></div>
-            <div class="dot-carrusel"></div>
+            <div class="dot-carrusel" :class="{ active: activeIndex === 0 }"></div>
+            <div class="dot-carrusel" :class="{ active: activeIndex === 1 }"></div>
+            <div class="dot-carrusel" :class="{ active: activeIndex === 2 }"></div>
+            <div class="dot-carrusel" :class="{ active: activeIndex === 3 }"></div>
           </div>
         </div>
         <div class="infoDiv">
@@ -25,8 +25,8 @@
       </div>
       <div class="containerRight">
         <div class="imagenes-juego">
-          <img class="imagen" :src="gameData ? gameData.background_image_additional : 'https://via.placeholder.com/560x275'" />
-          <img class="imagen" :src="gameData ? gameData.background_image_additional : 'https://via.placeholder.com/560x275'" />
+          <img v-if="gameData && gameData.background_image_additional" class="imagen" :src="gameData.background_image_additional" />
+          <img v-if="gameData && gameData.background_image_additional" class="imagen" :src="gameData.background_image_additional" />
         </div>
         <div class="detallesJuego">
           <div class="detalleSeccion">
@@ -61,8 +61,11 @@
 </template>
 
 <script>
+import axios from 'axios';
 import juegoInfoCarrusel from '~/componentes/Moleculas/juegoInfoCarrusel.vue';
 import BuyLink from '~/componentes/Atoms/BuyLink.vue';
+
+const apiKey = 'c320afcffae4417e9b8004ba91f1950b';
 
 export default {
   components: {
@@ -78,7 +81,9 @@ export default {
   },
   data() {
     return {
-      showAllTags: false
+      showAllTags: false,
+      carouselImages: [],
+      activeIndex: 0
     };
   },
   computed: {
@@ -88,6 +93,37 @@ export default {
       }
       return this.showAllTags ? this.gameData.tags : this.gameData.tags.slice(0, 5);
     }
+  },
+  watch: {
+    gameData: {
+      handler(newVal) {
+        if (newVal) {
+          this.fetchCarouselImages(newVal.id);
+        }
+      },
+      immediate: true
+    }
+  },
+  methods: {
+    async fetchCarouselImages(gameId) {
+  const apiUrl = `https://api.rawg.io/api/games/${gameId}?key=${apiKey}`;
+  try {
+    const response = await axios.get(apiUrl);
+    const backgroundImage = response.data.background_image;
+    // Agregar la imagen de fondo del juego como la primera imagen del carrusel
+    this.carouselImages = [backgroundImage];
+
+    // Luego, obtener las capturas de pantalla del juego
+    const screenshotsUrl = `https://api.rawg.io/api/games/${gameId}/screenshots?key=${apiKey}`;
+    const screenshotsResponse = await axios.get(screenshotsUrl);
+    const screenshots = screenshotsResponse.data.results.map(screenshot => screenshot.image).slice(0, 3);
+
+    // Agregar las capturas de pantalla restantes al carrusel
+    this.carouselImages.push(...screenshots);
+  } catch (error) {
+    console.error('Error fetching carousel images:', error);
+  }
+}
   },
   name: 'DetalleJuego'
 };
