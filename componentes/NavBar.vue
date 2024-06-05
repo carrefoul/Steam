@@ -1,6 +1,9 @@
 <template>
   <nav class="nav">
     <div class="headerLeft">
+      <div class="webNone">
+        <IconLink @click="openOverlay" :showIcon="true" :aloneIcon="true" iconName="Menu" />
+      </div>
       <nuxt-link to="/" class="LogoContainer">
         <nuxt-icon name="Logo" class="logo" filled></nuxt-icon>
       </nuxt-link>
@@ -22,21 +25,27 @@
     <div class="headerRight">
       <HeaderRight :loggedIn="loggedIn" />
     </div>
+    <portraitNav v-if="isOverlayVisible" @close="closeOverlay" />
   </nav>
 </template>
 
 <script>
 import HeaderLink from './Atoms/HeaderLink.vue';
 import HeaderRight from './Atoms/HeaderRight.vue';
+import IconLink from './Atoms/IconLink.vue';
+import portraitNav from '@/componentes/Despegables/portraitNav.vue';
 
 export default {
   components: {
     HeaderLink,
-    HeaderRight
+    HeaderRight,
+    portraitNav,
+    IconLink
   },
   data() {
     return {
-      loggedIn: false // Estado inicial como falso
+      loggedIn: false,
+      isOverlayVisible: false
     };
   },
   mounted() {
@@ -49,6 +58,12 @@ export default {
     // Método para comprobar el estado de inicio de sesión
     checkLoginStatus() {
       this.loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    },
+    openOverlay() {
+      this.isOverlayVisible = true;
+    },
+    closeOverlay() {
+      this.isOverlayVisible = false;
     }
   },
   beforeDestroy() {
@@ -70,6 +85,9 @@ export default {
   top: 0;
   z-index: 999;
   
+}
+.webNone {
+  display: none;
 }
 
 .headerLeft {
@@ -105,5 +123,32 @@ export default {
 .headerRight {
   display: flex;
   align-items: center;
+}
+
+@media (orientation : portrait) {
+  .nav {
+    width: 100vw;
+    padding: 0.6rem 0.8rem;
+    display: flex;
+    align-items: center;
+  }
+  .nav-list {
+    display: none;
+  }
+  .webNone {
+    display: block;
+  }
+
+  .LogoContainer {
+    width: 10rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    svg{
+      transform: scale(1.5);
+    }
+  }
 }
 </style>
