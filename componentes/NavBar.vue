@@ -98,11 +98,10 @@ export default {
 }
 
 .LogoContainer {
-  width: 6rem;
   height: 100%;
   overflow: hidden;
-    svg{
-      width: 6rem;
+    span{
+     transform: scale(8.5);
     }
 }
 
