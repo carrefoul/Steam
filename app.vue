@@ -2,15 +2,21 @@
       <div>
         <NavBar />
         <NuxtPage />
-        <Footer></Footer>
+        <div class="footer">
+          <Footer></Footer>
+        </div>
       </div>
     </template>
 
-    
     <style lang="postcss">
     body{
       background-color: var(--blanco);
       color: var(--negro);
+    }
+    @media (orientation : portrait) {
+      .footer {
+        display: none;
+      }
     }
       @font-face {
         font-family: AeonikTRIAL-Bold;
