@@ -1,12 +1,14 @@
 <template>
-  <button :class="buttonClass" @click="handleClick">
+  <NuxtLink :to="'/categoria'" :class="buttonClass" @click="handleClick">
     <component :is="textSize" class="text">
       {{ buttonText }}
     </component>
-  </button>
+  </NuxtLink>
 </template>
 
 <script scoped>
+
+
 export default {
   props: {
 

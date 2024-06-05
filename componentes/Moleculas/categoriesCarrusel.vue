@@ -13,7 +13,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import categoriesBox from '~/componentes/Atoms/categoriesBox.vue';
 
 const items = ref([
@@ -27,6 +26,8 @@ const items = ref([
     { id: 8, name: 'Category 8', buttonText: 'Carreras' },
     { id: 9, name: 'Category 9', buttonText: 'Ciencia y steampunk' }
 ]);
+
+
 
 </script>
 

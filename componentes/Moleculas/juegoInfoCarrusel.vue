@@ -1,30 +1,12 @@
 <template>
     <div class="carousel-container">
-        <swiper 
+        <UCarousel v-slot="{ item }" :items="images" :ui="{ item: 'basis-full' }" 
+            arrows>
+            <img :src="item" class="w-full" draggable="false">
+        </UCarousel>
+       
            
-            :slides-per-view="1" 
-            :loop="true"
-            :effect="'creative'"
-            :creative-effect="{
-                prev: {
-                    shadow: false,
-                    translate: ['-20%', 0, -1],
-                },
-                next: {
-                    translate: ['100%', 0, 0],
-                },
-            }"
-            ref="swiper">
-            <swiper-slide v-for="(image, index) in images" :key="index">
-                <img :src="image" alt="game Image" />
-            </swiper-slide>
-           
-        </swiper>
-        <div class="arrowContainer">
-            <CarruselArrows @click="slidePrev" :showSmallIcon="true" iconName="Flecha i" />
-            <CarruselArrows @click="slideNext" :showSmallIcon="true" iconName="Flecha d" />
-
-        </div>
+        
     
     </div>
 
@@ -32,10 +14,8 @@
 
 <script>
 import axios from 'axios';
-import { Swiper, SwiperSlide } from 'swiper/vue';
 
-import 'swiper/swiper-bundle.css';
-import CarruselArrows from '../Atoms/CarruselArrows.vue';
+
 
 const apiKey = 'c320afcffae4417e9b8004ba91f1950b';
 
@@ -43,11 +23,7 @@ export default {
     // mounted() {
     //     this.initSwiper();
     // },
-    components: {
-        Swiper,
-        SwiperSlide,
-        CarruselArrows
-    },
+    
     data() {
         return {
             images: [],
@@ -88,12 +64,7 @@ export default {
             }
 
         },
-        slidePrev() {
-            this.$refs.swiper.swiper.slidePrev();
-        },
-        slideNext() {
-            this.$refs.swiper.swiper.slideNext();
-        }
+        
 
     }
 };
@@ -112,34 +83,7 @@ export default {
     object-fit: cover;
 }
 
-.swiper-pagination {
-    bottom: 10px;
-}
 
-.swiper-pagination-bullet {
-    width: 21px;
-    height: 21px;
-    background-color: var(--gris);
-    border-radius: 0;
-    margin: 0 5px;
-}
 
-.swiper-pagination-bullet-active {
-    background-color: var(--azul);
-}
 
-.arrowContainer{
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    z-index: 4;
-    top: 50%;
-    width: 100%;
-    transform: translateY(-50%);
-}
-
-.arrowContainer > * {
-    pointer-events: all; /* Asegura que las flechas sean clicables */
-}
 </style>
