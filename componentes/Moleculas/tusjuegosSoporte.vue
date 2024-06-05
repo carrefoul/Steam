@@ -1,8 +1,11 @@
 <template>
     <div class="carousel-container">
-        <UCarousel v-slot="{ item }" :items="images" :ui="{ item: 'basis-full' }" 
+        <UCarousel v-slot="{ item }" :items="images" :ui="{ item: 'snap-start' }" 
             arrows>
-            <img :src="item" class="w-full" draggable="false">
+            <div class="juego">
+                <img :src="item" class="w-full" draggable="false">
+            </div> 
+            
         </UCarousel>
 
     </div>
@@ -12,11 +15,9 @@
 <script>
 import axios from 'axios';
 
-
 const apiKey = 'c320afcffae4417e9b8004ba91f1950b';
 
 export default {
-   
     data() {
         return {
             images: [],
@@ -33,12 +34,12 @@ export default {
             const maxAttempts = 5;
 
             try {
-                while (this.images.length < 4 && attempts < maxAttempts) {
+                while (this.images.length < 7 && attempts < maxAttempts) {
                     const response = await axios.get(apiUrl);
                     const games = response.data.results;
 
                     games.forEach((game) => {
-                        if (!this.usedIds.has(game.id) && this.images.length < 4) {
+                        if (!this.usedIds.has(game.id) && this.images.length < 7) {
                             this.usedIds.add(game.id);
                             this.images.push(game.background_image);
                         }
@@ -46,7 +47,7 @@ export default {
                     attempts++;
                 }
 
-                if (this.images.length < 4) {
+                if (this.images.length < 7) {
                     console.warn(
                         'No se encontraron suficientes imágenes únicas después de múltiples intentos.'
                     );
@@ -59,49 +60,23 @@ export default {
 };
 </script>
 
-<style scoped>
-.carousel-container {
-    width: 100%;
+<style>
+.juego{
+    height: 400px;
+    width: auto;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    box-sizing: border-box;
+    margin-right: 5px;
+}
+
+.juego:hover {
+    border: 3px solid blue;
+}
+
+.juego img {
+    width: auto;
     height: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.carousel-container img {
-    width: 100%;
-    height: 600px;
     object-fit: cover;
-}
-
-.swiper-pagination {
-    bottom: 10px;
-}
-
-.swiper-pagination-bullet {
-    width: 21px;
-    height: 21px;
-    background-color: var(--gris);
-    border-radius: 0;
-    margin: 0 5px;
-}
-
-.swiper-pagination-bullet-active {
-    background-color: var(--azul);
-}
-
-.arrowContainer {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    z-index: 4;
-    top: 50%;
-    width: 100%;
-    transform: translateY(-50%);
-}
-
-.arrowContainer>* {
-    pointer-events: all;
-    /* Asegura que las flechas sean clicables */
 }
 </style>

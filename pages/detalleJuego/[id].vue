@@ -1,19 +1,27 @@
 <template>
     <div class="detalle-juego">
-      <h1>Detalle del Juego</h1>
       <DetalleJuego :gameData="gameData" />
+      
     </div>
+    <main>
+        <RegisterNotif />
+        <comentariosOrganismo />
+    </main>
   </template>
   
   <script>
   import axios from 'axios';
   import DetalleJuego from '~/componentes/Organismos/DetalleJuego.vue';
+  import  RegisterNotif  from '@/componentes/Moleculas/registerNotif.vue';
+  import comentariosOrganismo from '~/componentes/Organismos/comentariosOrganismo.vue';
   
   const apiKey = 'c320afcffae4417e9b8004ba91f1950b'; // Reemplaza con tu clave de API de RAWG
   
   export default {
     components: {
       DetalleJuego,
+      RegisterNotif,
+      comentariosOrganismo
     },
     data() {
       return {
@@ -42,5 +50,14 @@
   .detalle-juego {
     padding: 20px;
   }
+
+  main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
   </style>
   

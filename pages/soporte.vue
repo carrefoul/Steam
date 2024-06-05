@@ -5,6 +5,12 @@
             <h1>TUS JUEGOS</h1>
             <imputsElements inputWidth="10rem" :showText="true" placeholderText="Busca un juego" :showIcon="true" iconName="Lupa" textSize="h3" />
         </div>
+        <main>
+          <tusJuegosCarrusel />
+          <soporteCarruselComponente />
+          
+
+        </main>
       </div>
       <div v-else class="soporteOut"> 
         <registerNotif class="registerNotif"/>
@@ -15,13 +21,18 @@
 <script>
  import registerNotif from '~/componentes/Moleculas/registerNotif.vue';
  import IconLink from '@/componentes/Atoms/IconLink.vue';
+ import soporteCarruselComponente from '~/componentes/Organismos/soporteCarruselComponente.vue';
+ import tusJuegosCarrusel from '~/componentes/Organismos/tusJuegosCarrusel.vue';
+
 
  export default {
   registerNotif,
 
   name: 'SuportPage',
     components: {
-    IconLink
+    IconLink,
+    soporteCarruselComponente ,
+    tusJuegosCarrusel
     },
     
   data() {
@@ -72,4 +83,15 @@
   width: 100%;
   height: 100%;
 }
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
+
+
 </style>

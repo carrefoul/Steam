@@ -13,21 +13,19 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import categoriesBox from '~/componentes/Atoms/categoriesBox.vue';
 
 const items = ref([
-    { id: 1, name: 'Category 1', buttonText: 'Ciudades y asentamientos' },
-    { id: 2, name: 'Category 2', buttonText: 'Todos los deportes' },
-    { id: 3, name: 'Category 3', buttonText: 'Roguelike' },
-    { id: 4, name: 'Category 4', buttonText: 'Puzzles' },
-    { id: 5, name: 'Category 5', buttonText: 'Anime' },
-    { id: 6, name: 'Category 6', buttonText: 'Aventura' },
-    { id: 7, name: 'Category 7', buttonText: 'Estrategia' },
-    { id: 8, name: 'Category 8', buttonText: 'Carreras' },
-    { id: 9, name: 'Category 9', buttonText: 'Ciencia y steampunk' }
+    { id: 1, name: 'Category 1', buttonText: 'Juegos, software, etc' },
+    { id: 2, name: 'Category 2', buttonText: 'Compras' },
+    { id: 3, name: 'Category 3', buttonText: 'Mi cuenta' },
+    { id: 4, name: 'Category 4', buttonText: 'Intercambio, regalos y puntos' },
+    { id: 5, name: 'Category 5', buttonText: 'Cliente de Steam' },
+    { id: 6, name: 'Category 6', buttonText: 'Comunidad Steam' },
+    { id: 7, name: 'Category 7', buttonText: 'Hardware de Steam' }
+    
 ]);
-
-
 
 </script>
 
@@ -43,5 +41,9 @@ const items = ref([
     margin-right: 5px;
 }
 
-
+.categorias {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
 </style>
