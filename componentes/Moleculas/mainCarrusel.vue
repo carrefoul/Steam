@@ -82,7 +82,6 @@ export default {
 .swiper-pagination-bullet {
     width: 21px;
     height: 21px;
-    background-color: var(--gris);
     border-radius: 0;
     margin: 0 5px;
 }
@@ -104,6 +103,5 @@ export default {
 
 .arrowContainer>* {
     pointer-events: all;
-    /* Asegura que las flechas sean clicables */
 }
 </style>

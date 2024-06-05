@@ -89,10 +89,10 @@ video {
   outline: none;
 }
 
-@media (max-width: 43.75rem) { /* 700px -> 43.75rem */
+@media (max-width: 43.75rem) { 
   .title-container {
-    left: 0.5rem; /* 8px -> 0.5rem */
-    transform: translateY(-15.625rem); /* -250px -> -15.625rem */
+    left: 0.5rem; 
+    transform: translateY(-15.625rem);
   }
 }
 </style>

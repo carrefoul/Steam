@@ -14,7 +14,7 @@
 import axios from 'axios';
 import GameCard from '../Moleculas/GameCard.vue';
 
-const apiKey = 'c320afcffae4417e9b8004ba91f1950b'; // Reemplaza con tu clave de API de RAWG
+const apiKey = 'c320afcffae4417e9b8004ba91f1950b'; 
 
 export default {
   components: {
