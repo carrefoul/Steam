@@ -100,4 +100,45 @@ export default {
 .raya {
     color: var(--gris);
 }
+@media (orientation : portrait) {
+  .footer {
+    display: flex;
+    padding: 0;
+  }
+  .textHolder {
+    display: none;
+  }
+  .footerBottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .raya {
+    display: none;
+  }
+  .logoClass {
+    transform: scale(5) translateY(0em);
+    color: white;
+   }
+  .footerTop{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .topRedes{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .logoHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+    h2{
+        font-size: 0.9rem;
+    }
+  }
+  }
 </style>
