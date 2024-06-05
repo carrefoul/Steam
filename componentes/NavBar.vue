@@ -25,7 +25,9 @@
     <div class="headerRight">
       <HeaderRight :loggedIn="loggedIn" />
     </div>
-    <portraitNav v-if="isOverlayVisible" @close="closeOverlay" />
+    <transition name="overlay">
+      <portraitNav v-if="isOverlayVisible"  @close="closeOverlay" class="portraitNav"/>
+    </transition>
   </nav>
 </template>
 
@@ -149,6 +151,13 @@ export default {
     svg{
       transform: scale(1.5);
     }
+  }
+  .overlay-enter-active, .overlay-leave-active {
+  transition: opacity 0.5s, transform 0.5s;
+  }
+  .overlay-enter, .overlay-leave-to {
+    opacity: 0;
+    transform: translateX(-50%);
   }
 }
 </style>
