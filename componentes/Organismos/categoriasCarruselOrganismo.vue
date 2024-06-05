@@ -30,7 +30,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss" scoped>
 .organismo {
     display: flex;
     flex-direction: column;

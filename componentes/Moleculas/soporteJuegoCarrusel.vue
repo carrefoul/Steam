@@ -28,7 +28,7 @@ const items = ref([
 
 </script>
 
-<style>
+<style lang="postcss" scoped>
 .carruselContainer {
     height: 100%;
     width: 100%;

@@ -73,7 +73,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .nav {
   display: flex;
   justify-content: space-between;

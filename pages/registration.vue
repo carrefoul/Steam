@@ -60,7 +60,7 @@
   };
   </script>
 
-<style>
+<style lang="postcss" scoped>
 .titulo {
   display: flex;
   box-sizing: content-box;

@@ -37,7 +37,7 @@ export default {
 }
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .subHeaderContainer{
   width: 100%;
 }

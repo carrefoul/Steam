@@ -66,7 +66,7 @@
   };
   </script>
 
-<style>
+<style scoped>
 .logginHolder {
     display: flex;
     flex-direction: column;

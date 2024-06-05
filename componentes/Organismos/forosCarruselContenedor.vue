@@ -3,23 +3,23 @@
         <component :is="textSize" class="text">
             {{ buttonText }}
         </component>
-        <soporteCarrusel />
+        <forosCarrusel />
 
     </div>
 </template>
 
 <script>
-import soporteCarrusel from '~/componentes/Moleculas/soporteCarrusel.vue';
+import forosCarrusel from '~/componentes/Moleculas/forosCarrusel.vue';
 
 export default {
     components: {
-        soporteCarrusel
+        forosCarrusel
     },
     props: {
 
         buttonText: {
             type: String,
-            default: 'SOPORTE'
+            default: 'FOROS'
         },
         textSize: {
             type: String,
@@ -30,7 +30,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .organismo {
     display: flex;
     flex-direction: column;
@@ -39,5 +39,5 @@ export default {
 
 }
 
-
+;
 </style>

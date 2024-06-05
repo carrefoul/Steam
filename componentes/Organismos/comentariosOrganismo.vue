@@ -33,7 +33,7 @@ export default {
 </script>
 
 
-<style>
+<style lang="postcss" scoped>
 .contenedor {
     display: flex;
     flex-direction: column;

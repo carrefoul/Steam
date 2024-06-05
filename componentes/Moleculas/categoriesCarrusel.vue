@@ -31,7 +31,7 @@ const items = ref([
 
 </script>
 
-<style>
+<style scoped>
 .carruselContainer {
     height: 100%;
     width: 100%;

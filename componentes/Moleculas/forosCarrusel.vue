@@ -17,13 +17,15 @@ import { ref } from 'vue';
 import categoriesBox from '~/componentes/Atoms/categoriesBox.vue';
 
 const items = ref([
-    { id: 1, name: 'Category 1', buttonText: 'Juegos, software, etc' },
-    { id: 2, name: 'Category 2', buttonText: 'Compras' },
-    { id: 3, name: 'Category 3', buttonText: 'Mi cuenta' },
-    { id: 4, name: 'Category 4', buttonText: 'Intercambio, regalos y puntos' },
-    { id: 5, name: 'Category 5', buttonText: 'Cliente de Steam' },
-    { id: 6, name: 'Category 6', buttonText: 'Comunidad Steam' },
-    { id: 7, name: 'Category 7', buttonText: 'Hardware de Steam' }
+    { id: 1, name: 'Category 1', buttonText: 'New to Steam' },
+    { id: 2, name: 'Category 2', buttonText: 'Help and tips' },
+    { id: 3, name: 'Category 3', buttonText: 'Suggestions/ Ideas' },
+    { id: 4, name: 'Category 4', buttonText: 'Steam Discussions' },
+    { id: 5, name: 'Category 5', buttonText: 'Steam for Mac' },
+    { id: 6, name: 'Category 6', buttonText: 'Steam Mobile' },
+    { id: 7, name: 'Category 7', buttonText: 'Steam Community' },
+    { id: 7, name: 'Category 7', buttonText: 'VAC Discussion' }
+
     
 ]);
 

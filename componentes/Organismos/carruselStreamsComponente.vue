@@ -3,23 +3,26 @@
         <component :is="textSize" class="text">
             {{ buttonText }}
         </component>
-        <soporteCarrusel />
+        <streamCarrusel />
 
     </div>
 </template>
 
-<script>
-import soporteCarrusel from '~/componentes/Moleculas/soporteCarrusel.vue';
+
+
+
+<script scoped>
+import streamCarrusel from '~/componentes/Moleculas/streamCarrusel.vue';
 
 export default {
     components: {
-        soporteCarrusel
+        streamCarrusel
     },
     props: {
 
         buttonText: {
             type: String,
-            default: 'SOPORTE'
+            default: 'RETRANSMISIONES'
         },
         textSize: {
             type: String,
@@ -28,6 +31,7 @@ export default {
     },
 
 };
+
 </script>
 
 <style scoped>

@@ -107,6 +107,10 @@
       <comentariosOrganismo />
     </div>
 
+    <div>
+      <streamCarrusel />
+    </div>
+
     
 
     
@@ -138,7 +142,7 @@ import mainCarruselOrganismo from '~/componentes/Organismos/mainCarruselOrganism
 import categoriasCarruselOrganismo from '~/componentes/Organismos/categoriasCarruselOrganismo.vue';
 import juegoInfoCarrusel from '~/componentes/Moleculas/juegoInfoCarrusel.vue';
 import comentariosOrganismo from '~/componentes/Organismos/comentariosOrganismo.vue';
-
+import streamCarrusel from '~/componentes/Moleculas/streamCarrusel.vue';
 
 
 export default {
@@ -161,6 +165,7 @@ export default {
     categoriasCarruselOrganismo,
     juegoInfoCarrusel,
     comentariosOrganismo,
+    streamCarrusel
     
 
    
@@ -172,7 +177,7 @@ export default {
 </script>
 
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .ajuste-titulo {
   display: flex;
   flex-direction: row;
