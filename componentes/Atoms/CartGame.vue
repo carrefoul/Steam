@@ -8,13 +8,11 @@
                 <div class="textCard">
                     <h2>{{ gameData.name }}</h2>
                 </div>
-                <div class="barra">
-                    <Bar></Bar>
-                </div>
             </div>
+           <h5 class="price">{{ gameData.randomPrice }} €</h5>
+
             <div class="right">
-                <BuyLink :showBox="true" textSize="h6"
-                    :showText="true" buttonText="Desinstalar" @click="uninstallGame" />
+                <IconLink showIcon="true" @click="uninstallGame" />
             </div>
         </div>
     </div>
@@ -43,21 +41,27 @@ export default {
     methods: {
         uninstallGame() {
             this.isVisible = false;
-        }
+            this.$emit('uninstall', this.gameData.id);
+        },
+    
     }
 };
 </script>
 
 <style scoped>
+.right{
+    width: 100%;
+}
 .container {
     display: flex;
     flex-direction: row;
     width: 100%;
     gap: 20px;
     height: 100px;
+    margin-bottom: 1rem;
 }
 .image-container {
-    width: 180px;
+    width: 36rem;
     height: 100px;
     overflow: hidden;
 }
@@ -68,10 +72,10 @@ export default {
 }
 .things {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    align-items: center;
+    align-items: flex-start;
 }
 .left {
     display: flex;
@@ -87,7 +91,11 @@ export default {
 .textCard h2 {
     font-family: AeonikTRIAL-Regular, Helvetica, sans-serif;
     font-weight: normal;
-    font-size: 1.05rem;
+    font-size: 1rem;
     margin: 0;
+}
+.price{
+    color: var(--azul);
+    font-weight: bolder;
 }
 </style>
