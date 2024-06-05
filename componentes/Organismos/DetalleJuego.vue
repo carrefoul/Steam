@@ -16,7 +16,11 @@
           <p class="description">
             {{ gameData ? gameData.description_raw : 'Cargando descripción...' }}
           </p>
-          <BuyLink textSize="h2" :showText="true" buttonText="BUY BUTTON"/>
+          <div class="infoComprar">
+            <h1>50,99 €</h1>
+            <IconLink textSize="h5" :fondoAzul="true" :showText="true" buttonText="Añadir al carrito" />
+            <BuyLink :fontChange="true" :showBox="true" textSize="p" :showIcon="true" iconName="Like" :showText="true" @click="redirectToPage" buttonText="Lista de Deseos" />
+          </div>
         </div>
       </div>
       <div class="containerRight">
@@ -176,8 +180,18 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 10rem;
-  flex: 0 1 auto;
+  .infoComprar{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: end;
+    h1{
+      margin-bottom: 10%;
+    }
+  }
+  .description {
+    width: 65%;
+  }
 }
 
 .containerRight {

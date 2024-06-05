@@ -10,6 +10,7 @@
       <img :src="gameData.background_image" alt="Game Image" @load="adjustHeight" />
       <icon-link 
         :showIcon="true" 
+        :aloneIcon="true"
         :iconName="isExpanded ? 'Cerrar' : 'Detalles'"
         v-if="showButton || isExpanded" 
         class="icon-button" 
@@ -111,7 +112,6 @@ export default {
   position: absolute;
   top: 10px;
   left: 10px;
-  color: var(--azul);
 }
 
 .details-container {
