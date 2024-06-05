@@ -13,7 +13,7 @@
       </div>
 
       <div>
-        <BuyLink :fontChange="true" :showBox="true" textSize="p" :showText="true" @click="redirectToPage" buttonText="Continuar el pago" />
+        <BuyLink :fontChange="true" :showBox="true" textSize="p" :showText="true"  buttonText="Continuar el pago" />
         <BuyLink :fontChange="true"  textSize="p" :showText="true" @click="redirectToPage" buttonText="Seguir comprando" />
       </div>
     </div>
@@ -82,6 +82,10 @@ export default {
     },
     removeGame(gameId) {
       this.games = this.games.filter(game => game.id !== gameId);
+    },
+    redirectToPage() {
+      this.$emit('close'); 
+      this.$router.push('/tienda');
     }
   }
 };
