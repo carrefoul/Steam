@@ -15,12 +15,12 @@
         </div>
       </div>
       <main>
+        <NoticiasGrid />
         <carruselStreamsComponente />
         <foroCarruselOrganismo />
         
 
       </main>
-
     </div>
     <div v-else class="ComunidadOut">
       <div class="subComunidad">
@@ -37,13 +37,12 @@
         </div>
       </div>
       <main>
+        <NoticiasGrid />
         <registerNotif  />
         <carruselStreamsComponente />
         
         
       </main>
-        
-      
 
     </div>
   </div>
@@ -52,20 +51,20 @@
 <script>
 import registerNotif from '~/componentes/Moleculas/registerNotif.vue';
 import IconLink from '@/componentes/Atoms/IconLink.vue';
+import NoticiasGrid from '@/componentes/Organismos/NoticiasGrid.vue';
 import carruselStreamsComponente from '~/componentes/Organismos/carruselStreamsComponente.vue';
 import foroCarruselOrganismo from '~/componentes/Organismos/foroCarruselOrganismo.vue';
 
-
 export default {
-  registerNotif,
+  
 
   name: 'ComunidadPage',
   components: {
     IconLink,
+    NoticiasGrid,
     carruselStreamsComponente,
+    registerNotif, 
     foroCarruselOrganismo
-   
-    
   },
 
   data() {
