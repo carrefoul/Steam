@@ -335,8 +335,6 @@ export default {
 
   }
 
-  .infoDiv {}
-
   .imagenes-juego {
     display: none;
   }

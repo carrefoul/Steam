@@ -1,5 +1,4 @@
 <template>
-  <link rel="icon" type="image/png" href="public/img/favicon.ico"/>
       <div>
         <NavBar />
         <NuxtPage />
