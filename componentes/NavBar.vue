@@ -98,7 +98,7 @@ export default {
 }
 
 .LogoContainer {
-  height: 100%;
+  height: 2rem;
   overflow: hidden;
     span{
      transform: scale(8.5);
