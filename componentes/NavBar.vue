@@ -17,9 +17,6 @@
         <li>
           <HeaderLink to="/soporte" isTitle>Soporte</HeaderLink>
         </li>
-        <li>
-          <HeaderLink to="/pruebas" isTitle>Pruebas</HeaderLink>
-        </li>
       </ul>
     </div>
     <div class="headerRight">
@@ -51,10 +48,13 @@ export default {
     };
   },
   mounted() {
+    // Comprobar el estado de inicio de sesión al cargar la página
     this.checkLoginStatus();
+    // Escuchar cambios de estado de inicio de sesión
     window.addEventListener('storage', this.checkLoginStatus);
   },
   methods: {
+    // Método para comprobar el estado de inicio de sesión
     checkLoginStatus() {
       this.loggedIn = localStorage.getItem('isLoggedIn') === 'true';
     },
@@ -66,6 +66,7 @@ export default {
     }
   },
   beforeDestroy() {
+    // Limpiar el listener al destruir el componente
     window.removeEventListener('storage', this.checkLoginStatus);
   }
 };
@@ -91,10 +92,10 @@ export default {
 .headerLeft {
   display: flex;
   align-items: center;
-  gap: 1rem;
 }
 
 .LogoContainer {
+  height: 100%;
   overflow: hidden;
     span{
      transform: scale(8.5);
@@ -135,12 +136,10 @@ export default {
   .webNone {
     display: block;
   }
-  .headerLeft {
-  display: flex;
-  align-items: center;
-}
+
   .LogoContainer {
-    width: 6rem;    height: 2rem;
+    width: 10rem;
+    height: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -149,11 +148,6 @@ export default {
       transform: scale(1.5);
     }
   }
-  .LogoContainer span{
-    transform: scale(5.5);
-
-  }
-
   .overlay-enter-active, .overlay-leave-active {
   transition: opacity 0.5s, transform 0.5s;
   }
