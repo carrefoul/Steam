@@ -31,6 +31,7 @@
   .flex{
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
   .progress-bar-container {
     width: 10rem;

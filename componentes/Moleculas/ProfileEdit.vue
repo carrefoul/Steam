@@ -58,7 +58,7 @@ justify-content: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1.563rem;
+    padding: 1rem 1.563rem ;
     align-items: center;
 }
 .leftProfile{

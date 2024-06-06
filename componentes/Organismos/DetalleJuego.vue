@@ -19,14 +19,17 @@
           <div class="infoComprar">
             <h1>50,99 €</h1>
             <IconLink textSize="h5" :fondoAzul="true" :showText="true" buttonText="Añadir al carrito" />
-            <BuyLink :fontChange="true" :showBox="true" textSize="p" :showIcon="true" iconName="Like" :showText="true" @click="redirectToPage" buttonText="Lista de Deseos" />
+            <BuyLink :fontChange="true" :showBox="true" textSize="p" :showIcon="true" iconName="Like" :showText="true"
+              @click="redirectToPage" buttonText="Lista de Deseos" />
           </div>
         </div>
       </div>
       <div class="containerRight">
         <div class="imagenes-juego">
-          <img v-if="gameData && gameData.background_image_additional" class="imagen" :src="gameData.background_image_additional" />
-          <img v-if="gameData && gameData.background_image_additional" class="imagen" :src="gameData.background_image_additional" />
+          <img v-if="gameData && gameData.background_image_additional" class="imagen"
+            :src="gameData.background_image_additional" />
+          <img v-if="gameData && gameData.background_image_additional" class="imagen"
+            :src="gameData.background_image_additional" />
         </div>
         <div class="detallesJuego">
           <div class="detalleSeccion">
@@ -106,24 +109,24 @@ export default {
   },
   methods: {
     async fetchCarouselImages(gameId) {
-  const apiUrl = `https://api.rawg.io/api/games/${gameId}?key=${apiKey}`;
-  try {
-    const response = await axios.get(apiUrl);
-    const backgroundImage = response.data.background_image;
-    // Agregar la imagen de fondo del juego como la primera imagen del carrusel
-    this.carouselImages = [backgroundImage];
+      const apiUrl = `https://api.rawg.io/api/games/${gameId}?key=${apiKey}`;
+      try {
+        const response = await axios.get(apiUrl);
+        const backgroundImage = response.data.background_image;
+        // Agregar la imagen de fondo del juego como la primera imagen del carrusel
+        this.carouselImages = [backgroundImage];
 
-    // Luego, obtener las capturas de pantalla del juego
-    const screenshotsUrl = `https://api.rawg.io/api/games/${gameId}/screenshots?key=${apiKey}`;
-    const screenshotsResponse = await axios.get(screenshotsUrl);
-    const screenshots = screenshotsResponse.data.results.map(screenshot => screenshot.image).slice(0, 3);
+        // Luego, obtener las capturas de pantalla del juego
+        const screenshotsUrl = `https://api.rawg.io/api/games/${gameId}/screenshots?key=${apiKey}`;
+        const screenshotsResponse = await axios.get(screenshotsUrl);
+        const screenshots = screenshotsResponse.data.results.map(screenshot => screenshot.image).slice(0, 3);
 
-    // Agregar las capturas de pantalla restantes al carrusel
-    this.carouselImages.push(...screenshots);
-  } catch (error) {
-    console.error('Error fetching carousel images:', error);
-  }
-}
+        // Agregar las capturas de pantalla restantes al carrusel
+        this.carouselImages.push(...screenshots);
+      } catch (error) {
+        console.error('Error fetching carousel images:', error);
+      }
+    }
   },
   name: 'DetalleJuego'
 };
@@ -131,8 +134,9 @@ export default {
 
 <style scoped>
 * {
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
+
 .container {
   display: flex;
   justify-content: center;
@@ -166,7 +170,8 @@ export default {
   width: 100%;
   position: relative;
   flex: 1;
-  height: 32.125rem; /* Altura fija en rem */
+  height: 32.125rem;
+  /* Altura fija en rem */
 }
 
 .imageDiv {
@@ -175,7 +180,8 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 32.125rem; /* Altura fija en rem */
+  height: 32.125rem;
+  /* Altura fija en rem */
   overflow: hidden;
 }
 
@@ -216,15 +222,18 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  .infoComprar{
+
+  .infoComprar {
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: end;
-    h1{
+
+    h1 {
       margin-bottom: 10%;
     }
   }
+
   .description {
     width: 65%;
   }
@@ -237,9 +246,10 @@ export default {
   align-items: stretch;
   gap: 20px;
   width: 30%;
-  max-width: 30%;
+ 
   box-sizing: border-box;
-  height: 100%; /* Expande en altura para ocupar todo el contenedor principal */
+  height: 100%;
+  /* Expande en altura para ocupar todo el contenedor principal */
 }
 
 .imagenes-juego {
@@ -250,7 +260,8 @@ export default {
   width: 100%;
   gap: 10px;
   flex-grow: 1;
-  height: 32.125rem; /* Altura fija en rem */
+  height: 32.125rem;
+  /* Altura fija en rem */
 }
 
 .imagen {
@@ -309,17 +320,40 @@ export default {
   margin-left: 10px;
 }
 
-.rating{
+.rating {
   font-weight: bold;
 }
 
 @media (orientation : portrait) {
-  .containerLeft{
+  .container {
+    flex-direction: column;
     width: 100%;
   }
+
+  .containerLeft {
+    width: 100%;
+
+  }
+
+  .infoDiv {}
+
   .imagenes-juego {
     display: none;
   }
-}
 
+  .detallesJuego {
+    width: 100%;
+  }
+
+  .containerRight {
+    width: 100%;
+  }
+
+  .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
 </style>
