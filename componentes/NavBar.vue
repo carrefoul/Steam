@@ -91,6 +91,7 @@ export default {
 .headerLeft {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
 .LogoContainer {
@@ -134,10 +135,12 @@ export default {
   .webNone {
     display: block;
   }
-
+  .headerLeft {
+  display: flex;
+  align-items: center;
+}
   .LogoContainer {
-    width: 10rem;
-    height: 2rem;
+    width: 6rem;    height: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
