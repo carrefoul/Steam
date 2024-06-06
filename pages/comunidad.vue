@@ -16,7 +16,8 @@
       </div>
       <main>
         <carruselStreamsComponente />
-        <forosCarruselContenedor />
+        <foroCarruselOrganismo />
+        
 
       </main>
 
@@ -39,6 +40,7 @@
         <registerNotif  />
         <carruselStreamsComponente />
         
+        
       </main>
         
       
@@ -51,7 +53,8 @@
 import registerNotif from '~/componentes/Moleculas/registerNotif.vue';
 import IconLink from '@/componentes/Atoms/IconLink.vue';
 import carruselStreamsComponente from '~/componentes/Organismos/carruselStreamsComponente.vue';
-import forosCarruselContenedor from '~/componentes/Organismos/forosCarruselContenedor.vue';
+import foroCarruselOrganismo from '~/componentes/Organismos/foroCarruselOrganismo.vue';
+
 
 export default {
   registerNotif,
@@ -60,7 +63,9 @@ export default {
   components: {
     IconLink,
     carruselStreamsComponente,
-    forosCarruselContenedor
+    foroCarruselOrganismo
+   
+    
   },
 
   data() {

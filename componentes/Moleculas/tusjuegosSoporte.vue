@@ -3,7 +3,11 @@
         <UCarousel v-slot="{ item }" :items="images" :ui="{ item: 'snap-start' }" 
             arrows>
             <div class="juego">
-                <img :src="item" class="w-full" draggable="false">
+                <NuxtLink :to="`/tusJuegosSoporte/${gameId}`">
+                    <img :src="item" class="w-full" draggable="false">
+
+                </NuxtLink>
+                
             </div> 
             
         </UCarousel>

@@ -5,11 +5,11 @@
                 <p>Inicia sesión en la Comunidad Steam para explorar más puntos de encuentro que explorar</p>
             </div>
             <div class="outButtonHolder">
-                <nuxt-link to="/loggin" class="outLink">
-                    <IconLink @click="login" textSize="h3" :pagina="true" :showText="true" buttonText="Iniciar sesión" />
+                <nuxt-link to="/loggin" class="outLink" @click="login">
+                    <IconLink  textSize="h3" :pagina="true" :showText="true" buttonText="Iniciar sesión" />
                 </nuxt-link>
-                <nuxt-link to="/registration" class="outLink">
-                    <IconLink class="link2" @click="login" textSize="h3" :pagina="true" :showText="true" buttonText="Registrarse" />
+                <nuxt-link to="/registration" class="outLink" @click="login">
+                    <IconLink class="link2"  textSize="h3" :pagina="true" :showText="true" buttonText="Registrarse" />
                 </nuxt-link>
             </div>
         </div>
