@@ -207,5 +207,6 @@
   .text-box-padding {
     padding: 0;
   }
+  
   </style>
   

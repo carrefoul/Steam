@@ -121,6 +121,10 @@ main{
     gap: 10px;
     margin-bottom: 90px;
   }
+  .soporteOut {
+    padding: 2rem;
+    transform: translateX(-1.2rem);
+  }
 }
 
 
