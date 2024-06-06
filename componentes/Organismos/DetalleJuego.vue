@@ -16,14 +16,9 @@
           <p class="description">
             {{ gameData ? gameData.description_raw : 'Cargando descripción...' }}
           </p>
-          <div v-if="loggedIn" class="infoComprar">
+          <div class="infoComprar">
             <h1>50,99 €</h1>
             <IconLink textSize="h5" :fondoAzul="true" :showText="true" buttonText="Añadir al carrito" />
-            <BuyLink :fontChange="true" :showBox="true" textSize="p" :showIcon="true" iconName="Like" :showText="true"
-              @click="redirectToPage" buttonText="Lista de Deseos" />
-          </div>
-          <div v-else class="infoComprar">
-            <h1>50,99 €</h1>
             <BuyLink :fontChange="true" :showBox="true" textSize="p" :showIcon="true" iconName="Like" :showText="true"
               @click="redirectToPage" buttonText="Lista de Deseos" />
           </div>
@@ -92,15 +87,7 @@ export default {
       showAllTags: false,
       carouselImages: [],
       activeIndex: 0,
-      loggedIn: false
     };
-  },
-  mounted() {
-    this.checkLoginStatus();
-    window.addEventListener('storage', this.checkLoginStatus);
-  },
-  beforeDestroy() {
-    window.removeEventListener('storage', this.checkLoginStatus);
   },
   computed: {
     displayedTags() {
@@ -121,9 +108,6 @@ export default {
     }
   },
   methods: {
-    checkLoginStatus() {
-      this.loggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    },
     async fetchCarouselImages(gameId) {
       const apiUrl = `https://api.rawg.io/api/games/${gameId}?key=${apiKey}`;
       try {
