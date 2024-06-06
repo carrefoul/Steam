@@ -73,7 +73,7 @@ import axios from 'axios';
 import juegoInfoCarrusel from '~/componentes/Moleculas/juegoInfoCarrusel.vue';
 import BuyLink from '~/componentes/Atoms/BuyLink.vue';
 
-const apiKey = 'c320afcffae4417e9b8004ba91f1950b';
+const apiKey = 'f4de9380f16546b09a3041a05219c157';
 
 export default {
   components: {
