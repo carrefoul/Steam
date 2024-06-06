@@ -45,7 +45,7 @@ export default {
     }
   },
   async created() {
-    const gameId = this.$route.params.id; // Obtener el ID del juego de la ruta
+    const gameId = this.$route.params.id; 
     await this.fetchGameDetails(gameId);
     this.checkLoginStatus();
   },

@@ -1,5 +1,9 @@
 <template>
-    <div class="news-gallery">
+  <div class="contendor">
+    <component :is="textSize" class="text">
+          {{ buttonText }}
+      </component>
+      <div class="news-gallery">
       <div ref="newsGrid" class="news-grid">
         <div 
           v-for="(news, index) in visibleNews" 
@@ -22,6 +26,8 @@
         />
       </div>
     </div>
+  </div>
+    
   </template>
   
   <script>
@@ -32,6 +38,17 @@
     components: {
       noticia,
       BuyLink,
+    },
+    props: {
+      buttonText: {
+        type: String,
+        default: 'ACTIVIDAD'
+      },
+      textSize: {
+        type: String,
+        default: 'h1',
+      },
+      
     },
     data() {
       return {
@@ -131,6 +148,14 @@
     display: flex;
     justify-content: center;
     margin-top: 20px;
+  }
+
+  .contendor{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px;
+    margin-top: 0px;
   }
   </style>
   

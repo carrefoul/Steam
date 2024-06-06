@@ -90,4 +90,14 @@ export default {
     font-size: 1.05rem;
     margin: 0;
 }
+
+@media (orientation : portrait) {
+  .barra{
+    height: auto;
+    width: 13rem;
+  }
+  .left {
+    width: 100%;
+}
+}
 </style>
