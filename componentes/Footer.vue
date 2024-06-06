@@ -72,7 +72,7 @@ export default {
     align-items: center;
 }
 .logoClass {
-    transform: scale(5) translateY(-0.14em);
+  
     color: var(--azul);
 }
 .footerTop {
