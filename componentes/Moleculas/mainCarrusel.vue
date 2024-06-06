@@ -1,12 +1,10 @@
 <template>
     <div class="carousel-container">
-      <UCarousel v-if="carouselItems.length > 0" :items="carouselItems" :ui="{ item: 'basis-full' }" arrows>
-        <template v-for="(item, index) in carouselItems" :key="index">
-          <NuxtLink :to="`/detalleJuego/${item.gameData.id}`" class="no-underline">
-            <img :src="item.image" class="w-full" draggable="false">
-          </NuxtLink>
-        </template>
-      </UCarousel>
+      <NuxtLink v-if="carouselItems.length > 0" :to="`/detalleJuego/${carouselItems[0].gameData.id}`" class="no-underline">
+        <UCarousel v-slot="{ item }" :items="carouselItems" :ui="{ item: 'basis-full' }" arrows>
+          <img :src="item.image" class="w-full" draggable="false">
+        </UCarousel>
+      </NuxtLink>
     </div>
   </template>
   
