@@ -3,7 +3,11 @@
         <UCarousel v-slot="{ item }" :items="images" :ui="{ item: 'snap-start' }" 
             arrows>
             <div class="juego">
+                
                 <img :src="item" class="w-full" draggable="false">
+
+               
+                
             </div> 
             
         </UCarousel>
@@ -78,5 +82,10 @@ export default {
     width: auto;
     height: 100%;
     object-fit: cover;
+}
+@media (orientation : portrait) {
+    .juego {
+        height: 200px;
+    }
 }
 </style>

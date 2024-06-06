@@ -1,9 +1,9 @@
 <template>
-  <NuxtLink :to="'/categoria'" :class="buttonClass" @click="handleClick">
+  <button  :class="buttonClass" @click="handleClick">
     <component :is="textSize" class="text">
       {{ buttonText }}
     </component>
-  </NuxtLink>
+  </button>
 </template>
 
 <script scoped>
@@ -53,4 +53,6 @@ export default {
 .custom-button text {
   width: auto;
 }
+
+
 </style>

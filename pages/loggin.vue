@@ -3,7 +3,7 @@
       <div class="logginS">
         <div class="logginLeft">
           <div class="main">
-            <h1>Inicia sesión con tu cuenta</h1>
+            <h1 class="title">Inicia sesión con tu cuenta</h1>
             <div class="logginImput">
               <imputsElements inputWidth="20rem" :showText="true" placeholderText="Nombre de cuenta" v-model="username" />
             </div>
@@ -106,6 +106,7 @@
     display: flex;
     flex-direction: column;
     gap: 0;
+    align-items: center;
 }
 .qrHolder {
     display: flex;
@@ -113,6 +114,7 @@
     align-items: center;
     width: 13.2em;
     height: 14.2em;
+    margin-top: 1rem;
 }
 .qrClass {
     transform: scale(13.2) translateY(-0.06rem);
@@ -133,5 +135,39 @@ h1 {
 }
 p{
     margin: 0;
+}
+@media (orientation : portrait) {
+  .main {
+   width: 10rem;
+}
+.logginRight{
+  display: none;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+
+}
+.logginButtonHolder {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+
+}
+.logginLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.extra{
+  display: flex;
+  align-items: center;
+}
+.title{
+  text-align: center;
+}
 }
 </style>

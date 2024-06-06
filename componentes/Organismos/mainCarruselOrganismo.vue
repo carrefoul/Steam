@@ -12,15 +12,24 @@ export default {
     components: {
         mainCarrusel
     },
-    
+
 }
 </script>
 
 <style scoped>
-.organismo{
+.organismo {
     display: flex;
     flex-direction: column;
     margin: 20px;
 
-};
+}
+
+
+
+@media (orientation : portrait) {
+    .organismo {
+        margin: 10px;
+        gap: 10px;
+    }
+}
 </style>

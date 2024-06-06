@@ -2,7 +2,7 @@
     <div class="carruselContainer">
         <UCarousel v-slot="{ item }" :items="items" :ui="{ item: 'snap-start' }" arrows >
             <div class="carousel-item-container">
-                <categoriesBox :item="item" :buttonText="item.buttonText" class="w-full" />
+                <categoriesBoxFuncional :item="item" :buttonText="item.buttonText" class="w-full" />
 
             </div>
             
@@ -13,7 +13,8 @@
 </template>
 
 <script setup lang="ts">
-import categoriesBox from '~/componentes/Atoms/categoriesBox.vue';
+
+import categoriesBoxFuncional from '../Atoms/categoriesBoxFuncional.vue';
 
 const items = ref([
     { id: 1, name: 'Category 1', buttonText: 'Ciudades y asentamientos' },
@@ -42,6 +43,7 @@ const items = ref([
 .carousel-item-container {
     margin-right: 5px;
 }
+
 
 
 </style>

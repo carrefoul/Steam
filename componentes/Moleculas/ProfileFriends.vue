@@ -37,7 +37,8 @@ export default {
 .all {
     display: flex;
     flex-direction: column;
-    padding: 1.563rem;
+    padding: 1rem 1.563rem;
+    gap: 15px;
 }
 .profilename {
     display: flex;
@@ -48,8 +49,8 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 1rem;
-    align-content: center;
+    
+    
     align-items: center;
 }
 .ajusteinput {
@@ -64,5 +65,14 @@ export default {
 .amigospic {
     width: 100%;
     height: auto;
+}
+
+
+@media (orientation : portrait) {
+  .all {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+}
 }
 </style>

@@ -85,14 +85,13 @@ methods: {
 .all {
 display: flex;
 flex-direction: column;
-padding: 20px;
+padding: 1rem 20px;
 gap: 10px;
 }
 .profilename {
 display: flex;
 align-items: center;
 color: var(--negro);
-margin-bottom: 1rem;
 }
 .icon-container {
 position: relative;
@@ -109,7 +108,6 @@ justify-content: center;
 display: flex;
 flex-direction: row;
 justify-content: space-between;
-margin-bottom: 1rem;
 align-content: center;
 align-items: center;
 }

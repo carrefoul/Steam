@@ -31,6 +31,7 @@
   .flex{
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
   .progress-bar-container {
     width: 10rem;
@@ -39,10 +40,23 @@
     background-color: white;
     display: flex;
     align-items: center;
+    margin-left: 1rem;
   }
   
   .progress-bar {
     height: 100%;
     background-color: var(--azul);
   }
+
+  @media (orientation : portrait) {
+  .text{
+    font-size: 0.7rem;
+    width: 30rem;
+    margin-right: 0.3rem;
+  }
+  .progress-bar-container{
+    width: 22rem;
+    margin-left: 0;
+  }
+}
   </style>

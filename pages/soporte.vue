@@ -2,8 +2,15 @@
   <div class="soporteContainer">
       <div v-if="loggedIn" class="soporteIn">
         <div class="subSoporte">
+          <div class="titulo">
             <h1>TUS JUEGOS</h1>
+
+          </div>
+          <div class="lupa">
             <imputsElements inputWidth="10rem" :showText="true" placeholderText="Busca un juego" :showIcon="true" iconName="Lupa" textSize="h3" />
+          </div>
+            
+            
         </div>
         <main>
           <tusJuegosCarrusel />
@@ -91,6 +98,29 @@ main{
   margin: 0;
   padding: 0;
   gap: 15px;
+}
+
+@media (orientation : portrait) {
+  .subSoporte {
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+
+  }
+  .titulo{
+    width: 100%;
+    margin: 0;
+  }
+  .lupa{
+    width: 100%;
+  }
+  main {
+    gap: 10px;
+    margin-bottom: 90px;
+  }
 }
 
 

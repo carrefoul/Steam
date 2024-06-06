@@ -89,7 +89,6 @@
   
   .friends-profile-pic {
     border: 3px solid; 
-    height: 5rem;
     width: 5rem;
     margin-right: 0.3rem;
     margin-top: 0.3rem;

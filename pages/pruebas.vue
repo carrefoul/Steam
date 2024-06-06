@@ -108,8 +108,9 @@
     </div>
 
     <div>
-      <streamCarrusel />
+      <carruselStreamsComponente />
     </div>
+
 
     
 
@@ -142,7 +143,8 @@ import mainCarruselOrganismo from '~/componentes/Organismos/mainCarruselOrganism
 import categoriasCarruselOrganismo from '~/componentes/Organismos/categoriasCarruselOrganismo.vue';
 import juegoInfoCarrusel from '~/componentes/Moleculas/juegoInfoCarrusel.vue';
 import comentariosOrganismo from '~/componentes/Organismos/comentariosOrganismo.vue';
-import streamCarrusel from '~/componentes/Moleculas/streamCarrusel.vue';
+import carruselStreamsComponente from '~/componentes/Organismos/carruselStreamsComponente.vue';
+
 
 
 export default {
@@ -165,7 +167,8 @@ export default {
     categoriasCarruselOrganismo,
     juegoInfoCarrusel,
     comentariosOrganismo,
-    streamCarrusel
+    carruselStreamsComponente
+ 
     
 
    

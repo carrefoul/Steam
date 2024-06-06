@@ -72,8 +72,7 @@ export default {
       this.$emit('update:inputText', this.inputText);
     },
     handleInput() {
-      // Manejar la entrada del usuario
-      // Por ejemplo, podrías agregar un console.log aquí para verificar el valor de inputText
+    
       console.log('Input:', this.inputText);
     }
   }
@@ -139,5 +138,15 @@ export default {
 
 .custom-button:hover .text-box {
     color: var(--azul);
+}
+@media (orientation : portrait) {
+  .custom-button {
+    padding: 0.6rem;
+
+    width: 12rem;
+}
+
+
+
 }
 </style>

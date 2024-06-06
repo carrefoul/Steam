@@ -77,6 +77,7 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    
 }
 .textCard {
     display: flex;
@@ -89,5 +90,19 @@ export default {
     font-weight: normal;
     font-size: 1.05rem;
     margin: 0;
+}
+
+.barra {
+    align-items: center;
+}
+
+@media (orientation : portrait) {
+  .barra{
+    height: auto;
+    width: 13rem;
+  }
+  .left {
+    width: 100%;
+}
 }
 </style>

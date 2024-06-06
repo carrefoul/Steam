@@ -8,9 +8,11 @@
           <h3 @click="scrollToCategorias">Categorías</h3>
         </div>
       </div>
-
-      <imputsElements inputWidth="10rem" :showText="true" placeholderText="Busca un juego" :showIcon="true"
+      <div class="buscador">
+        <imputsElements :showText="true" placeholderText="Busca un juego" :showIcon="true"
         iconName="Lupa" textSize="h3" />
+      </div>
+      
     </div>
   </div>
   <main>
@@ -77,30 +79,57 @@ export default {
   display: flex;
   flex-direction: row;
   margin: 20px;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .section {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 10px;
 }
 
 .pages-links {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
+  gap: 15px;
 }
 
 main{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
   margin: 0;
   padding: 0;
   gap: 15px;
+}
+
+@media (orientation : portrait) {
+  .subHeaderTienda {
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    justify-content: flex-start;
+    width: 100%;
+   
+    
+  }
+  .section {
+    gap: 5px;
+    width: 100%;
+   
+  }
+  .pages-links {
+    gap: 10px;
+  }
+  .buscador {
+    width: 100%;
+   
+  }
+
+  main {
+    gap: 10px;
+    margin-bottom: 90px;
+  }
 }
 </style>

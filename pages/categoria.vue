@@ -1,9 +1,15 @@
 <template>
   <div class="subHeaderContainer">
     <div class="subHeaderCategorias">
-      <h1>NOMBRE DE LA CATEGORÍA {{ id }}</h1>
-      <imputsElements inputWidth="10rem" :showText="true" placeholderText="Busca un juego" :showIcon="true"
+      <div class="titulo">
+        <h1>NOMBRE DE LA CATEGORÍA {{ id }}</h1>
+      </div>
+      <div class="lupa">
+        <imputsElements inputWidth="10rem" :showText="true" placeholderText="Busca un juego" :showIcon="true"
         iconName="Lupa" textSize="h3" />
+      </div>
+      
+      
     </div>
   </div>
   <main>
@@ -59,7 +65,7 @@
 import { useRoute } from 'vue-router';
 import IconLink from '@/componentes/Atoms/IconLink.vue';
 import GameGrid from '~/componentes/Organismos/GameGrid.vue';
-import despegablePlataforma from '@/componentes/Despegables/despegablePlataformas.vue';
+
 
 const route = useRoute();
 const id = route.params.id;
@@ -170,5 +176,31 @@ main {
   background-color: white;
   text-decoration: none;
   width: 200px;
+}
+
+@media (orientation : portrait) {
+  .subHeaderCategorias {
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+  }
+
+  .lupa{
+    width: 100%;
+  }
+  .titulo {
+    width: 100%;
+  }
+  .selectoresCategoria{
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  main {
+    gap: 10px;
+    margin-bottom: 90px;
+  }
 }
 </style>
