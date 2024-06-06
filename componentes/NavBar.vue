@@ -146,6 +146,11 @@ export default {
       transform: scale(1.5);
     }
   }
+  .LogoContainer span{
+    transform: scale(5.5);
+
+  }
+
   .overlay-enter-active, .overlay-leave-active {
   transition: opacity 0.5s, transform 0.5s;
   }

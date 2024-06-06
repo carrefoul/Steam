@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="buscador">
-        <imputsElements inputWidth="10rem" :showText="true" placeholderText="Busca un juego" :showIcon="true"
+        <imputsElements :showText="true" placeholderText="Busca un juego" :showIcon="true"
         iconName="Lupa" textSize="h3" />
       </div>
       
