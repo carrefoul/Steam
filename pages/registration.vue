@@ -8,23 +8,23 @@
           </div>
         <div class="registrationInput">
           <h2>Nombre de la cuenta</h2>
-          <imputsElements inputWidth="20rem" :showText="true" placeholderText="Nombre de cuenta" v-model="username" />
+          <imputsElements class="inp" inputWidth="20rem" :showText="true" placeholderText="Nombre de cuenta" v-model="username" />
         </div>
         <div class="registrationInput">
           <h2>Correo electrónico</h2>
-          <imputsElements inputWidth="20rem" :showText="true" placeholderText="Correo electrónico" v-model="username" />
+          <imputsElements class="inp" inputWidth="20rem" :showText="true" placeholderText="Correo electrónico" v-model="username" />
         </div>
         <div class="registrationInput">
           <h2>Contraseña</h2>
-          <imputsElements inputWidth="20rem" :showText="true" :isPassword="true" placeholderText="Contraseña" v-model="username" />
+          <imputsElements class="inp" inputWidth="20rem" :showText="true" :isPassword="true" placeholderText="Contraseña" v-model="username" />
         </div>
         <div class="registrationInput">
           <h2>Confirmar contraseña</h2>
-          <imputsElements inputWidth="20rem" :showText="true" :isPassword="true" placeholderText="Confirmar contraseña" v-model="username" />
+          <imputsElements class="inp" inputWidth="20rem" :showText="true" :isPassword="true" placeholderText="Confirmar contraseña" v-model="username" />
         </div>
         <div class="registrationInput">
           <h2>País</h2>
-          <imputsElements inputWidth="20rem" :showText="true" placeholderText="País" v-model="username" />
+          <imputsElements class="inp" inputWidth="20rem" :showText="true" placeholderText="País" v-model="username" />
         </div>
       </div>
       <div class="extras">
@@ -123,5 +123,34 @@ h1 {
 }
 h2 {
   margin: 0;
+}
+@media (orientation : portrait) {
+  
+  .todoReg {
+    flex-direction: column;
+
+}
+
+.titulo {
+  align-self: center;
+
+}
+.registrationInput {
+  align-items: center;
+ 
+}
+.inp{
+  width: 20rem;
+}
+.regButton{
+margin-top: 1rem;
+}
+.extras {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0rem;
+  justify-content: space-between;
+  align-items: center;
+}
 }
 </style>

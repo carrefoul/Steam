@@ -90,4 +90,58 @@ cursor: pointer;
   justify-content: space-between;
   margin-left: 1rem;
 }
+
+
+
+
+@media (orientation : portrait) {
+    .profilename{
+    color:var(--negro);
+    margin-right: 0.3rem;
+    font-size: 1.2rem;
+}
+
+.editar{
+width: 7rem;
+height: 2rem;
+border: 2px solid;
+display: flex;
+justify-content: center;
+}
+.all{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem;    align-items: center;
+}
+.leftProfile{
+    display: flex;
+    flex-direction: row;
+}
+.ajuste{
+   padding: 0;
+   margin: 0;
+   height: auto;
+}
+.NombreNivel{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+}
+.rightProfile{
+    display: none;
+   
+}
+
+.rightProfile:hover{
+cursor: pointer;
+}
+.ProfileInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 0.5rem;
+}
+}
 </style>
