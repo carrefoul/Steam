@@ -48,6 +48,9 @@ export default {
     const gameId = this.$route.params.id; // Obtener el ID del juego de la ruta
     await this.fetchGameDetails(gameId);
     this.checkLoginStatus();
+  },
+  mounted() {
+    window.scrollTo(0, 0); // Desplazarse a la parte superior de la página cuando se monta el componente
   }
 };
 </script>
