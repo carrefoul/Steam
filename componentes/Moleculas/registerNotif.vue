@@ -6,7 +6,7 @@
             </div>
             <div class="outButtonHolder">
                 <nuxt-link to="/loggin" class="outLink" @click="login">
-                    <IconLink  textSize="h3" :pagina="true" :showText="true" buttonText="Iniciar sesión" />
+                    <IconLink class="link2"  textSize="h3" :pagina="true" :showText="true" buttonText="Iniciar sesión" />
                 </nuxt-link>
                 <nuxt-link to="/registration" class="outLink" @click="login">
                     <IconLink class="link2"  textSize="h3" :pagina="true" :showText="true" buttonText="Registrarse" />
@@ -69,6 +69,17 @@
     justify-content: space-between;
     padding: 1.7rem 1rem 1.7rem 1rem;
     align-items: center;
+}
+@media (orientation : portrait) {
+    .outLink {
+        width: 9rem;
+    }
+    .custom-button {
+        padding: 0.1rem;
+    }
+    .outHolder {
+        padding: 1.8rem;
+    }
 }
 
 </style>

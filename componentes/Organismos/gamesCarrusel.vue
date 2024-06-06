@@ -20,23 +20,11 @@
             :class="['game-card', { expanded: isExpanded }]" 
             @mouseenter="showDetailIcon = true" 
             @mouseleave="showDetailIcon = false"
+            @click="toggleExpand(item.id)"
           >
             <div class="image-container">
               <img :src="item.background_image" alt="Game Image" />
-              <icon-link 
-                :showIcon="showDetailIcon && !isExpanded" 
-                :aloneIcon="true" 
-                iconName="Detalles" 
-                class="icon-button" 
-                @click.stop="toggleExpand(item.id)"
-              />
-              <icon-link 
-                :showIcon="isExpanded" 
-                :aloneIcon="true" 
-                iconName="Cerrar" 
-                class="icon-button" 
-                @click.stop="toggleExpand(item.id)"
-              />
+              
             </div>
             <div v-if="isExpanded" class="details-container">
               <div class="textCard">

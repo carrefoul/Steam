@@ -18,8 +18,6 @@
         <NoticiasGrid />
         <carruselStreamsComponente />
         <foroCarruselOrganismo />
-        
-
       </main>
     </div>
     <div v-else class="ComunidadOut">
@@ -39,9 +37,7 @@
       <main>
         <NoticiasGrid />
         <registerNotif  />
-        <carruselStreamsComponente />
-        
-        
+        <carruselStreamsComponente />        
       </main>
 
     </div>
@@ -188,5 +184,9 @@ main {
     gap: 10px;
     margin-bottom: 90px;
   }
+  .custom-button {
+    width: auto;
+  }
+  
 }
 </style>

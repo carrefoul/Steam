@@ -21,7 +21,7 @@ export default {
 
         buttonText: {
             type: String,
-            default: 'SOPORTE'
+            default: 'FORO'
         },
         textSize: {
             type: String,
