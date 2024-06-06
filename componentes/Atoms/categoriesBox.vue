@@ -53,4 +53,6 @@ export default {
 .custom-button text {
   width: auto;
 }
+
+
 </style>

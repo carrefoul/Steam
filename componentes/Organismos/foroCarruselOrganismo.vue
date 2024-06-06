@@ -41,5 +41,12 @@ export default {
 
 }
 
+@media (orientation : portrait) {
+    .organismo {
+        gap: 10px;
+        margin: 10px;
+    }
+}
+
 
 </style>

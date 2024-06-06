@@ -15,3 +15,12 @@ import ProfileGames from '@/componentes/Moleculas/ProfileGames.vue';
 
 
 </script>
+
+<style scoped>
+    @media (orientation : portrait) {
+        main{
+            margin-bottom: 90px;
+        }
+        
+    }
+</style>

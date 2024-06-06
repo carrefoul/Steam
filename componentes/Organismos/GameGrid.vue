@@ -139,4 +139,15 @@ export default {
   justify-content: center;
   margin-top: 20px;
 }
+
+@media (orientation : portrait) {
+ .load-more {
+  margin-top: 10px;
+ }
+
+ .gamegallery{
+  gap: 10px;
+  margin: 10px;
+ }
+}
 </style>

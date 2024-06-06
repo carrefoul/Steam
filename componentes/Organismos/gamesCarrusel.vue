@@ -250,4 +250,17 @@
     /* Three lines */
     max-width: 180px;
 }
+
+@media (orientation : portrait) {
+  .game-card {
+    height: 200px;
+    
+}
+
+.organismo{
+  margin: 10px;
+  gap: 10px;
+}
+
+}
 </style>

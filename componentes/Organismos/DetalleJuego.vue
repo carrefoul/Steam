@@ -312,4 +312,13 @@ export default {
   font-weight: bold;
 }
 
+@media (orientation : portrait) {
+  .containerLeft{
+    width: 100%;
+  }
+  .imagenes-juego {
+    display: none;
+  }
+}
+
 </style>

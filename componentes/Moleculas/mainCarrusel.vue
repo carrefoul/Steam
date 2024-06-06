@@ -73,33 +73,12 @@ export default {
     object-fit: cover;
 }
 
-.swiper-pagination {
-    bottom: 10px;
-}
 
-.swiper-pagination-bullet {
-    width: 21px;
-    height: 21px;
-    border-radius: 0;
-    margin: 0 5px;
-}
-
-.swiper-pagination-bullet-active {
-    background-color: var(--azul);
-}
-
-.arrowContainer {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    z-index: 4;
-    top: 50%;
+@media (orientation : portrait) {
+    .carousel-container img {
     width: 100%;
-    transform: translateY(-50%);
+    height: 300px;
+    object-fit: cover;
 }
-
-.arrowContainer>* {
-    pointer-events: all;
 }
 </style>

@@ -83,4 +83,9 @@ export default {
     height: 100%;
     object-fit: cover;
 }
+@media (orientation : portrait) {
+    .juego {
+        height: 200px;
+    }
+}
 </style>

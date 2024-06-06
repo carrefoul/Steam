@@ -157,5 +157,15 @@
     margin: 20px;
     margin-top: 0px;
   }
+
+  @media (orientation : portrait) {
+    .load-more {
+      margin-top: 10px;
+    }
+    .contendor {
+      margin: 10px;
+      gap: 10px;
+    }
+  }
   </style>
   

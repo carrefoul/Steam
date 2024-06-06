@@ -22,5 +22,11 @@ export default {
     flex-direction: column;
     margin: 20px;
 
-};
+}
+
+@media (orientation : portrait) {
+    .organismo {
+        margin: 10px;
+    }
+}
 </style>

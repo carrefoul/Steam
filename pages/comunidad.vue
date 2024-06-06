@@ -164,4 +164,29 @@ main {
   padding: 0;
   gap: 15px;
 }
+
+@media (orientation : portrait) {
+  .subComunidad {
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+  }
+  .textosSub {
+    gap: 5px;
+    width: 100%;
+  }
+  .subcategorias {
+    gap: 10px;
+  }
+  .buscador {
+    width: 100%;
+  }
+  main {
+    gap: 10px;
+    margin-bottom: 90px;
+  }
+}
 </style>
