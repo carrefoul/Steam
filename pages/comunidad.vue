@@ -1,87 +1,89 @@
 <template>
-  <div class="comunidadContainer">
-    <div v-if="loggedIn" class="comunidadIn">
-      <div class="subComunidad">
-        <div class="textosSub">
-          <h1>COMUNIDAD</h1>
-          <div class="subcategorias">
-            <h3>Actividad</h3>
-            <h3>Retransmisiones en directo</h3>
-          </div>
+    <div class="comunidadContainer">
+        <div v-if="loggedIn" class="comunidadIn">
+            <div class="subComunidad">
+              <div class="textosSub">
+                <h1>COMUNIDAD</h1>
+              <div class="subcategorias">
+                <h3>Actividad</h3>
+                <h3>Retransmisiones en directo</h3>
+              </div>
+              </div>
+              <div class="buscador">
+                <imputsElements inputWidth="10rem" :showText="true" placeholderText="Busca un juego" :showIcon="true" iconName="Lupa" textSize="h3" />
+              </div>
+            </div>
+            <div class="actividadHolder">
+                <h1>ACTIVIDAD</h1>
+                <NoticiasGrid />
+            </div>
+            <div class="retransmisionesHolder">
+                <h1>RETRANSMISIONES</h1>
+            </div>
+            <div class="forosHolder">
+                <h1>FOROS</h1>
+            </div>
         </div>
-        <div class="buscador">
-          <imputsElements inputWidth="10rem" :showText="true" placeholderText="Busca un juego" :showIcon="true"
-            iconName="Lupa" textSize="h3" />
+        <div v-else class="ComunidadOut"> 
+            <div class="subComunidad">
+              <div class="textosSub">
+                <h1>COMUNIDAD</h1>
+              <div class="subcategorias">
+                <h3>Actividad</h3>
+                <h3>Retransmisiones en directo</h3>
+              </div>
+              </div>
+              <div class="buscador">
+                <imputsElements inputWidth="10rem" :showText="true" placeholderText="Busca un juego" :showIcon="true" iconName="Lupa" textSize="h3" />
+              </div>
+            </div>
+            <div class="notifHolder">
+                <registerNotif class="registerNotif"/>
+            </div>
+            <div class="actividadHolder">
+                <h1>ACTIVIDAD</h1>
+            </div>
+            <div class="retransmisionesHolder">
+                <h1>RETRANSMISIONES</h1>
+            </div>
+            
         </div>
-      </div>
-      <main>
-        <carruselStreamsComponente />
-        <forosCarruselContenedor />
-
-      </main>
-
     </div>
-    <div v-else class="ComunidadOut">
-      <div class="subComunidad">
-        <div class="textosSub">
-          <h1>COMUNIDAD</h1>
-          <div class="subcategorias">
-            <h3>Actividad</h3>
-            <h3>Retransmisiones en directo</h3>
-          </div>
-        </div>
-        <div class="buscador">
-          <imputsElements inputWidth="10rem" :showText="true" placeholderText="Busca un juego" :showIcon="true"
-            iconName="Lupa" textSize="h3" />
-        </div>
-      </div>
-      <main>
-        <registerNotif  />
-        <carruselStreamsComponente />
-        
-      </main>
-        
+  </template>
+  
+  <script>
+   import registerNotif from '~/componentes/Moleculas/registerNotif.vue';
+   import IconLink from '@/componentes/Atoms/IconLink.vue';
+   import NoticiasGrid from '@/componentes/Organismos/NoticiasGrid.vue';
+  
+   export default {
+    registerNotif,
+  
+    name: 'ComunidadPage',
+      components: {
+      IconLink,
+      NoticiasGrid,
+      },
       
-
-    </div>
-  </div>
-</template>
-
-<script>
-import registerNotif from '~/componentes/Moleculas/registerNotif.vue';
-import IconLink from '@/componentes/Atoms/IconLink.vue';
-import carruselStreamsComponente from '~/componentes/Organismos/carruselStreamsComponente.vue';
-import forosCarruselContenedor from '~/componentes/Organismos/forosCarruselContenedor.vue';
-
-export default {
-  registerNotif,
-
-  name: 'ComunidadPage',
-  components: {
-    IconLink,
-    carruselStreamsComponente,
-    forosCarruselContenedor
-  },
-
-  data() {
-    return {
-      loggedIn: false
-    };
-  },
-  mounted() {
-    this.checkLoginStatus();
-    window.addEventListener('storage', this.checkLoginStatus);
-  },
-  beforeDestroy() {
-    window.removeEventListener('storage', this.checkLoginStatus);
-  },
-  methods: {
-    checkLoginStatus() {
-      this.loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    data() {
+      return {
+        loggedIn: false
+      };
+    },
+    mounted() {
+      this.checkLoginStatus();
+      window.addEventListener('storage', this.checkLoginStatus);
+    },
+    beforeDestroy() {
+      window.removeEventListener('storage', this.checkLoginStatus);
+    },
+    methods: {
+      checkLoginStatus() {
+        this.loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+      }
     }
-  }
-};
-</script>
+  };
+  </script>
 
 <style lang="postcss" scoped>
 h1 {
