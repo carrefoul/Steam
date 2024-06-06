@@ -106,7 +106,7 @@ export default {
   
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 4.5em; /* Three lines */
+  max-height: 4.5em; 
   max-width: 180px;
 }
 

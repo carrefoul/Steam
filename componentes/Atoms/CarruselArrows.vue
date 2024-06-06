@@ -41,7 +41,6 @@ export default {
   methods: {
     handleClick() {
       this.$emit('click');
-      // Acción al hacer clic
     }
   }
 };

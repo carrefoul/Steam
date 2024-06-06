@@ -61,7 +61,6 @@ export default {
     }
   },
   mounted() {
-    // Add a slight delay to ensure the menu has finished opening before adding the listener
     this.$nextTick(() => {
       setTimeout(this.addClickOutsideListener, 0);
     });

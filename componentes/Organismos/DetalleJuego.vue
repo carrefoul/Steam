@@ -113,15 +113,12 @@ export default {
       try {
         const response = await axios.get(apiUrl);
         const backgroundImage = response.data.background_image;
-        // Agregar la imagen de fondo del juego como la primera imagen del carrusel
         this.carouselImages = [backgroundImage];
 
-        // Luego, obtener las capturas de pantalla del juego
         const screenshotsUrl = `https://api.rawg.io/api/games/${gameId}/screenshots?key=${apiKey}`;
         const screenshotsResponse = await axios.get(screenshotsUrl);
         const screenshots = screenshotsResponse.data.results.map(screenshot => screenshot.image).slice(0, 3);
 
-        // Agregar las capturas de pantalla restantes al carrusel
         this.carouselImages.push(...screenshots);
       } catch (error) {
         console.error('Error fetching carousel images:', error);
@@ -171,7 +168,6 @@ export default {
   position: relative;
   flex: 1;
   height: 32.125rem;
-  /* Altura fija en rem */
 }
 
 .imageDiv {
@@ -181,7 +177,6 @@ export default {
   justify-content: flex-start;
   align-items: flex-start;
   height: 32.125rem;
-  /* Altura fija en rem */
   overflow: hidden;
 }
 
@@ -215,7 +210,7 @@ export default {
 }
 
 .dot-carrusel.active {
-  background: #0007ff;
+  background: var(--azul);
 }
 
 .infoDiv {
@@ -249,7 +244,6 @@ export default {
  
   box-sizing: border-box;
   height: 100%;
-  /* Expande en altura para ocupar todo el contenedor principal */
 }
 
 .imagenes-juego {
@@ -261,7 +255,6 @@ export default {
   gap: 10px;
   flex-grow: 1;
   height: 32.125rem;
-  /* Altura fija en rem */
 }
 
 .imagen {

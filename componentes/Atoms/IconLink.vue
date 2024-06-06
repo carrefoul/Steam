@@ -70,13 +70,12 @@
       textBoxClass() {
         return [
           'text-box',
-          { 'text-box-padding': !this.showIcon && this.showText } // Condición para agregar el padding solo si showIcon no está activo y showText está activo
+          { 'text-box-padding': !this.showIcon && this.showText } 
         ];
       }
     },
     methods: {
       handleClick() {
-        // Aquí puedes añadir lógica para manejar el clic del botón si es necesario
       }
     }
   };
@@ -92,14 +91,14 @@
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-    padding: 0.2rem 0.5rem 0.2rem 0.5rem; /* Removemos padding por defecto */
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem; 
     gap: 0.4rem;
     width: auto;
     height: 2.25rem;
   }
   
   .custom-button:hover {
-    color: var(--azul); /* Color de texto por defecto en hover */
+    color: var(--azul); 
   }
   
   .with-box {
@@ -161,7 +160,7 @@
   
   .pagina:hover {
     color: var(--azul);
-    outline: 0.1em solid var(--azul); /* Usamos outline en lugar de border para que no cambie el tamaño del contenedor */
+    outline: 0.1em solid var(--azul); 
     h3 {
       font-weight: bolder;
     }
@@ -186,16 +185,16 @@
   
   .icon {
     transform: scale(1.3);
-    fill: var(--icon-color, black); /* Color del icono por defecto */
+    fill: var(--icon-color, black); 
     transition: fill 0.3s;
   }
   
   .custom-button:hover .icon {
-    fill: var(--hover-icon-color, var(--azul)); /* Color del icono al hacer hover */
+    fill: var(--hover-icon-color, var(--azul));
   }
   
   .with-box .icon {
-    fill: white; /* Color del icono dentro de la caja con borde */
+    fill: white; 
   }
   
   .text-box {

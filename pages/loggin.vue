@@ -52,8 +52,6 @@
     },
     methods: {
       login() {
-        console.log('Username:', this.username);
-        console.log('Password:', this.password);
         if (this.username !== 'admin' && this.password !== 'admin') {
           localStorage.setItem('isLoggedIn', 'true');
           this.$router.push('/tienda');

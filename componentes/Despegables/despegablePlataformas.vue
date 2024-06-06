@@ -1,6 +1,5 @@
 <template>
     <div class="despegable-estilo">
-
         <p>Window</p>
         <p>MacOS</p>
         <p>Linux</p>

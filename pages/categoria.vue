@@ -75,7 +75,6 @@ const showGenero = ref(false);
 const showTematica = ref(false);
 const showModos = ref(false);
 
-// Método para cambiar la visibilidad del desplegable
 const togglePlataforma = () => {
   showPlataforma.value = !showPlataforma.value;
 };
@@ -142,7 +141,6 @@ main {
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
   padding: 0.2rem 0.5rem 0.2rem 0.5rem;
-  /* Removemos padding por defecto */
   gap: 0.4rem;
   width: 200px;
   height: 2.25rem;

@@ -16,7 +16,7 @@ import DetalleJuego from '~/componentes/Organismos/DetalleJuego.vue';
 import RegisterNotif from '@/componentes/Moleculas/registerNotif.vue';
 import comentariosOrganismo from '~/componentes/Organismos/comentariosOrganismo.vue';
 
-const apiKey = 'f4de9380f16546b09a3041a05219c157'; // Reemplaza con tu clave de API de RAWG
+const apiKey = 'f4de9380f16546b09a3041a05219c157'; 
 
 export default {
   components: {
@@ -50,7 +50,7 @@ export default {
     this.checkLoginStatus();
   },
   mounted() {
-    window.scrollTo(0, 0); // Desplazarse a la parte superior de la página cuando se monta el componente
+    window.scrollTo(0, 0); 
   }
 };
 </script>

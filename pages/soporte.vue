@@ -15,8 +15,7 @@
         <main>
           <tusJuegosCarrusel />
           <soporteCarruselComponente />
-          
-
+      
         </main>
       </div>
       <div v-else class="soporteOut"> 

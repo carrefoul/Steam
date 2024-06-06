@@ -22,7 +22,6 @@
     },
     methods: {
       handleClick() {
-        // Aquí puedes añadir lógica para manejar el clic del botón si es necesario
       }
     }
   };
@@ -45,7 +44,6 @@
     padding-left: 1rem;
   }
   
-  /* Estilos para el icono SVG */
   svg {
     vertical-align: middle;
     fill: currentColor;

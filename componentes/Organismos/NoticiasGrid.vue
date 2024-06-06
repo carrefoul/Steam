@@ -31,7 +31,7 @@
   </template>
   
   <script>
-  import noticia from '~/componentes/Moleculas/noticia.vue'; // Ajusta la ruta según tu estructura de archivos
+  import noticia from '~/componentes/Moleculas/noticia.vue'; 
   import BuyLink from '../Atoms/BuyLink.vue';
   
   export default {
@@ -108,7 +108,7 @@
       },
       loadMoreNews() {
         const currentNewsCount = this.visibleNews.length;
-        const additionalNews = this.shuffledNews.slice(currentNewsCount, currentNewsCount + 4); // Adjust the number of news to load more
+        const additionalNews = this.shuffledNews.slice(currentNewsCount, currentNewsCount + 4); 
         this.visibleNews = [...this.visibleNews, ...additionalNews];
         this.allNewsLoaded = this.visibleNews.length === this.shuffledNews.length;
       }
@@ -127,7 +127,7 @@
   .news-grid {
     display: grid;
     padding: 0px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Mantenemos el mínimo de 200px */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
     gap: 10px;
     width: 100%;
     box-sizing: border-box;
@@ -135,7 +135,7 @@
   
   @media screen and (min-width: 768px) {
     .news-grid {
-      grid-template-columns: repeat(5, 1fr); /* Establecemos 5 columnas en pantallas más grandes */
+      grid-template-columns: repeat(5, 1fr); 
     }
   }
   

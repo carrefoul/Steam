@@ -87,7 +87,7 @@ export default {
         { 'text-box-padding': !this.showIcon },
         { 'text-box': this.showText && this.showIcon },
         { 'text-box1': this.isPointer },
-        { 'text-box2': this.fontChange && this.showText && !this.showSale } // Aplica la clase si fontChange es verdadero y no hay venta
+        { 'text-box2': this.fontChange && this.showText && !this.showSale } 
       ];
     },
     isTextOnly() {
@@ -103,7 +103,6 @@ export default {
   methods: {
     handleClick() {
       if (!this.isTextOnly) {
-        // Solo ejecuta la acción si no es solo texto
       }
     }
   }
@@ -119,14 +118,14 @@ export default {
   border: none;
   text-align: center;
   transition: background-color 0.3s, color 0.3s;
-  padding: 0; /* Padding por defecto */
+  padding: 0; 
   gap: 0.4rem;
   width: auto;
   height: 2.25rem;
 }
 
 .custom-button.custom-padding {
-  padding: 0.5rem 0.2rem 0.5rem 0.2rem; /* Padding personalizado */
+  padding: 0.5rem 0.2rem 0.5rem 0.2rem; 
 }
 .custom-button:hover {
   color: var(--azul);
@@ -139,7 +138,6 @@ export default {
   
 }
 
-/* Nuevo estilo para el fondo azul */
 .with-box.fondo {
   background-color: var(--azul);
   color: var(--blanco);
@@ -147,7 +145,6 @@ export default {
 
 }
 
-/* Modificaciones en los estilos de texto para el fondo azul */
 .text-box.fondo {
   background-color: var(--azul);
   color: var(--blanco);
@@ -214,8 +211,8 @@ svg {
 .icon path {
   fill: var(--icon-color, black);
   transition: fill 0.3s;
-  transform: scale(1.5); /* Aumenta el tamaño del path */
-  transform-origin: center; /* Asegúrate de que el escalado ocurra desde el centro */
+  transform: scale(1.5); 
+  transform-origin: center; 
 }
 
 .custom-button:hover .icon path {
@@ -243,7 +240,7 @@ svg {
 .text-box2 {
   background: none;
   font-family: Aeon
-ikTRIAL-Regular !important; /* Cambia la fuente a AeonikTRIAL-Regular */
+ikTRIAL-Regular !important;
 margin: 0;
 cursor: pointer;
 }

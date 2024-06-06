@@ -43,7 +43,6 @@
     border: none;
     text-align: center;
     padding: 50px 70px;
-    /* Padding por defecto */
     width: auto;
     height: auto;
     color: white;

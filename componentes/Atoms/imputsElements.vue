@@ -68,12 +68,9 @@ export default {
     },
     handleBlur() {
       this.isEditing = false;
-      console.log('Texto ingresado:', this.inputText);
       this.$emit('update:inputText', this.inputText);
     },
     handleInput() {
-    
-      console.log('Input:', this.inputText);
     }
   }
 };

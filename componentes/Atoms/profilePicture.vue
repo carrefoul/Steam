@@ -35,7 +35,7 @@
     },
     data() {
       return {
-        seed: Math.floor(Math.random() * 1000) // Seed fixed for both server and client
+        seed: Math.floor(Math.random() * 1000) 
       };
     },
     computed: {

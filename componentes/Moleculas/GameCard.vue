@@ -58,8 +58,8 @@ export default {
     adjustHeight() {
       this.$nextTick(() => {
         const card = this.$refs.card;
-        const height = card.offsetHeight + 10; // Altura real de la tarjeta más el gap
-        const rowHeight = 10; // Debe coincidir con el valor de grid-auto-rows
+        const height = card.offsetHeight + 10; 
+        const rowHeight = 10; 
         const rowSpan = Math.ceil(height / rowHeight);
         card.style.gridRowEnd = `span ${rowSpan}`;
       });
@@ -105,7 +105,7 @@ export default {
 .image-container img {
   width: 100%;
   height: auto;
-  display: block; /* Ensures the image does not have any whitespace underneath */
+  display: block; 
 }
 
 .icon-button {
@@ -140,7 +140,7 @@ export default {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 4.5em; /* Three lines */
+  max-height: 4.5em; 
 }
 
 .buttons-container {

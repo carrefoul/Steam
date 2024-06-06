@@ -31,8 +31,6 @@ export default {
         logout() {
             window.dispatchEvent(new Event('storage'));
             localStorage.removeItem('isLoggedIn', 'true');
-            // Actualizar el estado de inicio de sesión en la aplicación
-            // Redirigir al usuario a la página de inicio de sesión u otra página apropiada
             this.$router.push('/tienda');
             window.dispatchEvent(new Event('storage'));
         }

@@ -103,7 +103,6 @@
       },
       toggleExpand(gameId) {
         this.isExpanded = !this.isExpanded;
-        // Lógica adicional si es necesario manejar la expansión de una tarjeta específica por su ID
       }
     }
   };
@@ -114,7 +113,7 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  z-index: 1; /* Asegura que esté por encima de la imagen */
+  z-index: 1; 
 }
 
 .custom-arrow {
@@ -235,7 +234,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-height: 4.5em;
-    /* Three lines */
     max-width: 180px;
 }
 

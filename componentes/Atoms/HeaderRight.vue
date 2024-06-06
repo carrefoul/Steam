@@ -51,13 +51,13 @@ export default {
     despegableUsuario,
     IconLink,
     desplegableDescargar,
-    carrito  // Registrar el componente carrito
+    carrito  
   },
   data() {
     return {
       showDespegableUsuario: false,
       showDesplegableDescargar: false,
-      showDesplegableCarrito: false  // Estado para el desplegable del carrito
+      showDesplegableCarrito: false  
     };
   },
   methods: {
@@ -130,7 +130,7 @@ export default {
 }
 
 .overlay.right {
-  justify-content: flex-end; /* Alinear a la derecha */
+  justify-content: flex-end; 
 }
 
 .background-overlay {
