@@ -60,7 +60,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss" scoped>
 .juego{
     height: 400px;
     width: auto;

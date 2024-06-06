@@ -16,7 +16,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .organismo{
     display: flex;
     flex-direction: column;

@@ -4,15 +4,20 @@
         <div class="logoHolder">
             <nuxt-icon name="Logo" class="icon"></nuxt-icon>
         </div>
-        <nuxt-link to="tienda" class="portraitLink">
+        <nuxt-link to="tienda" class="portraitLink" @click.native="toggleTiendaSub">
            <nuxt-icon name="Tienda" class="icon"></nuxt-icon>
            <h3>TIENDA</h3>
         </nuxt-link>
-        <nuxt-link to="comunidad" class="portraitLink">
+        <div class="tiendaSub" v-if="showTiendaSub">
+          <h3 @click.native="closeOverlay">Destacados</h3>
+          <h3 @click.native="scrollToElement('ofertasEspeciales')">Ofertas</h3>
+          <h3 @click.native="scrollToElement('categorias')">Categorías</h3>
+        </div>
+        <nuxt-link to="comunidad" class="portraitLink" @click.native="closeOverlay">
            <nuxt-icon name="Comunindad" class="icon"></nuxt-icon>
            <h3>COMUNIDAD</h3>
         </nuxt-link>
-        <nuxt-link to="soporte" class="portraitLink">
+        <nuxt-link to="soporte" class="portraitLink" @click.native="closeOverlay">
            <nuxt-icon name="Soporte" class="icon"></nuxt-icon>
            <h3>SOPORTE</h3>
         </nuxt-link>
@@ -28,12 +33,20 @@
     data() {
       return {
         show: true,
+        showTiendaSub: false,
       };
     },
     methods: {
       closeOverlay() {
         this.show = false;
         this.$emit('close');
+      },
+      toggleTiendaSub() {
+      this.showTiendaSub = !this.showTiendaSub;
+      },
+      scrollToElement(elementId) {
+        this.$router.push({ name: 'tienda', query: { scrollTo: elementId } });
+         this.closeOverlay(); // Cerrar el overlay después de hacer clic en un elemento del subtienda
       }
     }
   };
@@ -41,6 +54,9 @@
   
   <style lang="postcss" scoped>
   .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -75,5 +91,11 @@
     flex-direction: row;
     align-items: center;
     gap: 1rem;
+  }
+  .tiendaSub {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2.1rem;
+    transform: translateY(-1rem);
   }
   </style>

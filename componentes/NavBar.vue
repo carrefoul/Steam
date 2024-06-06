@@ -25,7 +25,9 @@
     <div class="headerRight">
       <HeaderRight :loggedIn="loggedIn" />
     </div>
-    <portraitNav v-if="isOverlayVisible" @close="closeOverlay" />
+    <transition name="overlay">
+      <portraitNav v-if="isOverlayVisible"  @close="closeOverlay" class="portraitNav"/>
+    </transition>
   </nav>
 </template>
 
@@ -73,7 +75,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .nav {
   display: flex;
   justify-content: space-between;
@@ -96,11 +98,10 @@ export default {
 }
 
 .LogoContainer {
-  width: 6rem;
   height: 100%;
   overflow: hidden;
-    svg{
-      width: 6rem;
+    span{
+     transform: scale(8.5);
     }
 }
 
@@ -149,6 +150,13 @@ export default {
     svg{
       transform: scale(1.5);
     }
+  }
+  .overlay-enter-active, .overlay-leave-active {
+  transition: opacity 0.5s, transform 0.5s;
+  }
+  .overlay-enter, .overlay-leave-to {
+    opacity: 0;
+    transform: translateX(-50%);
   }
 }
 </style>

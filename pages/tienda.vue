@@ -4,8 +4,8 @@
       <div class="section">
         <h1>DESTACADOS/NOVEDADES</h1>
         <div class="pages-links">
-          <h3>Ofertas especiales</h3>
-          <h3>Categorías</h3>
+          <h3 @click="scrollToGamesCarrusel">Ofertas especiales</h3>
+          <h3 @click="scrollToCategorias">Categorías</h3>
         </div>
       </div>
 
@@ -15,8 +15,8 @@
   </div>
   <main>
     <MainCarruselOrganismo />
-    <gamesCarrusel buttonText="OFERTAS ESPECIALES" />
-    <CategoriasCarruselOrganismo buttonText="CATEGORÍAS" />
+    <gamesCarrusel id="ofertasEspeciales" buttonText="OFERTAS ESPECIALES" />
+    <CategoriasCarruselOrganismo id="categorias" buttonText="CATEGORÍAS" />
   </main>
 
 
@@ -33,11 +33,42 @@ export default {
     mainCarruselOrganismo,
     categoriasCarruselOrganismo,
     gamesCarrusel
+  },
+  methods: {
+    scrollToGamesCarrusel() {
+      const gamesCarruselElement = document.getElementById('ofertasEspeciales');
+      if (gamesCarruselElement) {
+        gamesCarruselElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    },
+    scrollToCategorias() {
+      const CategoriasCarruselOrganismo = document.getElementById('categorias');
+      if (CategoriasCarruselOrganismo) {
+        CategoriasCarruselOrganismo.scrollIntoView({ behavior: 'smooth' });
+      }
+    },
+    scrollToElement(elementId) {
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  },
+   watch: {
+    '$route.query.scrollTo': {
+      immediate: true,
+      handler(newVal) {
+        if (newVal) {
+          this.scrollToElement(newVal);
+        }
+      }
+    }
   }
 }
+
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .subHeaderContainer{
   width: 100%;
 }
