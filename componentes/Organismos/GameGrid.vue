@@ -49,10 +49,17 @@ export default {
       page: 1,
       totalGamesLoaded: 0,
       allGamesLoaded: false,
+      // Variable para controlar el número de columnas en el grid
+      columns: 5,
     };
   },
   async mounted() {
+    this.setColumns(); // Llama a la función para configurar el número de columnas
     await this.fetchGames();
+    window.addEventListener('resize', this.setColumns); // Actualiza el número de columnas cuando se redimensiona la ventana
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.setColumns); // Elimina el listener cuando se destruye el componente
   },
   methods: {
     async fetchGames() {
@@ -87,6 +94,17 @@ export default {
     async loadMoreGames() {
       this.page += 1;
       await this.fetchGames();
+    },
+    // Función para ajustar el número de columnas según el tamaño de la pantalla
+    setColumns() {
+      const screenWidth = window.innerWidth;
+      if (screenWidth <= 600) { // Móvil
+        this.columns = 1;
+      } else if (screenWidth <= 1024) { // Entre móvil y tablet
+        this.columns = 3;
+      } else { // Pantalla grande (ordenador)
+        this.columns = Math.min(5, Math.floor(screenWidth / 200)); // Máximo 5 columnas
+      }
     }
   },
 };
@@ -104,10 +122,16 @@ export default {
 .game-grid {
   display: grid;
   padding: 0px;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Mantenemos el mínimo de 200px */
   gap: 10px;
   width: 100%;
   box-sizing: border-box;
+}
+
+@media screen and (min-width: 768px) {
+  .game-grid {
+    grid-template-columns: repeat(5, 1fr); /* Establecemos 5 columnas en pantallas más grandes */
+  }
 }
 
 .load-more {

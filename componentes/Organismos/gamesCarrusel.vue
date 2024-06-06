@@ -1,122 +1,134 @@
 <template>
     <div class="organismo">
-        <div class="top-part">
-            <component :is="textSize" class="text">
-                {{ buttonText }}
-            </component>
-            <NuxtLink to="/ofertasEspeciales" class="no-underline">
-                <BuyLink :showIcon="true" :showInverted="true" :showBox="true" iconName="Más" textSize="h6"
-                    :showText="true" buttonText="Ver más" />
-            </NuxtLink>
-
-        </div>
-        <div class="carousel-container">
-            <UCarousel v-slot="{ item }" :items="games" :ui="{ item: 'snap-start' }" :prev-button="{
-                class: 'custom-arrow custom-arrow-left',
-                icon: 'i-heroicons-arrow-left-20-solid custom-icon'
-            }" :next-button="{
-                class: 'custom-arrow custom-arrow-right',
-                icon: 'i-heroicons-arrow-right-20-solid custom-icon'
-            }" arrows>
-                <!-- <gameCardCarrusel :game="item" class="w-full" draggable="false" /> -->
-                <div :class="['game-card', { expanded: isExpanded }]" @click="toggleExpand">
-                    <div class="image-container">
-                        <img :src="item.background_image" alt="Game Image" />
-                    </div>
-                    <div v-if="isExpanded" class="details-container">
-                        <div class="textCard">
-                            <h2>{{ item.name }}</h2>
-                            <p class="game-description">{{ item.description }}</p>
-                        </div>
-                        <div>
-                            <BuyMiniCard :gameId="item.id" />
-                        </div>
-                    </div>
-                </div>
-            </UCarousel>
-
-        </div>
+      <div class="top-part">
+        <component :is="textSize" class="text">
+          {{ buttonText }}
+        </component>
+        <NuxtLink to="/ofertasEspeciales" class="no-underline">
+          <BuyLink :showIcon="true" :showInverted="true" :showBox="true" iconName="Más" textSize="h6" :showText="true" buttonText="Ver más" />
+        </NuxtLink>
+      </div>
+      <div class="carousel-container">
+        <UCarousel v-slot="{ item }" :items="games" :ui="{ item: 'snap-start' }" :prev-button="{
+          class: 'custom-arrow custom-arrow-left',
+          icon: 'i-heroicons-arrow-left-20-solid custom-icon'
+        }" :next-button="{
+          class: 'custom-arrow custom-arrow-right',
+          icon: 'i-heroicons-arrow-right-20-solid custom-icon'
+        }" arrows>
+          <div 
+            :class="['game-card', { expanded: isExpanded }]" 
+            @mouseenter="showDetailIcon = true" 
+            @mouseleave="showDetailIcon = false"
+          >
+            <div class="image-container">
+              <img :src="item.background_image" alt="Game Image" />
+              <icon-link 
+                :showIcon="showDetailIcon && !isExpanded" 
+                :aloneIcon="true" 
+                iconName="Detalles" 
+                class="icon-button" 
+                @click.stop="toggleExpand(item.id)"
+              />
+              <icon-link 
+                :showIcon="isExpanded" 
+                :aloneIcon="true" 
+                iconName="Cerrar" 
+                class="icon-button" 
+                @click.stop="toggleExpand(item.id)"
+              />
+            </div>
+            <div v-if="isExpanded" class="details-container">
+              <div class="textCard">
+                <h2>{{ item.name }}</h2>
+                <p class="game-description">{{ item.description }}</p>
+              </div>
+              <div>
+                <BuyMiniCard :gameId="item.id" />
+              </div>
+            </div>
+          </div>
+        </UCarousel>
+      </div>
     </div>
-
-</template>
-
-<script>
-import axios from 'axios';
-import CarruselArrows from '../Atoms/CarruselArrows.vue';
-import gameCardCarrusel from '../Moleculas/gameCardCarrusel.vue';
-
-import BuyMiniCard from '../Atoms/BuyMiniCard.vue';
-
-const apiKey = 'c320afcffae4417e9b8004ba91f1950b';
-
-export default {
-    // mounted() {
-    //     this.initSwiper();
-    // },
+  </template>
+  
+  <script>
+  import axios from 'axios';
+  import CarruselArrows from '../Atoms/CarruselArrows.vue';
+  import gameCardCarrusel from '../Moleculas/gameCardCarrusel.vue';
+  import BuyMiniCard from '../Atoms/BuyMiniCard.vue';
+  
+  const apiKey = 'c320afcffae4417e9b8004ba91f1950b';
+  
+  export default {
     components: {
-        CarruselArrows,
-        gameCardCarrusel,
-        BuyMiniCard
-
+      CarruselArrows,
+      gameCardCarrusel,
+      BuyMiniCard
     },
     props: {
-
-        buttonText: {
-            type: String,
-            default: 'Estim'
-        },
-        textSize: {
-            type: String,
-            default: 'h1',
-        },
-        gameData: {
-            type: Object,
-            required: true
-        },
+      buttonText: {
+        type: String,
+        default: 'Estim'
+      },
+      textSize: {
+        type: String,
+        default: 'h1',
+      },
+      gameData: {
+        type: Object,
+        required: true
+      },
     },
     data() {
-        return {
-            games: [],
-            isExpanded: false,
-
-        };
+      return {
+        games: [],
+        isExpanded: false,
+        showDetailIcon: false
+      };
     },
     async mounted() {
-        await this.fetchGames();
+      await this.fetchGames();
     },
     methods: {
-        toggleExpand() {
-            this.isExpanded = !this.isExpanded;
-
-        },
-
-        async fetchGames() {
-            const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}&page_size=7`;
-
-            try {
-                const response = await axios.get(apiUrl);
-                const games = response.data.results;
-
-                const gameDetailsPromises = games.map(async (game) => {
-                    const gameDetailsUrl = `https://api.rawg.io/api/games/${game.id}?key=${apiKey}`;
-                    const gameDetailsResponse = await axios.get(gameDetailsUrl);
-                    return {
-                        ...game,
-                        description: gameDetailsResponse.data.description_raw || 'No description available'
-                    };
-                });
-
-                this.games = await Promise.all(gameDetailsPromises);
-            } catch (error) {
-                console.error('Error fetching game data:', error);
-            }
+      async fetchGames() {
+        const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}&page_size=7`;
+  
+        try {
+          const response = await axios.get(apiUrl);
+          const games = response.data.results;
+  
+          const gameDetailsPromises = games.map(async (game) => {
+            const gameDetailsUrl = `https://api.rawg.io/api/games/${game.id}?key=${apiKey}`;
+            const gameDetailsResponse = await axios.get(gameDetailsUrl);
+            return {
+              ...game,
+              description: gameDetailsResponse.data.description_raw || 'No description available'
+            };
+          });
+  
+          this.games = await Promise.all(gameDetailsPromises);
+        } catch (error) {
+          console.error('Error fetching game data:', error);
         }
-
+      },
+      toggleExpand(gameId) {
+        this.isExpanded = !this.isExpanded;
+        // Lógica adicional si es necesario manejar la expansión de una tarjeta específica por su ID
+      }
     }
-};
-</script>
+  };
+  </script>
 
 <style scoped>
+.icon-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1; /* Asegura que esté por encima de la imagen */
+}
+
 .custom-arrow {
     background-color: #f0f0f0 ;
     border-radius: 0% ;

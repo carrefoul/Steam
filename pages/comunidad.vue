@@ -15,6 +15,7 @@
             </div>
             <div class="actividadHolder">
                 <h1>ACTIVIDAD</h1>
+                <NoticiasGrid />
             </div>
             <div class="retransmisionesHolder">
                 <h1>RETRANSMISIONES</h1>
@@ -53,13 +54,15 @@
   <script>
    import registerNotif from '~/componentes/Moleculas/registerNotif.vue';
    import IconLink from '@/componentes/Atoms/IconLink.vue';
+   import NoticiasGrid from '@/componentes/Organismos/NoticiasGrid.vue';
   
    export default {
     registerNotif,
   
     name: 'ComunidadPage',
       components: {
-      IconLink
+      IconLink,
+      NoticiasGrid,
       },
       
     data() {
