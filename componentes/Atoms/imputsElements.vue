@@ -140,4 +140,10 @@ export default {
 .custom-button:hover .text-box {
     color: var(--azul);
 }
+@media (orientation : portrait) {
+  .custom-button {
+   
+    width: 12rem;
+}
+}
 </style>

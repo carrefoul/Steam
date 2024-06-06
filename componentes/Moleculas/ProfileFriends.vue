@@ -65,4 +65,13 @@ export default {
     width: 100%;
     height: auto;
 }
+
+
+@media (orientation : portrait) {
+  .all {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+}
+}
 </style>

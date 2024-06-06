@@ -1,6 +1,6 @@
 <template>
   <div v-if="loggedIn" class="BuyMiniCard">
-    <BuyLink :showSale="true" textSize="h2" :showText="true" buttonText="BUY BUTTON" class="buybutton"/>
+    <BuyLink :showSale="true" textSize="h2" :showText="true" buttonText="50,99 €" class="buybutton"/>
     <div class="MiniCard">
       <IconLink class="adjust-space" textSize="p" :fondoAzul="true" :showText="true" buttonText="Añadir al carro" />
       <NuxtLink :to="`/detalleJuego/${gameId}`" class="no-underline">
@@ -9,7 +9,7 @@
     </div>
   </div>
   <div v-else class="BuyMiniCard">
-    <BuyLink :showSale="true" textSize="h2" :showText="true" buttonText="BUY BUTTON" />
+    <BuyLink :showSale="true" textSize="h2" :showText="true" buttonText="50,99 €" />
     <div class="MiniCard">
       <NuxtLink :to="`/detalleJuego/${gameId}`" class="no-underline">
         <BuyLink :fontChange="true" :showBox="true" textSize="p" :showText="true" buttonText="Ver más" />

@@ -274,6 +274,7 @@ export default {
 .detalleSeccion {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .static-text {
