@@ -92,6 +92,7 @@ export default {
 .headerLeft {
   display: flex;
   align-items: center;
+  gap: 2rem;
 }
 
 .LogoContainer {

@@ -15,7 +15,7 @@
 <script>
 import axios from 'axios';
 
-const apiKey = 'c320afcffae4417e9b8004ba91f1950b';
+const apiKey = 'f4de9380f16546b09a3041a05219c157';
 const gameIds = [1234, 5678, 91011];
 
 export default {
